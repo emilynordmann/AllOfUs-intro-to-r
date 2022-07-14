@@ -1,0 +1,74 @@
+:root {
+ --navy: #262262;   /* hsl(315, 42%, 42%) */
+  --blue: #5eaee0; /* hsl( 33, 70%, 62%) */
+  --grey: #f1f2f2; /* hsl( 49, 87%, 70%) */
+  --pink: #f2728c;
+  --yellow: #ffdd7f;
+  --orange: #f68d76;
+  --green: #7ac79b
+  --purple: #a27db7
+}
+
+/* styles for webex-solveme */
+.webex-incorrect,
+.webex-radiogroup label.webex-incorrect{
+    border: 2px dotted var(--pink);
+    background-color: #edaddd;
+    border-radius: 0.25em;
+}
+.webex-correct,
+.webex-radiogroup label.webex-correct {
+    border: 2px solid var(--green);
+    background-color: #c0edc2;
+    border-radius: 0.25em;
+}
+
+.webex-incorrect span::before,
+.webex-incorrect + .webex-icon::after {
+  content: "\274C  ";
+}
+
+.webex-correct span::before,
+.webex-correct + .webex-icon::after {
+  content: "\2705  ";
+}
+
+
+/* styles for hidden solutions */
+.webex-solution {
+    height: 2.5em;
+    overflow-y: hidden;
+    padding: 0.5em;
+    margin-bottom: 10px;
+}
+.webex-solution.open {
+    height: auto;
+    border: 2px solid var(--blue);
+    border-radius: 5px;
+}
+.webex-solution button {
+    height: 2em;
+    margin-bottom: 0.5em;
+    border-radius: 0.5em;
+    background-color: var(--blue);
+    color: white;
+    padding: 0 0.5em;
+}
+.webex-solution pre.sourceCode {
+    border-color: var(--green);
+}
+
+.webex-radiogroup label {
+  margin-left: 2em;
+  text-indent: -1em;
+  padding-left: 0.5em;
+  font-weight: 400;
+  display: block;
+  border: 2px solid rgba(255, 255, 255, 1);
+  border-radius: 0.25em;
+}
+
+.webex-radiogroup label input {
+  position: relative;
+  left: -1em;
+}
