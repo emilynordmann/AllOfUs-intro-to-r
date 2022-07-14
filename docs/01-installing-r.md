@@ -35,13 +35,8 @@ Sys.which("make")
 ```
 
 ```
-<<<<<<< HEAD
 ##                               make 
 ## "C:\\rtools40\\usr\\bin\\make.exe"
-=======
-## make 
-##   ""
->>>>>>> 846d1831ec47858fcf4174c02677fffd4045896c
 ```
 
 

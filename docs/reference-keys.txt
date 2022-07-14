@@ -4,10 +4,7 @@ fig:img-updaterstudio
 fig:img-updateall
 fig:img-rstudio
 fig:img-autocomplete
-<<<<<<< HEAD
 instructors
-=======
->>>>>>> 846d1831ec47858fcf4174c02677fffd4045896c
 installing-r
 installing-base-r
 installing-rstudio
