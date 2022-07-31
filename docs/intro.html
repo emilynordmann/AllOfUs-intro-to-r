@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 2 Intro to R and RStudio | Intro to R and Data Vizualisation</title>
 <meta name="author" content="Emily Nordmann &amp; Javan Carter">
-<meta name="description" content="2.1 Intended Learning Outcomes Install R and RStudio Be able to install add-on packages Be able to get help for packages and functions Be able to create objects by writing and running code in the...">
+<meta name="description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Be able to install add-on packages Be able to get help for packages and functions Be able to create objects by...">
 <meta name="generator" content="bookdown 0.25 with bs4_book()">
 <meta property="og:title" content="Chapter 2 Intro to R and RStudio | Intro to R and Data Vizualisation">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://emilynordmann.github.io/AllOfUs-intro-to-r/intro.html">
 <meta property="og:image" content="https://emilynordmann.github.io/AllOfUs-intro-to-r/images/logos/logo.png">
-<meta property="og:description" content="2.1 Intended Learning Outcomes Install R and RStudio Be able to install add-on packages Be able to get help for packages and functions Be able to create objects by writing and running code in the...">
+<meta property="og:description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Be able to install add-on packages Be able to get help for packages and functions Be able to create objects by...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 2 Intro to R and RStudio | Intro to R and Data Vizualisation">
-<meta name="twitter:description" content="2.1 Intended Learning Outcomes Install R and RStudio Be able to install add-on packages Be able to get help for packages and functions Be able to create objects by writing and running code in the...">
+<meta name="twitter:description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Be able to install add-on packages Be able to get help for packages and functions Be able to create objects by...">
 <meta name="twitter:image" content="https://emilynordmann.github.io/AllOfUs-intro-to-r/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -74,6 +74,7 @@
 <li><a class="" href="index.html">Course Overview</a></li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">1</span> Installing R</a></li>
 <li><a class="active" href="intro.html"><span class="header-section-number">2</span> Intro to R and RStudio</a></li>
+<li><a class="" href="intro-viz.html"><span class="header-section-number">3</span> Intro to data viz</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="glossary.html"><span class="header-section-number">A</span> Glossary</a></li>
 <li><a class="" href="license.html">License</a></li>
@@ -93,44 +94,43 @@
 <h2>
 <span class="header-section-number">2.1</span> Intended Learning Outcomes<a class="anchor" aria-label="anchor" href="#ilo-intro"><i class="fas fa-link"></i></a>
 </h2>
+<p>By the end of this chapter you should be able to:</p>
 <ul>
-<li>Install R and RStudio</li>
 <li>Be able to install add-on packages</li>
 <li>Be able to get help for packages and functions</li>
 <li>Be able to create objects by writing and running code in the console</li>
 </ul>
-<p>Please note that if you're completely new to R, we don't expect you to fully understand everything in this chapter. Almost all of the concepts will be further explained in the workshop and you will feel more comfortable with them with continued practice. However, the first workshop session in particular will run much smoother if you have some familiarity with the basics.</p>
+<p>Please note that if you're completely new to R, you may not fully understand everything in this chapter first time. Almost all of the concepts will be further explained again throughout this course and you will feel more comfortable with them with continued practice. We would recommend re-reading this chapter towards the end of the course and you will likely understand a lot more.</p>
 <p>Download the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf">RStudio IDE Cheatsheet</a>.</p>
 </div>
 <div id="intro-r-rstudio" class="section level2" number="2.2">
 <h2>
 <span class="header-section-number">2.2</span> R and RStudio<a class="anchor" aria-label="anchor" href="#intro-r-rstudio"><i class="fas fa-link"></i></a>
 </h2>
-<p>R is a programming language that you will write code in and RStudio is an Integrated Development Environment (<a class="glossary" target="_blank" title="Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R." href="https://psyteachr.github.io/glossary/i#ide">IDE</a>) which makes working in R easier. Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it would be much harder without things like spell-checking and formatting and you wouldn't be able to use some of the advanced features that Word has developed. In a similar way, you can use R without R Studio but we wouldn't recommend it. RStudio serves as a text editor, file manager, spreadsheet viewer, and more. The key thing to remember is that although you will do all of your work using RStudio for this workshop, you are actually using two pieces of software which means that from time-to-time, both of them may have separate updates.</p>
 <div id="rstudio_ide" class="section level3" number="2.2.1">
 <h3>
 <span class="header-section-number">2.2.1</span> RStudio<a class="anchor" aria-label="anchor" href="#rstudio_ide"><i class="fas fa-link"></i></a>
 </h3>
-<p>When you installed R, that gave your computer the ability to process the R programming language, and also installed an app called "R". We will never use that app. Instead, we will use <a href="http://www.rstudio.com" target="_blank">RStudio</a>. RStudio is arranged with four window <a class="glossary" target="_blank" title='RStudio is arranged with four window "panes".' href="https://psyteachr.github.io/glossary/p#panes">panes</a>.</p>
+<p>When you installed R, that gave your computer the ability to process the R programming language, and also installed an app called "R". We will never use that app. Instead, we will use <a href="http://www.rstudio.com" target="_blank">RStudio</a>. RStudio is arranged with up to four window <a class="glossary" target="_blank" title='RStudio is arranged with four window "panes".' href="https://psyteachr.github.io/glossary/p#panes">panes</a>.</p>
+<p>By default, the upper left pane is the <strong>source pane</strong>, where you view, write, and edit code from files and view data tables in a spreadsheet format. When you first open RStudio, this pane won't display until we open a document or load in some data - don't worry, we'll get to that soon.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:img-rstudio"></span>
 <img src="images/intro/rstudio.png" alt="The RStudio IDE" width="100%"><p class="caption">
 Figure 2.1: The RStudio IDE
 </p>
 </div>
-<p>By default, the upper left pane is the <strong>source pane</strong>, where you view, write, and edit code from files and view data tables in a spreadsheet format. When you first open RStudio, this pane won't display until we open a document or load in some data - don't worry, we'll get to that soon.</p>
 <p>The lower left pane is the <strong>console pane</strong>, where you can type in commands and view output messages. You can write code in the console to test it out. The code will run and can create objects in the environment, but the code itself won't be saved. You need to write your code into a script in the source pane to save it.</p>
 <p>The right panes have several different tabs that show you information about your code. The most used tabs in the upper right pane are the <strong>Environment</strong> tab and the <strong>Help</strong> tab. The environment tab lists some information about the <a class="glossary" target="_blank" title="A word that identifies and stores the value of some data for later use." href="https://psyteachr.github.io/glossary/o#object">objects</a> that you have defined in your code. We'll learn more about the Help tab in Section <a href="intro.html#function-help">2.4.4</a>.</p>
-<p>In the lower right pane, the most used tabs are the <strong>Files</strong> tab for directory structure, the <strong>Plots</strong> tab for plots made in a script, the <strong>Packages</strong> tab for managing add-on packages (see Section <a href="intro.html#packages">2.4</a>), and the <strong>Viewer</strong> tab to display reports created by your scripts. You can change the location of panes and what tabs are shown under <strong><code>Preferences &gt; Pane Layout</code></strong>.</p>
+<p>In the lower right pane, the most used tabs are the <strong>Files</strong> tab for directory structure, the <strong>Plots</strong> tab for plots made in a script, the <strong>Packages</strong> tab for managing add-on packages (see Section <a href="intro.html#packages">2.4</a>), and the <strong>Viewer</strong> tab to display reports created by your scripts. You can change the location of panes and what tabs are shown under <strong><code>Preferences &gt; Pane Layout</code></strong> although if you're new to R, we'd suggest just keeping the defaults for now so that your screen looks like our screen.</p>
 </div>
 <div id="intro-reproducibility" class="section level3" number="2.2.2">
 <h3>
 <span class="header-section-number">2.2.2</span> Reproducibility<a class="anchor" aria-label="anchor" href="#intro-reproducibility"><i class="fas fa-link"></i></a>
 </h3>
 <p>One of the main reasons to learn R is that you can create <a class="glossary" target="_blank" title="The extent to which the findings of a study can be repeated in some other context" href="https://psyteachr.github.io/glossary/r#reproducibility">reproducible</a> reports. This involves writing scripts that transform data, create summaries and visualisations, and embed them in a report in a way that always gives you the same results.</p>
-<p>When you do things reproducibly, others (and future you) can understand and check your work. You can also reuse your work more easily. For example, if you need to create the same exam board report every semester for student grades, a reproducible report allows you to download the new data and create the report within seconds. It might take a little longer to set up the report in the first instance with reproducible methods, but the time it saves you in the long run is invaluable.</p>
+<p>When you do things reproducibly, others (and future you) can understand and check your work. You can also reuse your work more easily. For example, if you need to run the same set of analyses each year on a new cohort of data, a reproducible report allows you to download the new data and create the report within seconds. It might take a little longer to set up the report in the first instance with reproducible methods, but the time it saves you in the long run is invaluable.</p>
 <div class="try">
-<p>Section <a href="installing-r.html#rstudio-settings">1.4</a> shows you how to change two important settings in the global Options to increase reproducibility. Your settings should have:</p>
+<p>Section <a href="installing-r.html#rstudio-settings">1.6</a> shows you how to change two important settings in the global Options to increase reproducibility. Your settings should have:</p>
 <ul>
 <li>Restore .RData into workspace at startup: <select class="webex-select"><option value="blank"></option>
 <option value="">Checked</option>
@@ -171,7 +171,6 @@ Figure 2.1: The RStudio IDE
 </h2>
 <p>When you install R you will have access to a range of <a class="glossary" target="_blank" title="A named section of code that can be reused." href="https://psyteachr.github.io/glossary/f#function">functions</a> including options for <a class="glossary" target="_blank" title="The process of preparing data for visualisation and statistical analysis." href="https://psyteachr.github.io/glossary/d#data-wrangling">data wrangling</a> and statistical analysis. The functions that are included in the default installation are typically referred to as <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages." href="https://psyteachr.github.io/glossary/b#base-r">base R</a> and you can think of them like the default apps that come pre-loaded on your phone.</p>
 <p>A <a class="glossary" target="_blank" title="A named section of code that can be reused." href="https://psyteachr.github.io/glossary/f#function">function</a> is a name that refers to some code you can reuse. We'll be using functions that are provided in packages, but you can also write your own functions.</p>
-<p>If you type a function into the console pane, it will run as soon as you hit enter. If you put the function in a <a class="glossary" target="_blank" title="A plain-text file that contains commands in a coding language, such as R." href="https://psyteachr.github.io/glossary/s#script">script</a> or <a class="glossary" target="_blank" title="The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code." href="https://psyteachr.github.io/glossary/r#r-markdown">R Markdown</a> document in the <a class="glossary" target="_blank" title='RStudio is arranged with four window "panes".' href="https://psyteachr.github.io/glossary/p#panes">source pane</a>, it won't run until you run the script, <a class="glossary" target="_blank" title="To create an HTML, PDF, or Word document from an R Markdown (Rmd) document" href="https://psyteachr.github.io/glossary/k#knit">knit</a> the R Markdown file, or run a code <a class="glossary" target="_blank" title="A section of code in an R Markdown file" href="https://psyteachr.github.io/glossary/c#chunk">chunk</a>. You'll learn more about this in Chapter <a href="#reports"><strong>??</strong></a>.</p>
 <p>For example, the function <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code> is included in base R, and does what you would expect. In the console, run the below code:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span></code></pre></div>
@@ -191,33 +190,35 @@ Figure 2.1: The RStudio IDE
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># type this in the console pane</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></code></pre></div>
-<p>If you get a message that says something like <code>package ‘tidyverse’ successfully unpacked and MD5 sums checked</code>, the installation was successful. If you get an error and the package wasn't installed, check the troubleshooting section of Appendix <a href="installing-r.html#package-install-troubleshooting">1.10</a>.</p>
+<p>If you get a message that says something like <code>package ‘tidyverse’ successfully unpacked and MD5 sums checked</code>, the installation was successful. If you get an error and the package wasn't installed, check the troubleshooting section of Section <a href="installing-r.html#package-install-troubleshooting">1.12</a>.</p>
 <div class="dangerous">
-<p>Never install a package from inside a script. Only do this from the console pane.</p>
+<p>Never install a package from inside a script. Only do this from the console pane. This is because if you put the code to install a package in your script, you risk installing the package mulitple times. Not only will this waste time, but you may accidentally install a later version of the package you didn't want which breaks your code.</p>
 </div>
-<p>You can also install multiple packages at once. Here is the command to install all of the packages we'll be using in this workshop.</p>
+<p>You can also install multiple packages at once. Here is the command to install all of the packages we'll be using in this course. Depending on your set-up and connection speed, this might take anywhere from a couple of minutes to 10+ minutes.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">packages</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>
   <span class="st">"tidyverse"</span>,  <span class="co"># for everything</span>
   <span class="st">"patchwork"</span>,  <span class="co"># for multi-part plots</span>
   <span class="st">"ggthemes"</span>,   <span class="co"># for themed plots</span>
-  <span class="st">"devtools"</span>    <span class="co"># for installing github packages</span>
+  <span class="st">"devtools"</span>,   <span class="co"># for installing github packages</span>
+  <span class="st">"rmarkdown"</span>,  <span class="co"># for reproducible reports</span>
+  <span class="st">"medicaldata"</span> <span class="co"># for medical datasets </span>
 <span class="op">)</span>
 
 <span class="co"># determine which need to be installed</span>
 <span class="va">new_packages</span> <span class="op">&lt;-</span> <span class="va">packages</span><span class="op">[</span><span class="op">!</span><span class="va">packages</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">]</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="va">new_packages</span><span class="op">)</span></code></pre></div>
-<p>Once you have the <code class="package">devtools</code> package, you can also install packages from repositories other than CRAN, such as github. The following code installs the development version of a package for making waffle plots.</p>
+<p>Once you have the <code class="package">devtools</code> package, you can also install packages from repositories other than CRAN, such as github. The following code installs the package associated with a <a href="https://journals.sagepub.com/doi/full/10.1177/25152459221074654">paper Emily wrote on data visualization</a>.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install waffle package </span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"hrbrmstr/waffle"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="co"># install data viz package </span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"psyteachr/introdataviz"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="loading-a-package" class="section level3" number="2.4.2">
 <h3>
 <span class="header-section-number">2.4.2</span> Loading a package<a class="anchor" aria-label="anchor" href="#loading-a-package"><i class="fas fa-link"></i></a>
 </h3>
-<p>This is done using the <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> function. This is like <strong>launching</strong> an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. For example, when you run <code><a href="https://github.com/leeper/rio">library(rio)</a></code> within a session, the functions in the package referred to by <code>rio</code> will be made available for your R session. The next time you start R, you will need to run <code><a href="https://github.com/leeper/rio">library(rio)</a></code> again if you want to access that package.</p>
+<p>This is done using the <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> function. This is like <strong>launching</strong> an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. For example, when you run <code><a href="https://patchwork.data-imaginist.com">library(patchwork)</a></code> within a session, the functions in the package referred to by <code>patchwork</code> will be made available for your R session. The next time you start R, you will need to run <code><a href="https://patchwork.data-imaginist.com">library(patchwork)</a></code> again if you want to access that package.</p>
 <p>After installing the<code class="package">tidyverse</code> package, you can load it for your current R session as follows:</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></code></pre></div>
@@ -230,18 +231,16 @@ Figure 2.1: The RStudio IDE
 <h3>
 <span class="header-section-number">2.4.3</span> Tidyverse<a class="anchor" aria-label="anchor" href="#tidyverse"><i class="fas fa-link"></i></a>
 </h3>
-<p><code class="package">tidyverse</code>is a meta-package that loads several packages we'll be using in almost every chapter in this book:</p>
+<p><code class="package">tidyverse</code>is a meta-package that loads several packages we'll be using in every chapter in this course:</p>
 <ul>
 <li>
-<code class="package">ggplot2</code>, for data visualisation (Chapter <a href="#viz"><strong>??</strong></a>)</li>
+<code class="package">ggplot2</code>, for data visualisation</li>
 <li>
-<code class="package">readr</code>, for data import (Chapter <a href="#data"><strong>??</strong></a>)</li>
+<code class="package">readr</code>, for data import</li>
 <li>
-<code class="package">tibble</code>, for tables (Chapter <a href="#data"><strong>??</strong></a>)</li>
+<code class="package">tidyr</code>, for data tidying</li>
 <li>
-<code class="package">tidyr</code>, for data tidying (Chapter <a href="#tidy"><strong>??</strong></a>)</li>
-<li>
-<code class="package">dplyr</code>, for data manipulation (Chapter <a href="#wrangle"><strong>??</strong></a>)</li>
+<code class="package">dplyr</code>, for data manipulation</li>
 <li>
 <code class="package">stringr</code>, for <a class="glossary" target="_blank" title="A piece of text inside of quotes." href="https://psyteachr.github.io/glossary/s#string">strings</a>
 </li>
@@ -272,7 +271,7 @@ Figure 2.1: The RStudio IDE
 <div class="small_right" style="width: 50%; max-width: 400px;">
 <img src="images/intro/function_help.png">
 </div>
-<p>Function help is always organised in the same way. For example, look at the help for <code><a href="https://rdrr.io/r/stats/Normal.html">?stats::rnorm</a></code>. At the top, it tells you the name of the function and its package in curly brackets, then a short description of the function, followed by a longer description. The <strong>Usage</strong> section shows the function with all of its <a class="glossary" target="_blank" title="A variable that provides input to a function." href="https://psyteachr.github.io/glossary/a#argument">arguments</a>. If any of those arguments have default values, they will be shown like <code>function(arg = default)</code>. The <strong>Arguments</strong> section lists each argument with an explanation. There may be a <strong>Details</strong> section after this with even more detail about the functions. The <strong>Examples</strong> section is last, and shows examples that you can run in your console window to see how the function works.</p>
+<p>Function help is always organised in the same way. For example, look at the help for <code><a href="https://rdrr.io/r/base/sample.html">?base::sample</a></code>. At the top, it tells you the name of the function and its package in curly brackets, then a short description of the function, followed by a longer description. The <strong>Usage</strong> section shows the function with all of its <a class="glossary" target="_blank" title="A variable that provides input to a function." href="https://psyteachr.github.io/glossary/a#argument">arguments</a>. If any of those arguments have default values, they will be shown like <code>function(arg = default)</code>. The <strong>Arguments</strong> section lists each argument with an explanation. There may be a <strong>Details</strong> section after this with even more detail about the functions. The <strong>Examples</strong> section is last, and shows examples that you can run in your console window to see how the function works.</p>
 <div class="try">
 <ul>
 <li>What is the first argument to the <code>mean</code> function? <select class="webex-select"><option value="blank"></option>
@@ -294,7 +293,7 @@ Figure 2.1: The RStudio IDE
 <h3>
 <span class="header-section-number">2.4.5</span> Arguments<a class="anchor" aria-label="anchor" href="#arguments"><i class="fas fa-link"></i></a>
 </h3>
-<p>Most functions allow/require you to specify one or more<a class="glossary" target="_blank" title="A variable that provides input to a function." href="https://psyteachr.github.io/glossary/a#argument">arguments</a>. These are options that you can set. You can look up the arguments/options that a function has by using the help documentation. Some arguments are required, and some are optional. Optional arguments will often use a default (normally specified in the help documentation) if you do not enter any value.</p>
+<p>Most functions allow/require you to specify one or more <a class="glossary" target="_blank" title="A variable that provides input to a function." href="https://psyteachr.github.io/glossary/a#argument">arguments</a>. These are options that you can set. You can look up the arguments/options that a function has by using the help documentation. Some arguments are required, and some are optional. Optional arguments will often use a default (normally specified in the help documentation) if you do not enter any value.</p>
 <p>As an example, look at the help documentation for the function <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> which randomly samples items from a list.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="op">?</span><span class="va">sample</span></code></pre></div>
@@ -332,7 +331,7 @@ Why are my letters different to your letters?
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">5</span>, replace <span class="op">=</span> <span class="cn">TRUE</span>, x <span class="op">=</span> <span class="va">letters</span><span class="op">)</span></code></pre></div>
 <p>When you are first learning R, you may find it useful to write out the argument names as it can help you remember and understand what each part of the function is doing. However, as your skills progress you may find it quicker to omit the argument names and you will also see examples of code online that do not use argument names, so it is important to be able to understand which argument each bit of code is referring to (or look up the help documentation to check).</p>
-<p>In this workshop, we will always write out the argument names the first time we use each function. However, in subsequent uses they may be omitted.</p>
+<p>In this course, we will always write out the argument names the first time we use each function. However, in subsequent uses they may be omitted.</p>
 </div>
 <div id="tab-auto-complete" class="section level3" number="2.4.7">
 <h3>
@@ -352,12 +351,12 @@ Figure 2.2: Tab auto-complete
 <span class="header-section-number">2.5</span> Objects<a class="anchor" aria-label="anchor" href="#objects"><i class="fas fa-link"></i></a>
 </h2>
 <p>A large part of your coding will involve creating and manipulating objects. Objects contain stuff. That stuff can be numbers, words, or the result of operations and analyses. You assign content to an object using <code>&lt;-</code>.</p>
-<p>Run the following code in the console, but change the values of <code>name</code> and <code>age</code> to your own details and change <code>christmas</code> to a holiday or date you care about.</p>
+<p>Run the following code in the console, but change the values of <code>name</code> and <code>age</code> to your own details and change <code>new_year</code> to a holiday or date you care about.</p>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">name</span> <span class="op">&lt;-</span> <span class="st">"Emily"</span>
-<span class="va">age</span> <span class="op">&lt;-</span> <span class="fl">36</span>
+<span class="va">age</span> <span class="op">&lt;-</span> <span class="fl">37</span>
 <span class="va">today</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">christmas</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2022-12-25"</span><span class="op">)</span></code></pre></div>
+<span class="va">new_year</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2022-12-31"</span><span class="op">)</span></code></pre></div>
 <p>You'll see that four objects now appear in the environment pane:</p>
 <ul>
 <li>
@@ -367,7 +366,7 @@ Figure 2.2: Tab auto-complete
 <li>
 <code>today</code> stores the result of the function <code><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date()</a></code>. This function returns your computer system's date. Unlike <code>name</code> and <code>age</code>, which are hard-coded (i.e., they will always return the values you enter), the contents of the object <code>today</code> will change dynamically with the date. That is, if you run that function tomorrow, it will update the date to tomorrow's date.</li>
 <li>
-<code>christmas</code> is also a date but it's hard-coded as a very specific date. It's wrapped within the <code><a href="https://rdrr.io/r/base/as.Date.html">as.Date()</a></code> function that tells R to interpret the character string you provide as date rather than text.</li>
+<code>new_year</code> is also a date but it's hard-coded as a very specific date. It's wrapped within the <code><a href="https://rdrr.io/r/base/as.Date.html">as.Date()</a></code> function that tells R to interpret the character string you provide as date rather than text.</li>
 </ul>
 <div class="try">
 <p>To print the contents of an object, type the object's name in the console and press enter. Try printing all four objects now.</p>
@@ -376,7 +375,7 @@ Figure 2.2: Tab auto-complete
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">decade</span> <span class="op">&lt;-</span> <span class="va">age</span> <span class="op">+</span> <span class="fl">10</span>
 <span class="va">full_name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">name</span>, <span class="st">"Nordmann"</span><span class="op">)</span>
-<span class="va">how_long</span> <span class="op">&lt;-</span> <span class="va">christmas</span> <span class="op">-</span> <span class="va">today</span></code></pre></div>
+<span class="va">how_long</span> <span class="op">&lt;-</span> <span class="va">new_year</span> <span class="op">-</span> <span class="va">today</span></code></pre></div>
 </div>
 <div id="help" class="section level2" number="2.6">
 <h2>
@@ -408,13 +407,13 @@ Figure 2.2: Tab auto-complete
 <span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span><span class="op">(</span><span class="st">"ggplot2-specs"</span>, package <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
-<div id="workshop-prep" class="section level2" number="2.7">
+<div id="setup-check" class="section level2" number="2.7">
 <h2>
-<span class="header-section-number">2.7</span> Workshop set-up check<a class="anchor" aria-label="anchor" href="#workshop-prep"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.7</span> Set-up check<a class="anchor" aria-label="anchor" href="#setup-check"><i class="fas fa-link"></i></a>
 </h2>
-<p>Restart your R sessino and then run the below code. If you have managed to install and update all software and packages as required, it should run without issue and produce the below histograms.</p>
-<p>If you get the error <code>there is no package called...</code>, make sure you have installed all the packages listed in Section <a href="intro.html#install-package">2.4.1</a>.</p>
-<p>If you are having technical issues working on your own machine and cannot get the below code to run, please use <a href="https://rstudio.cloud/">RStudio Cloud</a> for the workshop as there will not be time to troubleshoot installation problems.</p>
+<p>Restart your R session and then run the below code. If you have managed to install and update all software and packages as required, it should run without issue and produce the below histograms. It will also produce the messages <code>stat_bin() using bins = 30. Pick better value with binwidth</code> and <code>Warning: Removed 28 rows containing non-finite values (stat_bin)</code>. These look like errors but they're not - we'll explain what these mean in the next chapter.</p>
+<p>If you get the error <code>there is no package called...</code>, install the package it says you don't have.</p>
+<p>If you are having technical issues working on your own machine and cannot get the below code to run, please consider using <a href="https://rstudio.cloud/">RStudio Cloud</a>.</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com">patchwork</a></span><span class="op">)</span>
@@ -439,9 +438,43 @@ Figure 2.2: Tab auto-complete
 <pre><code>## Warning: Removed 6 rows containing non-finite values (stat_bin).</code></pre>
 <div class="inline-figure"><img src="02-intro-to-r_files/figure-html/unnamed-chunk-6-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="glossary-intro" class="section level2" number="2.8">
+<div id="error-logs" class="section level2" number="2.8">
 <h2>
-<span class="header-section-number">2.8</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-intro"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.8</span> Error logs<a class="anchor" aria-label="anchor" href="#error-logs"><i class="fas fa-link"></i></a>
+</h2>
+<p>Coding involves making a <strong>lot</strong> of errors. We've already mentioned this in Section <a href="intro.html#help">2.6</a>. We weren't joking! Getting good at R really means getting good at spotting typos and finding extra or missing commas. When you're first learning to code, it can be useful to keep an error log. This will feel like it is slowing you down but it will serve you well in the long-run. Not only will it give you a list of common errors and how to fix them, but you'll also start to notice the patterns in the errors you get.</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="15%">
+<col width="28%">
+<col width="40%">
+<col width="15%">
+</colgroup>
+<thead><tr class="header">
+<th>Code that threw the error</th>
+<th>Error message</th>
+<th>Explanation</th>
+<th>Code that fixed the error</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>read_csv("my_data.csv")</td>
+<td>could not find function read_csv</td>
+<td>I forgot to load the tidyverse before I used the function read_csv</td>
+<td>library(tidyverse)</td>
+</tr>
+<tr class="even">
+<td>read_csv("my_data")</td>
+<td>'my_data` does not exist in working directory</td>
+<td>I forgot to add the file extension .csv to the name of the file.</td>
+<td>read_csv("my_data.csv")</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="glossary-intro" class="section level2" number="2.9">
+<h2>
+<span class="header-section-number">2.9</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-intro"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <thead><tr>
@@ -475,14 +508,6 @@ The set of R functions that come with a basic installation of R, before you add 
 </td>
 <td style="text-align:left;">
 A data type representing strings of text.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/c.html#chunk" class="glossary" target="_blank">chunk</a>
-</td>
-<td style="text-align:left;">
-A section of code in an R Markdown file
 </td>
 </tr>
 <tr>
@@ -527,22 +552,6 @@ A named section of code that can be reused.
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/i.html#ide" class="glossary" target="_blank">ide</a>
-</td>
-<td style="text-align:left;">
-Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/k.html#knit" class="glossary" target="_blank">knit</a>
-</td>
-<td style="text-align:left;">
-To create an HTML, PDF, or Word document from an R Markdown (Rmd) document
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 <a href="https://psyteachr.github.io/glossary/n.html#numeric" class="glossary" target="_blank">numeric</a>
 </td>
 <td style="text-align:left;">
@@ -575,26 +584,10 @@ RStudio is arranged with four window "panes".
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/r.html#r-markdown" class="glossary" target="_blank">r markdown</a>
-</td>
-<td style="text-align:left;">
-The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 <a href="https://psyteachr.github.io/glossary/r.html#reproducibility" class="glossary" target="_blank">reproducibility</a>
 </td>
 <td style="text-align:left;">
 The extent to which the findings of a study can be repeated in some other context
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/s.html#script" class="glossary" target="_blank">script</a>
-</td>
-<td style="text-align:left;">
-A plain-text file that contains commands in a coding language, such as R.
 </td>
 </tr>
 <tr>
@@ -616,66 +609,14 @@ A type of data structure that collects values with the same data type, like T/F 
 </tbody>
 </table></div>
 </div>
-<div id="resources-intro" class="section level2" number="2.9">
+<div id="resources-intro" class="section level2" number="2.10">
 <h2>
-<span class="header-section-number">2.9</span> Further Resources<a class="anchor" aria-label="anchor" href="#resources-intro"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.10</span> Further Resources<a class="anchor" aria-label="anchor" href="#resources-intro"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf">RStudio IDE Cheatsheet</a></li>
 <li><a href="https://rstudio.cloud/" target="_blank">RStudio Cloud</a></li>
 </ul>
-</div>
-</div>
-
-
-
-<div class="chapter-nav">
-<div class="prev"><a href="installing-r.html"><span class="header-section-number">1</span> Installing R</a></div>
-<div class="next"><a href="glossary.html"><span class="header-section-number">A</span> Glossary</a></div>
-</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#intro"><span class="header-section-number">2</span> Intro to R and RStudio</a></li>
-<li><a class="nav-link" href="#ilo-intro"><span class="header-section-number">2.1</span> Intended Learning Outcomes</a></li>
-<li>
-<a class="nav-link" href="#intro-r-rstudio"><span class="header-section-number">2.2</span> R and RStudio</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#rstudio_ide"><span class="header-section-number">2.2.1</span> RStudio</a></li>
-<li><a class="nav-link" href="#intro-reproducibility"><span class="header-section-number">2.2.2</span> Reproducibility</a></li>
-<li><a class="nav-link" href="#themes-and-accessiblilty"><span class="header-section-number">2.2.3</span> Themes and accessiblilty</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#intro-sessions"><span class="header-section-number">2.3</span> Sessions</a></li>
-<li>
-<a class="nav-link" href="#packages"><span class="header-section-number">2.4</span> Packages and functions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#install-package"><span class="header-section-number">2.4.1</span> Installing a package</a></li>
-<li><a class="nav-link" href="#loading-a-package"><span class="header-section-number">2.4.2</span> Loading a package</a></li>
-<li><a class="nav-link" href="#tidyverse"><span class="header-section-number">2.4.3</span> Tidyverse</a></li>
-<li><a class="nav-link" href="#function-help"><span class="header-section-number">2.4.4</span> Function Help</a></li>
-<li><a class="nav-link" href="#arguments"><span class="header-section-number">2.4.5</span> Arguments</a></li>
-<li><a class="nav-link" href="#argument-names"><span class="header-section-number">2.4.6</span> Argument names</a></li>
-<li><a class="nav-link" href="#tab-auto-complete"><span class="header-section-number">2.4.7</span> Tab auto-complete</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#objects"><span class="header-section-number">2.5</span> Objects</a></li>
-<li>
-<a class="nav-link" href="#help"><span class="header-section-number">2.6</span> Getting help</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#package-reference-manuals"><span class="header-section-number">2.6.1</span> Package reference manuals</a></li>
-<li><a class="nav-link" href="#googling"><span class="header-section-number">2.6.2</span> Googling</a></li>
-<li><a class="nav-link" href="#vignettes"><span class="header-section-number">2.6.3</span> Vignettes</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#workshop-prep"><span class="header-section-number">2.7</span> Workshop set-up check</a></li>
-<li><a class="nav-link" href="#glossary-intro"><span class="header-section-number">2.8</span> Glossary</a></li>
-<li><a class="nav-link" href="#resources-intro"><span class="header-section-number">2.9</span> Further Resources</a></li>
-</ul>
-
-      <div class="book-extra">
-        <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/psyteachr/template/blob/master/book/02-intro-to-r.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/psyteachr/template/edit/master/book/02-intro-to-r.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
-        </ul>
-</div>
-    </nav>
 </div>
 </div>
 <script>
@@ -879,15 +820,63 @@ $( document ).ready(function() {
   move_sidebar();
   window.onresize = move_sidebar;
 });
-</script>
+</script><div class="chapter-nav">
+<div class="prev"><a href="installing-r.html"><span class="header-section-number">1</span> Installing R</a></div>
+<div class="next"><a href="intro-viz.html"><span class="header-section-number">3</span> Intro to data viz</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#intro"><span class="header-section-number">2</span> Intro to R and RStudio</a></li>
+<li><a class="nav-link" href="#ilo-intro"><span class="header-section-number">2.1</span> Intended Learning Outcomes</a></li>
+<li>
+<a class="nav-link" href="#intro-r-rstudio"><span class="header-section-number">2.2</span> R and RStudio</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#rstudio_ide"><span class="header-section-number">2.2.1</span> RStudio</a></li>
+<li><a class="nav-link" href="#intro-reproducibility"><span class="header-section-number">2.2.2</span> Reproducibility</a></li>
+<li><a class="nav-link" href="#themes-and-accessiblilty"><span class="header-section-number">2.2.3</span> Themes and accessiblilty</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#intro-sessions"><span class="header-section-number">2.3</span> Sessions</a></li>
+<li>
+<a class="nav-link" href="#packages"><span class="header-section-number">2.4</span> Packages and functions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#install-package"><span class="header-section-number">2.4.1</span> Installing a package</a></li>
+<li><a class="nav-link" href="#loading-a-package"><span class="header-section-number">2.4.2</span> Loading a package</a></li>
+<li><a class="nav-link" href="#tidyverse"><span class="header-section-number">2.4.3</span> Tidyverse</a></li>
+<li><a class="nav-link" href="#function-help"><span class="header-section-number">2.4.4</span> Function Help</a></li>
+<li><a class="nav-link" href="#arguments"><span class="header-section-number">2.4.5</span> Arguments</a></li>
+<li><a class="nav-link" href="#argument-names"><span class="header-section-number">2.4.6</span> Argument names</a></li>
+<li><a class="nav-link" href="#tab-auto-complete"><span class="header-section-number">2.4.7</span> Tab auto-complete</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#objects"><span class="header-section-number">2.5</span> Objects</a></li>
+<li>
+<a class="nav-link" href="#help"><span class="header-section-number">2.6</span> Getting help</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#package-reference-manuals"><span class="header-section-number">2.6.1</span> Package reference manuals</a></li>
+<li><a class="nav-link" href="#googling"><span class="header-section-number">2.6.2</span> Googling</a></li>
+<li><a class="nav-link" href="#vignettes"><span class="header-section-number">2.6.3</span> Vignettes</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#setup-check"><span class="header-section-number">2.7</span> Set-up check</a></li>
+<li><a class="nav-link" href="#error-logs"><span class="header-section-number">2.8</span> Error logs</a></li>
+<li><a class="nav-link" href="#glossary-intro"><span class="header-section-number">2.9</span> Glossary</a></li>
+<li><a class="nav-link" href="#resources-intro"><span class="header-section-number">2.10</span> Further Resources</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/psyteachr/template/blob/master/book/02-intro-to-r.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/psyteachr/template/edit/master/book/02-intro-to-r.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
 
 </div>
- <!-- .container -->
+</div> <!-- .container -->
 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Intro to R and Data Vizualisation</strong>" was written by Emily Nordmann &amp; Javan Carter. It was last built on 2022-07-14.</p>
+    <p>"<strong>Intro to R and Data Vizualisation</strong>" was written by Emily Nordmann &amp; Javan Carter. It was last built on 2022-07-31.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

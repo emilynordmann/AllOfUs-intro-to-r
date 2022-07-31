@@ -1,6 +1,19 @@
 # Installing `R` {#installing-r}
 
-Installing R and RStudio is usually straightforward. The sections below explain how and [there is a helpful YouTube video here](https://www.youtube.com/watch?v=lVKMsaWju8w){target="_blank"}. If you run into serious difficulties (for example if you don't have admin rights to your machine), for the purposes of the workshop we recommend using [RStudio Cloud](https://rstudio.cloud/) as there will not be time to trouble-shoot complex installation issues. 
+## Intended Learning Outcomes 
+
+By the end of this chapter you should be able to :
+
+* Install R and RStudio
+* Update R, Rstudio, and packages
+
+Whilst you will use the workbench to conduct analyses on the All of Us database, having access to a regular copy of R on your machine that you can use free-of-charge will be helpful for learning R.
+
+Installing R and RStudio is usually straightforward. The sections below explain how and in addition to the walkthrough video provided on the Academy, [there is a helpful YouTube video here](https://www.youtube.com/watch?v=lVKMsaWju8w){target="_blank"}. If you run into difficulties (for example if you don't have admin rights to your machine), we recommend using [RStudio Cloud](https://rstudio.cloud/). RStudio Cloud has almost all of the same features as a local installation of R but runs in your browser. There are some differences with how you import and export data and manage projects between the cloud and a local installation, however, for the most part the differences are minimal. 
+
+## R and RStudio {#intro-r-rstudio}
+
+R is a programming language that you will write code in and RStudio is an Integrated Development Environment (<a class='glossary' target='_blank' title='Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R.' href='https://psyteachr.github.io/glossary/i#ide'>IDE</a>) which makes working in  R easier. Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it would be much harder without things like spell-checking and formatting and you wouldn't be able to use some of the advanced features that Word has developed. In a similar way, you can use R without R Studio (sometimes referred to as "Base R") but we wouldn't recommend it. RStudio serves as a text editor, file manager, spreadsheet viewer, and more. The key thing to remember is that although you will do all of your work using RStudio for this course, you are actually using two pieces of software which means that from time-to-time, both of them may have separate updates.
 
 ## Installing Base R
 
@@ -51,7 +64,7 @@ You may also want to change the appearance of your code. Different fonts and the
 <p class="caption">(\#fig:settings-general)RStudio General and Appearance settings</p>
 </div>
 
-You may also want to change the settings in the Code tab. For example, Lisa DeBruine prefers two spaces instead of tabs for their code and likes to be able to see the <a class='glossary' target='_blank' title='Spaces, tabs and line breaks' href='https://psyteachr.github.io/glossary/w#whitespace'>whitespace</a> characters. But these are all a matter of personal preference.
+You may also want to change the settings in the Code tab. For example, some people prefer two spaces instead of tabs for their code, or like to be able to see the <a class='glossary' target='_blank' title='Spaces, tabs and line breaks' href='https://psyteachr.github.io/glossary/w#whitespace'>whitespace</a> characters. But these are all a matter of personal preference.
 
 <div class="figure" style="text-align: center">
 <img src="images/appx/rstudio_settings_code.png" alt="RStudio Code settings" width="100%" />
@@ -68,6 +81,8 @@ You can install the LaTeX typesetting system to produce PDF reports from RStudio
 install.packages("tinytex")
 tinytex::install_tinytex()
 ```
+
+Please note that producing PDF reports is not necessary to learn R and complete this course, so if you have trouble with this step, you can skip it and return when you are more comfortable with R (if you decide that PDF reports would be useful).
 
 ## Updating R, RStudio, and packages {#updating-r}
 
@@ -139,7 +154,7 @@ To update multiple packages, or indeed all packages, RStudio provides helpful to
 
 ## Troubleshooting {#package-install-troubleshooting}
 
-Occasionally, you might have a few problem packages that seemingly refuse to update or install. For Emily, `rlang` and `vctrs` cause no end of trouble. These aren't packages that you will likely every explicitly load, but they're required beneath the surface for R to do things like knit your Markdown files etc.
+Occasionally, you might have a few problem packages that seemingly refuse to update or install. For Emily, `rlang` and `vctrs` cause no end of trouble. These aren't packages that you will likely ever explicitly load, but they're required beneath the surface for R to do things like knit your Markdown files etc.
 
 ### Non-zero exit status
 
@@ -184,4 +199,8 @@ If that works and you can install packages, set this library path permanently:
 5. Restart R for changes to take effect
 
 The code in your .Rprofile will now run every time you start up R. 
+
+### RStudio Cloud
+
+We recommend having a local installation of R and RStudio, not least because it means you don't need an active internet connection to use it. However, if you're having difficulty installing R, Rstudio, or in the next chapter, packages, we strongly recommend using [RStudio Cloud](https://rstudio.cloud/) which runs in your browser. For the purposes of this course, there will be very little difference between learning on a local installation and using the cloud. What matters is that you get up and running and feel comfortable with the set-up, so if you're having installation issues, take a break, use RStudio Cloud instead, and return to installation at a later point.
 

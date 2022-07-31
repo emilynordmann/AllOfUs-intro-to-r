@@ -6,41 +6,40 @@
 
 ## Intended Learning Outcomes {#ilo-intro}
 
-* Install R and RStudio
+By the end of this chapter you should be able to:
+
 * Be able to install add-on packages
 * Be able to get help for packages and functions
 * Be able to create objects by writing and running code in the console
 
-Please note that if you're completely new to R, we don't expect you to fully understand everything in this chapter. Almost all of the concepts will be further explained in the workshop and you will feel more comfortable with them with continued practice. However, the first workshop session in particular will run much smoother if you have some familiarity with the basics.
+Please note that if you're completely new to R, you may not fully understand everything in this chapter first time. Almost all of the concepts will be further explained again throughout this course and you will feel more comfortable with them with continued practice. We would recommend re-reading this chapter towards the end of the course and you will likely understand a lot more.
 
 Download the [RStudio IDE Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf).
 
 ## R and RStudio {#intro-r-rstudio}
 
-R is a programming language that you will write code in and RStudio is an Integrated Development Environment (<a class='glossary' target='_blank' title='Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R.' href='https://psyteachr.github.io/glossary/i#ide'>IDE</a>) which makes working in  R easier. Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it would be much harder without things like spell-checking and formatting and you wouldn't be able to use some of the advanced features that Word has developed. In a similar way, you can use R without R Studio but we wouldn't recommend it. RStudio serves as a text editor, file manager, spreadsheet viewer, and more. The key thing to remember is that although you will do all of your work using RStudio for this workshop, you are actually using two pieces of software which means that from time-to-time, both of them may have separate updates.
-
 ### RStudio {#rstudio_ide}
 
-When you installed R, that gave your computer the ability to process the R programming language, and also installed an app called "R". We will never use that app. Instead, we will use [RStudio](http://www.rstudio.com){target="_blank"}.  RStudio is arranged with four window <a class='glossary' target='_blank' title='RStudio is arranged with four window "panes".' href='https://psyteachr.github.io/glossary/p#panes'>panes</a>.
+When you installed R, that gave your computer the ability to process the R programming language, and also installed an app called "R". We will never use that app. Instead, we will use [RStudio](http://www.rstudio.com){target="_blank"}.  RStudio is arranged with up to four window <a class='glossary' target='_blank' title='RStudio is arranged with four window "panes".' href='https://psyteachr.github.io/glossary/p#panes'>panes</a>.
+
+By default, the upper left pane is the **source pane**, where you view, write, and edit code from files and view data tables in a spreadsheet format. When you first open RStudio, this pane won't display until we open a document or load in some data - don't worry, we'll get to that soon.
 
 <div class="figure" style="text-align: center">
 <img src="images/intro/rstudio.png" alt="The RStudio IDE" width="100%" />
 <p class="caption">(\#fig:img-rstudio)The RStudio IDE</p>
 </div>
 
-By default, the upper left pane is the **source pane**, where you view, write, and edit code from files and view data tables in a spreadsheet format. When you first open RStudio, this pane won't display until we open a document or load in some data - don't worry, we'll get to that soon.
-
 The lower left pane is the **console pane**, where you can type in commands and view output messages. You can write code in the console to test it out. The code will run and can create objects in the environment, but the code itself won't be saved. You need to write your code into a script in the source pane to save it.
 
 The right panes have several different tabs that show you information about your code. The most used tabs in the upper right pane are the **Environment** tab and the **Help** tab. The environment tab lists some information about the <a class='glossary' target='_blank' title='A word that identifies and stores the value of some data for later use.' href='https://psyteachr.github.io/glossary/o#object'>objects</a> that you have defined in your code. We'll learn more about the Help tab in Section\ \@ref(function-help). 
 
-In the lower right pane, the most used tabs are the **Files** tab for directory structure, the **Plots** tab for plots made in a script, the **Packages** tab for managing add-on packages (see Section\ \@ref(packages)), and the **Viewer** tab to display reports created by your scripts. You can change the location of panes and what tabs are shown under **`Preferences > Pane Layout`**.
+In the lower right pane, the most used tabs are the **Files** tab for directory structure, the **Plots** tab for plots made in a script, the **Packages** tab for managing add-on packages (see Section\ \@ref(packages)), and the **Viewer** tab to display reports created by your scripts. You can change the location of panes and what tabs are shown under **`Preferences > Pane Layout`** although if you're new to R, we'd suggest just keeping the defaults for now so that your screen looks like our screen.
 
 ### Reproducibility {#intro-reproducibility}
 
 One of the main reasons to learn R is that you can create <a class='glossary' target='_blank' title='The extent to which the findings of a study can be repeated in some other context' href='https://psyteachr.github.io/glossary/r#reproducibility'>reproducible</a> reports. This involves writing scripts that transform data, create summaries and visualisations, and embed them in a report in a way that always gives you the same results.
 
-When you do things reproducibly, others (and future you) can understand and check your work. You can also reuse your work more easily. For example, if you need to create the same exam board report every semester for student grades, a reproducible report allows you to download the new data and create the report within seconds. It might take a little longer to set up the report in the first instance with reproducible methods, but the time it saves you in the long run is invaluable.
+When you do things reproducibly, others (and future you) can understand and check your work. You can also reuse your work more easily. For example, if you need to run the same set of analyses each year on a new cohort of data, a reproducible report allows you to download the new data and create the report within seconds. It might take a little longer to set up the report in the first instance with reproducible methods, but the time it saves you in the long run is invaluable.
 
 ::: {.try data-latex=""}
 Section\ \@ref(rstudio-settings) shows you how to change two important settings in the global Options to increase reproducibility. Your settings should have:
@@ -69,8 +68,6 @@ Try doing each of these now. Additionally, now would be a good time to create a 
 When you install R you will have access to a range of <a class='glossary' target='_blank' title='A named section of code that can be reused.' href='https://psyteachr.github.io/glossary/f#function'>functions</a> including options for <a class='glossary' target='_blank' title='The process of preparing data for visualisation and statistical analysis.' href='https://psyteachr.github.io/glossary/d#data-wrangling'>data wrangling</a> and statistical analysis. The functions that are included in the default installation are typically referred to as <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages.' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> and you can think of them like the default apps that come pre-loaded on your phone. 
 
 A <a class='glossary' target='_blank' title='A named section of code that can be reused.' href='https://psyteachr.github.io/glossary/f#function'>function</a> is a name that refers to some code you can reuse. We'll be using functions that are provided in packages, but you can also write your own functions. 
-
-If you type a function into the console pane, it will run as soon as you hit enter. If you put the function in a <a class='glossary' target='_blank' title='A plain-text file that contains commands in a coding language, such as R.' href='https://psyteachr.github.io/glossary/s#script'>script</a> or <a class='glossary' target='_blank' title='The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.' href='https://psyteachr.github.io/glossary/r#r-markdown'>R Markdown</a> document in the <a class='glossary' target='_blank' title='RStudio is arranged with four window "panes".' href='https://psyteachr.github.io/glossary/p#panes'>source pane</a>, it won't run until you run the script, <a class='glossary' target='_blank' title='To create an HTML, PDF, or Word document from an R Markdown (Rmd) document' href='https://psyteachr.github.io/glossary/k#knit'>knit</a> the R Markdown file, or run a code <a class='glossary' target='_blank' title='A section of code in an R Markdown file' href='https://psyteachr.github.io/glossary/c#chunk'>chunk</a>. You'll learn more about this in Chapter\ \@ref(reports).
 
 For example, the function `sum()` is included in base R, and does what you would expect. In the console, run the below code:
 
@@ -104,13 +101,13 @@ Install the <code class='package'>tidyverse</code> package on your system. This 
 install.packages("tidyverse")
 ```
 
-If you get a message that says something like `package ‘tidyverse’ successfully unpacked and MD5 sums checked`, the installation was successful. If you get an error and the package wasn't installed, check the troubleshooting section of Appendix\ \@ref(package-install-troubleshooting).
+If you get a message that says something like `package ‘tidyverse’ successfully unpacked and MD5 sums checked`, the installation was successful. If you get an error and the package wasn't installed, check the troubleshooting section of Section\ \@ref(package-install-troubleshooting).
 
 ::: {.dangerous data-latex=""}
-Never install a package from inside a script. Only do this from the console pane.
+Never install a package from inside a script. Only do this from the console pane. This is because if you put the code to install a package in your script, you risk installing the package mulitple times. Not only will this waste time, but you may accidentally install a later version of the package you didn't want which breaks your code.
 :::
 
-You can also install multiple packages at once. Here is the command to install all of the packages we'll be using in this workshop. 
+You can also install multiple packages at once. Here is the command to install all of the packages we'll be using in this course. Depending on your set-up and connection speed, this might take anywhere from a couple of minutes to 10+ minutes.
 
 
 ```r
@@ -118,7 +115,9 @@ packages <- c(
   "tidyverse",  # for everything
   "patchwork",  # for multi-part plots
   "ggthemes",   # for themed plots
-  "devtools"    # for installing github packages
+  "devtools",   # for installing github packages
+  "rmarkdown",  # for reproducible reports
+  "medicaldata" # for medical datasets 
 )
 
 # determine which need to be installed
@@ -127,17 +126,17 @@ new_packages <- packages[!packages %in% installed.packages()]
 install.packages(new_packages)
 ```
 
-Once you have the <code class='package'>devtools</code> package, you can also install packages from repositories other than CRAN, such as github. The following code installs the development version of a package for making waffle plots.
+Once you have the <code class='package'>devtools</code> package, you can also install packages from repositories other than CRAN, such as github. The following code installs the package associated with a [paper Emily wrote on data visualization](https://journals.sagepub.com/doi/full/10.1177/25152459221074654).
 
 
 ```r
-# install waffle package 
-devtools::install_github("hrbrmstr/waffle")
+# install data viz package 
+devtools::install_github("psyteachr/introdataviz")
 ```
 
 ### Loading a package
 
-This is done using the `library()` function. This is like **launching** an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. For example, when you run `library(rio)` within a session, the functions in the package referred to by `rio` will be made available for your R session. The next time you start R, you will need to run `library(rio)` again if you want to access that package.
+This is done using the `library()` function. This is like **launching** an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. For example, when you run `library(patchwork)` within a session, the functions in the package referred to by `patchwork` will be made available for your R session. The next time you start R, you will need to run `library(patchwork)` again if you want to access that package.
 
 After installing the<code class='package'>tidyverse</code> package, you can load it for your current R session as follows:
 
@@ -154,13 +153,12 @@ You can use the convention `package::function()` to indicate in which add-on pac
 
 ### Tidyverse
 
-<code class='package'>tidyverse</code>is a meta-package that loads several packages we'll be using in almost every chapter in this book:
+<code class='package'>tidyverse</code>is a meta-package that loads several packages we'll be using in every chapter in this course:
 
-- <code class='package'>ggplot2</code>, for data visualisation (Chapter\ \@ref(viz))
-- <code class='package'>readr</code>, for data import (Chapter\ \@ref(data))
-- <code class='package'>tibble</code>, for tables (Chapter\ \@ref(data))
-- <code class='package'>tidyr</code>, for data tidying (Chapter\ \@ref(tidy))
-- <code class='package'>dplyr</code>, for data manipulation (Chapter\ \@ref(wrangle))
+- <code class='package'>ggplot2</code>, for data visualisation 
+- <code class='package'>readr</code>, for data import
+- <code class='package'>tidyr</code>, for data tidying 
+- <code class='package'>dplyr</code>, for data manipulation 
 - <code class='package'>stringr</code>, for <a class='glossary' target='_blank' title='A piece of text inside of quotes.' href='https://psyteachr.github.io/glossary/s#string'>strings</a>
 - <code class='package'>forcats</code>, for <a class='glossary' target='_blank' title='A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter' href='https://psyteachr.github.io/glossary/f#factor'>factors</a>
 - <code class='package'>purrr</code>, for repeating things
@@ -187,7 +185,7 @@ help("ggplot", package="ggplot2")
 
 <div class="small_right" style="width: 50%; max-width: 400px;"><img src="images/intro/function_help.png" /></div>
 
-Function help is always organised in the same way. For example, look at the help for `?stats::rnorm`. At the top, it tells you the name of the function and its package in curly brackets, then a short description of the function, followed by a longer description. The **Usage** section shows the function with all of its <a class='glossary' target='_blank' title='A variable that provides input to a function.' href='https://psyteachr.github.io/glossary/a#argument'>arguments</a>. If any of those arguments have default values, they will be shown like `function(arg = default)`. The **Arguments** section lists each argument with an explanation. There may be a **Details** section after this with even more detail about the functions. The **Examples** section is last, and shows examples that you can run in your console window to see how the function works.
+Function help is always organised in the same way. For example, look at the help for `?base::sample`. At the top, it tells you the name of the function and its package in curly brackets, then a short description of the function, followed by a longer description. The **Usage** section shows the function with all of its <a class='glossary' target='_blank' title='A variable that provides input to a function.' href='https://psyteachr.github.io/glossary/a#argument'>arguments</a>. If any of those arguments have default values, they will be shown like `function(arg = default)`. The **Arguments** section lists each argument with an explanation. There may be a **Details** section after this with even more detail about the functions. The **Examples** section is last, and shows examples that you can run in your console window to see how the function works.
 
 
 ::: {.try data-latex=""}
@@ -198,7 +196,7 @@ Function help is always organised in the same way. For example, look at the help
 
 ### Arguments
 
-Most functions allow/require you to specify one or more<a class='glossary' target='_blank' title='A variable that provides input to a function.' href='https://psyteachr.github.io/glossary/a#argument'>arguments</a>. These are options that you can set.  You can look up the arguments/options that a function has by using the help documentation. Some arguments are required, and some are optional. Optional arguments will often use a default (normally specified in the help documentation) if you do not enter any value.
+Most functions allow/require you to specify one or more <a class='glossary' target='_blank' title='A variable that provides input to a function.' href='https://psyteachr.github.io/glossary/a#argument'>arguments</a>. These are options that you can set.  You can look up the arguments/options that a function has by using the help documentation. Some arguments are required, and some are optional. Optional arguments will often use a default (normally specified in the help documentation) if you do not enter any value.
 
 As an example, look at the help documentation for the function `sample()` which randomly samples items from a list. 
 
@@ -274,7 +272,7 @@ sample(size = 5, replace = TRUE, x = letters)
 
 When you are first learning R, you may find it useful to write out the argument names as it can help you remember and understand what each part of the function is doing. However, as your skills progress you may find it quicker to omit the argument names and you will also see examples of code online that do not use argument names, so it is important to be able to understand which argument each bit of code is referring to (or look up the help documentation to check).
 
-In this workshop, we will always write out the argument names the first time we use each function. However, in subsequent uses they may be omitted.
+In this course, we will always write out the argument names the first time we use each function. However, in subsequent uses they may be omitted.
 
 ### Tab auto-complete
 
@@ -289,14 +287,14 @@ One very useful feature of R Studio is  tab auto-complete for functions (see Fig
 
 A large part of your coding will involve creating and manipulating objects. Objects contain stuff. That stuff can be numbers, words, or the result of operations and analyses. You assign content to an object using `<-`.
 
-Run the following code in the console, but change the values of `name` and `age` to your own details and change `christmas` to a holiday or date you care about.
+Run the following code in the console, but change the values of `name` and `age` to your own details and change `new_year` to a holiday or date you care about.
 
 
 ```r
 name <- "Emily"
-age <- 36
+age <- 37
 today <- Sys.Date()
-christmas <- as.Date("2022-12-25")
+new_year <- as.Date("2022-12-31")
 ```
 
 You'll see that four objects now appear in the environment pane:
@@ -304,7 +302,7 @@ You'll see that four objects now appear in the environment pane:
 * `name` is <a class='glossary' target='_blank' title='A data type representing strings of text.' href='https://psyteachr.github.io/glossary/c#character'>character</a> (text) data. In order for R to recognise it as character data, it **must** be enclosed in double quotation marks `" "`.
 * `age` is <a class='glossary' target='_blank' title='A data type representing a real decimal number or integer.' href='https://psyteachr.github.io/glossary/n#numeric'>numeric</a> data. In order for R to recognise this as a number, it **must not** be enclosed in quotation marks.
 * `today` stores the result of the function `Sys.Date()`. This function returns your computer system's date. Unlike `name` and `age`, which are hard-coded (i.e., they will always return the values you enter), the contents of the object `today` will change dynamically with the date. That is, if you run that function tomorrow, it will update the date to tomorrow's date.
-* `christmas` is also a date but it's hard-coded as a very specific date. It's wrapped within the `as.Date()` function that tells R to interpret the character string you provide as date rather than text.
+* `new_year` is also a date but it's hard-coded as a very specific date. It's wrapped within the `as.Date()` function that tells R to interpret the character string you provide as date rather than text.
 
 ::: {.try data-latex=""}
 
@@ -318,7 +316,7 @@ Finally, a key concept to understand is that objects can interact and you can sa
 ```r
 decade <- age + 10
 full_name <- paste(name, "Nordmann")
-how_long <- christmas - today
+how_long <- new_year - today
 ```
 
 
@@ -349,13 +347,13 @@ vignette("ggplot2-specs", package = "ggplot2")
 ```
 
 
-## Workshop set-up check {#workshop-prep}
+## Set-up check {#setup-check}
 
-Restart your R sessino and then run the below code. If you have managed to install and update all software and packages as required, it should run without issue and produce the below histograms. 
+Restart your R session and then run the below code. If you have managed to install and update all software and packages as required, it should run without issue and produce the below histograms. It will also produce the messages `stat_bin() using bins = 30. Pick better value with binwidth` and `Warning: Removed 28 rows containing non-finite values (stat_bin)`. These look like errors but they're not - we'll explain what these mean in the next chapter.
 
-If you get the error `there is no package called...`, make sure you have installed all the packages listed in Section\ \@ref(install-package).
+If you get the error `there is no package called...`, install the package it says you don't have.
 
-If you are having technical issues working on your own machine and cannot get the below code to run, please use [RStudio Cloud](https://rstudio.cloud/) for the workshop as there will not be time to troubleshoot installation problems.
+If you are having technical issues working on your own machine and cannot get the below code to run, please consider using [RStudio Cloud](https://rstudio.cloud/).
 
 
 ```r
@@ -396,6 +394,14 @@ mass + height
 
 <img src="02-intro-to-r_files/figure-html/unnamed-chunk-6-1.png" width="100%" style="display: block; margin: auto;" />
 
+## Error logs
+
+Coding involves making a **lot** of errors. We've already mentioned this in Section \@ref(help). We weren't joking! Getting good at R really means getting good at spotting typos and finding extra or missing commas. When you're first learning to code, it can be useful to keep an error log. This will feel like it is slowing you down but it will serve you well in the long-run. Not only will it give you a list of common errors and how to fix them, but you'll also start to notice the patterns in the errors you get.
+
+| Code that threw the error | Error message                                  | Explanation                                                        | Code that fixed the error |
+|---------------------------|------------------------------------------------|--------------------------------------------------------------------|---------------------------|
+| read_csv("my_data.csv")   | could not find function read_csv               | I forgot to load the tidyverse before I used the function read_csv | library(tidyverse)        |
+| read_csv("my_data")       | 'my_data\` does not exist in working directory | I forgot to add the file extension .csv to the name of the file.   | read_csv("my_data.csv")   |
 
 ## Glossary {#glossary-intro}
 
@@ -420,10 +426,6 @@ mass + height
    <td style="text-align:left;"> A data type representing strings of text. </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [chunk](https://psyteachr.github.io/glossary/c.html#chunk){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> A section of code in an R Markdown file </td>
-  </tr>
-  <tr>
    <td style="text-align:left;"> [conflict](https://psyteachr.github.io/glossary/c.html#conflict){class="glossary" target="_blank"} </td>
    <td style="text-align:left;"> Having two packages loaded that have a function with the same name. </td>
   </tr>
@@ -444,14 +446,6 @@ mass + height
    <td style="text-align:left;"> A named section of code that can be reused. </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [ide](https://psyteachr.github.io/glossary/i.html#ide){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R. </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> [knit](https://psyteachr.github.io/glossary/k.html#knit){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> To create an HTML, PDF, or Word document from an R Markdown (Rmd) document </td>
-  </tr>
-  <tr>
    <td style="text-align:left;"> [numeric](https://psyteachr.github.io/glossary/n.html#numeric){class="glossary" target="_blank"} </td>
    <td style="text-align:left;"> A data type representing a real decimal number or integer. </td>
   </tr>
@@ -468,16 +462,8 @@ mass + height
    <td style="text-align:left;"> RStudio is arranged with four window "panes". </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [r markdown](https://psyteachr.github.io/glossary/r.html#r-markdown){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code. </td>
-  </tr>
-  <tr>
    <td style="text-align:left;"> [reproducibility](https://psyteachr.github.io/glossary/r.html#reproducibility){class="glossary" target="_blank"} </td>
    <td style="text-align:left;"> The extent to which the findings of a study can be repeated in some other context </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> [script](https://psyteachr.github.io/glossary/s.html#script){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> A plain-text file that contains commands in a coding language, such as R. </td>
   </tr>
   <tr>
    <td style="text-align:left;"> [string](https://psyteachr.github.io/glossary/s.html#string){class="glossary" target="_blank"} </td>

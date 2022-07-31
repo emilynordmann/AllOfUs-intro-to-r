@@ -2,7 +2,7 @@
 title: "Intro to R and Data Vizualisation" # edit
 #subtitle: "optional" 
 author: "Emily Nordmann & Javan Carter" # edit
-date: "2022-07-14"
+date: "2022-07-31"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
@@ -26,14 +26,23 @@ apple-touch-icon-size: 180
 <div class="small_right"><img src="images/logos/logo.png" 
      alt="All of Us Logo" /></div>
 
-Week 1
+This course is designed to be completed over approximately two weeks. Each week there are several chapters of this workbook to work through asynchronously with an accompanying walkthrough video and suggested reading list. The time it takes to work through each chapter will vary considerably depending on your previous experience with R and programming. 
 
+For complete novices, we estimate that each chapter will take between 1-2 hours and that you will likely want or need to watch the walkthrough video in full. Those with more experience with programming will likely take less time and for you we have included links to further resources so that you can go beyond the core material provided in this course.
+
+In addition to the asychronous content, there will be two synchronous sessions at the times advertised via the Academy. In these sessions, your instructors will answer questions, provide additional support, and conduct a live walkthrough of the skills covered in the workbook using the All of Us workbench and database. Finally, to complete the course, there will be a 20-item multiple-choice quiz.
+
+For all learners, we strongly recommend that you space out your study sessions with R. Three one-hour sessions will be more effective than one-three hour session (if you'd like an overview of the science behind distributed practice, [Wikipedia](https://en.wikipedia.org/wiki/Distributed_practice) is actually not a bad place to start).
+
+**Week 1 topics**
+
+* Installing R
 * Intro to R and Rstudio
 * Intro to data visualization 
 
-Week 2
+**Week 2 topics**
 
-* Data summaries (descriptive stats)
+* Data summaries and descriptive statistics
 * Customizing visualisations 
 
      
