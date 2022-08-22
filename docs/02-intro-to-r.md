@@ -112,12 +112,15 @@ You can also install multiple packages at once. Here is the command to install a
 
 ```r
 packages <- c(
-  "tidyverse",  # for everything
-  "patchwork",  # for multi-part plots
-  "ggthemes",   # for themed plots
-  "devtools",   # for installing github packages
-  "rmarkdown",  # for reproducible reports
-  "medicaldata" # for medical datasets 
+  "tidyverse",   # for everything
+  "patchwork",   # for multi-part plots
+  "ggthemes",    # for themed plots
+  "devtools",    # for installing github packages
+  "rmarkdown",   # for reproducible reports
+  "medicaldata", # for medical datasets
+  "gapminder",   # for gapminder dataset
+  "psych",       # for descriptive stats (and other things)
+  "plotly"       # for interactive plots  
 )
 
 # determine which need to be installed

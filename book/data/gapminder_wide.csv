@@ -1,0 +1,143 @@
+country,continent,lifeExp_2002,lifeExp_2007
+Afghanistan,Asia,42.129,43.828
+Albania,Europe,75.651,76.423
+Algeria,Africa,70.994,72.301
+Angola,Africa,41.003,42.731
+Argentina,Americas,74.34,75.32
+Australia,Oceania,80.37,81.235
+Austria,Europe,78.98,79.829
+Bahrain,Asia,74.795,75.635
+Bangladesh,Asia,62.013,64.062
+Belgium,Europe,78.32,79.441
+Benin,Africa,54.406,56.728
+Bolivia,Americas,63.883,65.554
+Bosnia and Herzegovina,Europe,74.09,74.852
+Botswana,Africa,46.634,50.728
+Brazil,Americas,71.006,72.39
+Bulgaria,Europe,72.14,73.005
+Burkina Faso,Africa,50.65,52.295
+Burundi,Africa,47.36,49.58
+Cambodia,Asia,56.752,59.723
+Cameroon,Africa,49.856,50.43
+Canada,Americas,79.77,80.653
+Central African Republic,Africa,43.308,44.741
+Chad,Africa,50.525,50.651
+Chile,Americas,77.86,78.553
+China,Asia,72.028,72.961
+Colombia,Americas,71.682,72.889
+Comoros,Africa,62.974,65.152
+"Congo, Dem. Rep.",Africa,44.966,46.462
+"Congo, Rep.",Africa,52.97,55.322
+Costa Rica,Americas,78.123,78.782
+Cote d'Ivoire,Africa,46.832,48.328
+Croatia,Europe,74.876,75.748
+Cuba,Americas,77.158,78.273
+Czech Republic,Europe,75.51,76.486
+Denmark,Europe,77.18,78.332
+Djibouti,Africa,53.373,54.791
+Dominican Republic,Americas,70.847,72.235
+Ecuador,Americas,74.173,74.994
+Egypt,Africa,69.806,71.338
+El Salvador,Americas,70.734,71.878
+Equatorial Guinea,Africa,49.348,51.579
+Eritrea,Africa,55.24,58.04
+Ethiopia,Africa,50.725,52.947
+Finland,Europe,78.37,79.313
+France,Europe,79.59,80.657
+Gabon,Africa,56.761,56.735
+Gambia,Africa,58.041,59.448
+Germany,Europe,78.67,79.406
+Ghana,Africa,58.453,60.022
+Greece,Europe,78.256,79.483
+Guatemala,Americas,68.978,70.259
+Guinea,Africa,53.676,56.007
+Guinea-Bissau,Africa,45.504,46.388
+Haiti,Americas,58.137,60.916
+Honduras,Americas,68.565,70.198
+"Hong Kong, China",Asia,81.495,82.208
+Hungary,Europe,72.59,73.338
+Iceland,Europe,80.5,81.757
+India,Asia,62.879,64.698
+Indonesia,Asia,68.588,70.65
+Iran,Asia,69.451,70.964
+Iraq,Asia,57.046,59.545
+Ireland,Europe,77.783,78.885
+Israel,Asia,79.696,80.745
+Italy,Europe,80.24,80.546
+Jamaica,Americas,72.047,72.567
+Japan,Asia,82,82.603
+Jordan,Asia,71.263,72.535
+Kenya,Africa,50.992,54.11
+"Korea, Dem. Rep.",Asia,66.662,67.297
+"Korea, Rep.",Asia,77.045,78.623
+Kuwait,Asia,76.904,77.588
+Lebanon,Asia,71.028,71.993
+Lesotho,Africa,44.593,42.592
+Liberia,Africa,43.753,45.678
+Libya,Africa,72.737,73.952
+Madagascar,Africa,57.286,59.443
+Malawi,Africa,45.009,48.303
+Malaysia,Asia,73.044,74.241
+Mali,Africa,51.818,54.467
+Mauritania,Africa,62.247,64.164
+Mauritius,Africa,71.954,72.801
+Mexico,Americas,74.902,76.195
+Mongolia,Asia,65.033,66.803
+Montenegro,Europe,73.981,74.543
+Morocco,Africa,69.615,71.164
+Mozambique,Africa,44.026,42.082
+Myanmar,Asia,59.908,62.069
+Namibia,Africa,51.479,52.906
+Nepal,Asia,61.34,63.785
+Netherlands,Europe,78.53,79.762
+New Zealand,Oceania,79.11,80.204
+Nicaragua,Americas,70.836,72.899
+Niger,Africa,54.496,56.867
+Nigeria,Africa,46.608,46.859
+Norway,Europe,79.05,80.196
+Oman,Asia,74.193,75.64
+Pakistan,Asia,63.61,65.483
+Panama,Americas,74.712,75.537
+Paraguay,Americas,70.755,71.752
+Peru,Americas,69.906,71.421
+Philippines,Asia,70.303,71.688
+Poland,Europe,74.67,75.563
+Portugal,Europe,77.29,78.098
+Puerto Rico,Americas,77.778,78.746
+Reunion,Africa,75.744,76.442
+Romania,Europe,71.322,72.476
+Rwanda,Africa,43.413,46.242
+Sao Tome and Principe,Africa,64.337,65.528
+Saudi Arabia,Asia,71.626,72.777
+Senegal,Africa,61.6,63.062
+Serbia,Europe,73.213,74.002
+Sierra Leone,Africa,41.012,42.568
+Singapore,Asia,78.77,79.972
+Slovak Republic,Europe,73.8,74.663
+Slovenia,Europe,76.66,77.926
+Somalia,Africa,45.936,48.159
+South Africa,Africa,53.365,49.339
+Spain,Europe,79.78,80.941
+Sri Lanka,Asia,70.815,72.396
+Sudan,Africa,56.369,58.556
+Swaziland,Africa,43.869,39.613
+Sweden,Europe,80.04,80.884
+Switzerland,Europe,80.62,81.701
+Syria,Asia,73.053,74.143
+Taiwan,Asia,76.99,78.4
+Tanzania,Africa,49.651,52.517
+Thailand,Asia,68.564,70.616
+Togo,Africa,57.561,58.42
+Trinidad and Tobago,Americas,68.976,69.819
+Tunisia,Africa,73.042,73.923
+Turkey,Europe,70.845,71.777
+Uganda,Africa,47.813,51.542
+United Kingdom,Europe,78.471,79.425
+United States,Americas,77.31,78.242
+Uruguay,Americas,75.307,76.384
+Venezuela,Americas,72.766,73.747
+Vietnam,Asia,73.017,74.249
+West Bank and Gaza,Asia,72.37,73.422
+"Yemen, Rep.",Asia,60.308,62.698
+Zambia,Africa,39.193,42.384
+Zimbabwe,Africa,39.989,43.487

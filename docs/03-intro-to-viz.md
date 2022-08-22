@@ -1,5 +1,13 @@
 # Intro to data viz {#intro-viz}
 
+## Intended Learning Outcomes {#ilo-viz}
+
+By the end of the chapter you should be able to:
+
+* Create and manage projects
+* Understand the grammar of ggplot
+* Produce and customize a range of visualizations
+
 ## Organising a project {#projects}
 
 Before we write any code, first, we need to get organised. <a class='glossary' target='_blank' title='A way to organise related files in RStudio' href='https://psyteachr.github.io/glossary/p#project'>Projects</a> in RStudio are a way to group all the files you need for one project. Most projects include scripts, data files, and output files like the PDF report created by the script or images.
@@ -29,7 +37,7 @@ RStudio will restart itself and open with this new project directory as the work
 
 If you're working on the cloud:
 
-- **New project > New RStudio Project**
+- **`New project > New RStudio Project`**
 - Wait for the project to initialise
 - Name the project <code class='path'>intro-to-r</code> by clicking on the name of the project (by default "Untitled project") at the top.
 
@@ -46,7 +54,7 @@ Depending on your settings, you may also see a directory called `.Rproj.user`, w
 
 ## R Markdown {#rmarkdown}
 
-For this course we will use <a class='glossary' target='_blank' title='The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.' href='https://psyteachr.github.io/glossary/r#r-markdown'>R Markdown</a> to write and save our code in. We won't have time to cover too many of the features of R Markdown but it's an incredibly powerful format that allows you to create fully reproducible reports where all text, code, and analysis is contained within the one document. You can also use it to create websites, online books (like this one), presentations, and Shiny apps. If you'd like to learn more about R Markdown, there's links to additional resources in Section \@ref(resources-viz).
+For this course we will use <a class='glossary' target='_blank' title='The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.' href='https://psyteachr.github.io/glossary/r#r-markdown'>R Markdown</a> to write and save our code in, which is similar to the Jupyter notebooks that the workbench uses. We won't have time to cover too many of the features of R Markdown but it's an incredibly powerful format that allows you to create fully reproducible reports where all text, code, and analysis is contained within the one document. You can also use it to create websites, online books (like this one), presentations, and Shiny apps. If you'd like to learn more about R Markdown, there's links to additional resources in Section \@ref(resources-viz).
 
 ### New document
 
@@ -87,6 +95,7 @@ library(tidyverse)
 library(patchwork)
 library(ggthemes)
 library(medicaldata)
+library(gapminder)
 ```
 
 ### Running code
@@ -103,7 +112,7 @@ Run your code using method 3. You should see the packages load in the console.
 
 ## Loading data
 
-Broadly speaking there are three types of data you can load when working in R:
+If you're using the All of Us data, you'll load in the data from the workbench but it's useful to know how to import data into R more genrally. Broadly speaking there are three types of data you can load when working in R:
 
 1.  Built-in data sets that come with the packages you install that are useful for reproducible demos. Common ones you will see when you Google help documentation are `mtcars` and `diamonds` but we'll be using datasets from the `medicaldata` packahe that are built specifically for teaching data skills to health researchers.
 2.  Data sets stored online and accessed via a URL.
@@ -146,50 +155,44 @@ You can now use this data. Insert a new heading (\##) named "My first plot". The
 ggplot(covid_testing, aes(x = pan_day)) +
   geom_histogram(colour = "black") +
   theme_economist() +
-  labs(title = "Day after start of pandemic",
-       y = "Number of cases")
+  labs(title = "COVID-19 cases",
+       y = "Number of cases", x = "Day after pandemic")
 ```
 
 ### Online sources {#loading-online}
 
-Now, let's try loading data that is stored online. Create a code chunk in your document and copy, paste, and run the below code. This code loads some simulated customer satisfaction data.
+Now, let's try loading data that is stored online. Create a code chunk in your document and copy, paste, and run the below code. This code loads the `gapminder` dataset that is contained in the <code class='package'>gapminder</code> package, except we've saved it as a `.csv` file and uploaded it to GitHub for the purposes of this exercise. The dataset contains an excerpt of the Gapminder data on life expectancy, GDP per capita, and population by country from 1952 to 2007.
 
 -   The data is stored in a `.csv` file so we're going to use the `read_csv()` function to load it in.
 -   Note that the url is contained within double quotation marks - it won't work without this.
 
 
 ```r
-survey_data <- read_csv("https://psyteachr.github.io/ads-v1/data/survey_data.csv")
+# read in data
+gapminder <- read_csv("https://raw.githubusercontent.com/emilynordmann/AllOfUs-intro-to-r/main/book/data/gapminder.csv")
 ```
 
 ::: {.warning data-latex=""}
 If you get an error message that looks like:
 
-> Error in read_csv("<https://psyteachr.github.io/ads-v1/data/survey_data.csv>") :\
+> Error in read_csv("https://raw.githubusercontent.com/emilynordmann/AllOfUs-intro-to-r/main/book/data/gapminder.csv") :\
 > could not find function "read_csv"
 
 This means that you have not loaded tidyverse. Check that `library(tidyverse)` is in the setup chunk and that you have run the setup chunk.
 :::
 
-This data is simulated data for a call centre customer satisfaction survey. The first thing you should do when you need to plot data is to get familiar with what all of the rows (observations) and columns (variables) mean. Sometimes this is obvious, and sometimes it requires help from the data provider. Here, each row represents one call to the centre.
-
--   `caller_id` is a unique ID for each caller
--   `employee_id` is a unique ID for each employee taking calls
--   `call_start` is the date and time that the call arrived
--   `wait_time` is the number of seconds the caller had to wait
--   `call_time` is the number of seconds the call lasted after the employee picked up
--   `issue_category` is whether the issue was tech, sales, returns, or other
--   `satisfaction` is the customer satisfaction rating on a scale from 1 (very unsatisfied) to 5 (very satisfied)
-
 Create another heading (\##) named "My second plot", another code chunk below it, and copy, paste, and run the code below.
 
 
 ```r
-ggplot(survey_data, aes(x = call_time)) +
-  geom_histogram(colour = "black", fill = "wheat") +
+ggplot(gapminder, aes(x = continent, y = lifeExp)) +
+  geom_boxplot() +
   theme_excel() +
-  labs(x = "Time spent on call (seconds)",
-       title = "Customer calls")
+  labs(y = "Life Expectancy",
+       title = "Life Expectancy by Continent",
+       subtitle = "1952 - 2007",
+       x = NULL) +
+  theme(legend.position = "bottom")
 ```
 
 ## Knitting your file {#rmd-knit}
@@ -205,22 +208,22 @@ You can also knit by typing the following code into the console. Never put this 
 
 
 ```r
-rmarkdown::render("day_1.Rmd")
+rmarkdown::render("chapter_3.Rmd")
 
 # alternatively, you can use this, but may get a warning
-knitr::knit2html("day_1.Rmd")
+knitr::knit2html("chapter_3.Rmd")
 ```
 :::
 
-We don't have time to cover how to customise the knitted output in this workshop, but suffice to say that you can control almost every aspect, from whether the code is displayed or hidden, to the size and placement of the figures.
+We don't have time to cover how to customise the knitted output in this course, but suffice to say that you can control almost every aspect, from whether the code is displayed or hidden, to the size and placement of the figures.
 
-As you work through this workshop, we encourage you to use the Markdown document to take notes on the code and the output you create so that you have a complete single record of the work you've done. In particular, use headings and new code chunks to separate tasks, and if (when) you experience an error, make a note of how you fixed it.
+As you work through this course, we encourage you to use the Markdown document to take notes on the code and the output you create so that you have a complete single record of the work you've done. In particular, use headings and new code chunks to separate tasks, and if (when) you experience an error, make a note of how you fixed it.
 
 Ok, let's get started properly.
 
 ## Building plots
 
-There are multiple approaches to data visualisation in R; in this workshop we will use the popular package <code class='package'>ggplot2</code>, which is part of the larger `tidyverse` collection of packages. A grammar of graphics (the "gg" in "ggplot") is a standardised way to describe the components of a graphic. <code class='package'>ggplot2</code> uses a layered grammar of graphics, in which plots are built up in a series of layers. It may be helpful to think about any picture as having multiple elements that sit semi-transparently over each other. A good analogy is old Disney movies where artists would create a background and then add moveable elements on top of the background via transparencies.
+There are multiple approaches to data visualisation in R; in this course we will use the popular package <code class='package'>ggplot2</code>, which is part of the larger `tidyverse` collection of packages. A grammar of graphics (the "gg" in "ggplot") is a standardised way to describe the components of a graphic. <code class='package'>ggplot2</code> uses a layered grammar of graphics, in which plots are built up in a series of layers. It may be helpful to think about any picture as having multiple elements that sit semi-transparently over each other. A good analogy is old animated movies where artists would create a background and then add moveable elements on top of the background via transparencies.
 
 Figure \@ref(fig:layers) displays the evolution of a simple scatterplot using this layered approach. First, the plot space is built (layer 1); the variables are specified (layer 2); the type of visualisation (known as a `geom`) that is desired for these variables is specified (layer 3) - in this case `geom_point()` is called to visualise individual data points; a second geom is added to include a line of best fit (layer 4), the axis labels are edited for readability (layer 5), and finally, a theme is applied to change the overall appearance of the plot (layer 6).
 
@@ -229,7 +232,7 @@ Figure \@ref(fig:layers) displays the evolution of a simple scatterplot using t
 <p class="caption">(\#fig:layers)Evolution of a layered plot</p>
 </div>
 
-Importantly, each layer is independent and independently customisable. For example, the size, colour and position of each component can be adjusted, or one could, for example, remove the first geom (the data points) to only visualise the line of best fit, simply by removing the layer that draws the data points (Figure \@ref(fig:remove-layer)). The use of layers makes it easy to build up complex plots step-by-step, and to adapt or extend plots from existing code.
+Importantly, each layer is independent and independently customizable. For example, the size, color and position of each component can be adjusted, or one could, for example, remove the first geom (the data points) to only visualize the line of best fit, simply by removing the layer that draws the data points (Figure \@ref(fig:remove-layer)). The use of layers makes it easy to build up complex plots step-by-step, and to adapt or extend plots from existing code.
 
 <div class="figure" style="text-align: center">
 <img src="03-intro-to-viz_files/figure-html/remove-layer-1.png" alt="Final plot with scatterplot layer removed." width="100%" />
@@ -244,7 +247,7 @@ Every plot starts with the `ggplot()` function and a data table. If your data ar
 
 
 ```r
-ggplot(data = survey_data)
+ggplot(data = gapminder)
 ```
 
 <div class="figure" style="text-align: center">
@@ -262,8 +265,8 @@ Set the arguments `x` and `y` to the names of the columns you want to be plotted
 ```r
 # set up the plot with mapping
 ggplot(
-  data = survey_data, 
-  mapping = aes(x = wait_time, y = call_time)
+  data = gapminder, 
+  mapping = aes(x = lifeExp, y = gdpPercap)
 )
 ```
 
@@ -277,7 +280,7 @@ In the example above, we wrote out the names of the <a class='glossary' target='
 
 
 ```r
-ggplot(survey_data,  aes(wait_time, call_time))
+ggplot(gapminder,  aes(lifeExp, gdpPercap))
 ```
 :::
 
@@ -287,7 +290,7 @@ Now we can add our plot elements in layers. These are referred to as <a class='g
 
 
 ```r
-ggplot(survey_data, aes(x = wait_time, y = call_time)) +
+ggplot(gapminder, aes(x = lifeExp, y = gdpPercap)) +
   geom_point() # scatterplot
 ```
 
@@ -301,7 +304,7 @@ Somewhat annoyingly, the plus has to be on the end of the previous line, not at 
 
 
 ```r
-ggplot(survey_data, aes(x = wait_time, y = call_time))
+ggplot(gapminder, aes(x = lifeExp, y = gdpPercap)) 
 ```
 
 <img src="03-intro-to-viz_files/figure-html/unnamed-chunk-11-1.png" width="100%" style="display: block; margin: auto;" />
@@ -323,13 +326,13 @@ Part of the power of <code class='package'>ggplot2</code> is that you can add mo
 
 ```r
 # Points first
-ggplot(survey_data, aes(x = wait_time, y = call_time)) +
+ggplot(gapminder, aes(x = lifeExp, y = gdpPercap)) +
   geom_point() + # scatterplot
-  geom_smooth(method = lm) # line of best fit
+  geom_smooth(method = "loess") # line of best fit
 
 # Line first
-ggplot(survey_data, aes(x = wait_time, y = call_time)) +
-  geom_smooth(method = lm) + # line of best fit
+ggplot(gapminder, aes(x = lifeExp, y = gdpPercap)) +
+  geom_smooth(method = "loess") + # line of best fit
   geom_point() # scatterplot
 ```
 
@@ -345,13 +348,13 @@ Just like you can save numbers and data tables to objects, you can also save the
 
 ```r
 point_first <- 
-  ggplot(survey_data, aes(x = wait_time, y = call_time)) +
+ggplot(gapminder, aes(x = lifeExp, y = gdpPercap)) +
   geom_point() + # scatterplot
-  geom_smooth(method = lm) # line of best fit
+  geom_smooth(method = "loess") # line of best fit
   
 line_first <-
-  ggplot(survey_data, aes(x = wait_time, y = call_time)) +
-  geom_smooth(method = lm) + # line of best fit
+ggplot(gapminder, aes(x = lifeExp, y = gdpPercap)) +
+  geom_smooth(method = "loess") + # line of best fit
   geom_point() # scatterplot
 ```
 
@@ -378,6 +381,16 @@ point_first + line_first + plot_layout(nrow = 1)
 <p class="caption">(\#fig:build-plot-geom2b)Combining plots with patchwork.</p>
 </div>
 
+### Saving plots to disk
+
+Another reason to save you plots to an object is so that you can save them to disk using `ggsave()`. The `filename` argument specifies what the name of the file you save will be - it must have a file extension although you can choose the image format (e.g., .png, .jpeg). The resulting file will save into your project directory. There are many more options to `ggsave()` that allow you to specify the height, width, and resolution of the image you save.
+
+
+```r
+ggsave(filename = "my_plot.png", plot = point_first)
+```
+
+
 ## Customising plots
 
 ### Format axes
@@ -388,13 +401,13 @@ The `name` argument changes the axis label. The `breaks` argument sets the major
 
 
 ```r
-ggplot(survey_data, aes(x = wait_time, y = call_time)) +
-  geom_point(alpha = 0.2) + 
-  geom_smooth(method = lm) +
-  scale_x_continuous(name = "Wait Time (seconds)", 
-                     breaks = seq(from = 0, to = 600, by = 60)) +
-  scale_y_continuous(name = "Call time (seconds)",
-                     breaks = seq(from = 0, to = 600, by = 30))
+ggplot(gapminder, aes(x = lifeExp, y = gdpPercap)) +
+  geom_point() + 
+  geom_smooth(method = "loess") + 
+  scale_x_continuous(name = "Life Expectancy", 
+                     breaks = seq(from = 0, to = 100, by = 10)) +
+  scale_y_continuous(name = "GDP per capita",
+                     breaks = seq(from = 0, to = 125000, by = 25000))
 ```
 
 ```
@@ -412,20 +425,19 @@ Check the help for `?scale_x_continuous` to see how you would set the minor unit
 
 ### Axis limits
 
-If you want to change the minimum and maximum values on an axis, use the `coord_cartesian()` function. Many plots make more sense if the minimum and maximum values represent the range of possible values, even if those values aren't present in the data. Here, wait and call times can't be less than 0 seconds, so we'll set the minimum values to 0 and the maximum values to the first break above the highest value.
+If you want to change the minimum and maximum values on an axis, use the `coord_cartesian()` function. Many plots make more sense if the minimum and maximum values represent the range of possible values, even if those values aren't present in the data. Here, life expectancy and GDP can't be less than 0, so we'll set the minimum values to 0 and the maximum values to the first break above the highest value.
 
 
 ```r
-ggplot(survey_data, aes(x = wait_time, y = call_time)) +
-  geom_point(colour = "dodgerblue", 
-             alpha = 0.2) + 
-  geom_smooth(method = lm) +
-  scale_x_continuous(name = "Wait Time (seconds)", 
-                     breaks = seq(from = 0, to = 600, by = 60)) +
-  scale_y_continuous(name = "Call time (seconds)",
-                     breaks = seq(from = 0, to = 600, by = 30)) +
-  coord_cartesian(xlim = c(0, 360), 
-                  ylim = c(0, 180))
+ggplot(gapminder, aes(x = lifeExp, y = gdpPercap)) +
+  geom_point() + 
+  geom_smooth(method = "loess") + 
+  scale_x_continuous(name = "Life Expectancy", 
+                     breaks = seq(from = 0, to = 100, by = 10)) +
+  scale_y_continuous(name = "GDP per capita",
+                     breaks = seq(from = 0, to = 125000, by = 25000)) +
+  coord_cartesian(xlim = c(0, 100), 
+                  ylim = c(0, 120000))
 ```
 
 ```
@@ -449,18 +461,20 @@ It's also worth highlighting that this code is starting to look quite complicate
 
 
 ```r
-ggplot(survey_data, aes(x = wait_time, y = call_time)) +
-  geom_point(alpha = 0.2) + 
-  geom_smooth(method = lm, 
-              formula = y~x, 
-              colour = rgb(0, .5, .8)) +
-  scale_x_continuous(name = "Wait Time (seconds)", 
-                     breaks = seq(from = 0, to = 600, by = 60)) +
-  scale_y_continuous(name = "Call time (seconds)",
-                     breaks = seq(from = 0, to = 600, by = 30)) +
-  coord_cartesian(xlim = c(0, 360), 
-                  ylim = c(0, 180)) +
-  ggthemes::theme_gdocs(base_size = 18)
+ggplot(gapminder, aes(x = lifeExp, y = gdpPercap)) +
+  geom_point() + 
+  geom_smooth(method = "loess") + 
+  scale_x_continuous(name = "Life Expectancy", 
+                     breaks = seq(from = 0, to = 100, by = 10)) +
+  scale_y_continuous(name = "GDP per capita",
+                     breaks = seq(from = 0, to = 125000, by = 25000)) +
+  coord_cartesian(xlim = c(0, 100), 
+                  ylim = c(0, 120000))+
+  ggthemes::theme_gdocs(base_size = 16)
+```
+
+```
+## `geom_smooth()` using formula 'y ~ x'
 ```
 
 <div class="figure" style="text-align: center">
@@ -470,11 +484,11 @@ ggplot(survey_data, aes(x = wait_time, y = call_time)) +
 
 ## Appropriate plots
 
-Now that you know how to build up a plot by layers and customise its appearance, you're ready to learn about some more plot types. Different types of data require different types of plots, so this section is organised by data type.
+Now that you know how to build up a plot by layers and customize its appearance, you're ready to learn about some more plot types. Different types of data require different types of plots, so this section is organised by data type.
 
 The [ggplot2 cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf) is a great resource to help you find plots appropriate to your data, based on how many variables you're plotting and what type they are. The examples below all use the same customer satisfaction data, but each plot communicates something different.
 
-We don't expect you to memorise all of the plot types or the methods for customising them, but it will be helpful to try out the code in the examples below for yourself, changing values to test your understanding.
+We don't expect you to memorize all of the plot types or the methods for customizing them, but it will be helpful to try out the code in the examples below for yourself, changing values to test your understanding.
 
 ### Counting categories
 
@@ -484,11 +498,11 @@ If you want to count the number of things per category, you can use `geom_bar()`
 
 
 ```r
-ggplot(survey_data, aes(x = issue_category)) +
+ggplot(covid_testing, aes(x = result)) +
   geom_bar()
 ```
 
-<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-15-1.png" width="100%" style="display: block; margin: auto;" />
 
 ### One continuous variable
 
@@ -496,11 +510,11 @@ If you have a continuous variable, like the number of seconds callers have to wa
 
 #### Histogram
 
-A histogram splits the data into "bins" along the x-axis and shows the count of how many observations are in each bin along the y-axis.
+A histogram splits the data into "bins" along the x-axis and shows the count of how many observations are in each bin along the y-axis (the covid testing data is from a children's hospital).
 
 
 ```r
-ggplot(survey_data, aes(x = wait_time)) +
+ggplot(covid_testing, aes(x = age)) +
   geom_histogram()
 ```
 
@@ -509,8 +523,8 @@ ggplot(survey_data, aes(x = wait_time)) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-15-1.png" alt="Histogram of wait times." width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-15)Histogram of wait times.</p>
+<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-16-1.png" alt="Histogram of wait times." width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-16)Histogram of wait times.</p>
 </div>
 
 You should always set the `binwidth` or number of `bins` to something meaningful for your data (otherwise you get an annoying message). You might need to try a few options before you find something that looks good and conveys the meaning of your plot -- try changing the values of `binwidth` and `bins` below to see what works best.
@@ -518,40 +532,40 @@ You should always set the `binwidth` or number of `bins` to something meaningful
 
 ```r
 # adjust width of each bar
-ggplot(survey_data, aes(x = wait_time)) +
-  geom_histogram(binwidth = 15)
+ggplot(covid_testing, aes(x = age)) +
+  geom_histogram(binwidth = 20)
 
 # adjust number of bars
-ggplot(survey_data, aes(x = wait_time)) +
-  geom_histogram(bins = 5)
+ggplot(covid_testing, aes(x = age)) +
+  geom_histogram(bins = 50)
 ```
 
-By default, the bars start *centered* on 0, so if `binwidth` is set to 15, the first bar would include -7.5 to 7.5 seconds, which doesn't make much sense. We can set `boundary = 0` so that each bar represents increments of 15 seconds *starting* from 0.
+By default, the bars start *centered* on 0, so if `binwidth` is set to 20, the first bar would include -10 to 10 years old, which doesn't make much sense. We can set `boundary = 0` so that each bar represents increments of 20 years *starting* from 0.
 
 
 ```r
-ggplot(survey_data, aes(x = wait_time)) +
-  geom_histogram(binwidth = 15, boundary = 0)
+ggplot(covid_testing, aes(x = age)) +
+  geom_histogram(binwidth = 20, boundary = 0)
 ```
 
-<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-18-1.png" width="100%" style="display: block; margin: auto;" />
 
 Finally, the default style of grey bars is ugly, so you can change that by setting the `fill` and `colour`, as well as using `scale_x_continuous()` to update the axis labels.
 
 
 ```r
-ggplot(survey_data, aes(x = wait_time)) +
-  geom_histogram(binwidth = 15, 
+ggplot(covid_testing, aes(x = age)) +
+  geom_histogram(binwidth = 20, 
                  boundary = 0, 
                  fill = "white", 
                  color = "black") +
-  scale_x_continuous(name = "Wait time (seconds)",
-                     breaks = seq(0, 600, 60))
+  scale_x_continuous(name = "Subject age at covid test",
+                     breaks = seq(0, 150, 20))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-18-1.png" alt="Histogram with custom styles." width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-18)Histogram with custom styles.</p>
+<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-19-1.png" alt="Histogram with custom styles." width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-19)Histogram with custom styles.</p>
 </div>
 
 #### Frequency plot
@@ -560,14 +574,14 @@ Rather than plotting each bin as a bar, you can connect a line across the top of
 
 
 ```r
-ggplot(survey_data, aes(x = wait_time)) +
-  scale_x_continuous(name = "Wait time (seconds)",
-                     breaks = seq(0, 600, 60)) +
-  geom_freqpoly(boundary = 0, binwidth = 15, 
+ggplot(covid_testing, aes(x = age)) +
+  scale_x_continuous(name = "Subject age at covid test",
+                     breaks = seq(0, 150, 20)) +
+  geom_freqpoly(boundary = 0, binwidth = 20, 
                 color = "black")
 ```
 
-<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-19-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-20-1.png" width="100%" style="display: block; margin: auto;" />
 
 #### Density plot
 
@@ -575,13 +589,13 @@ If the distribution is smooth, a density plot is often a better way to show the 
 
 
 ```r
-ggplot(survey_data, aes(x = wait_time)) +
-  scale_x_continuous(name = "Wait time (seconds)",
-                     breaks = seq(0, 600, 60)) +
+ggplot(covid_testing, aes(x = age)) +
+  scale_x_continuous(name = "Subject age at covid test",
+                     breaks = seq(0, 150, 20)) +
   geom_density(fill = "purple", color = "black")
 ```
 
-<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-20-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;" />
 
 ### Grouped continuous variables
 
@@ -595,15 +609,15 @@ Setting the `fill` aesthetic in the mapping will produce different coloured bars
 
 
 ```r
-ggplot(survey_data, aes(x = wait_time, fill = issue_category)) +
+ggplot(gapminder, aes(x = lifeExp, fill = continent)) +
   geom_histogram(boundary = 0, 
-                 binwidth = 15,
+                 binwidth = 1,
                  color = "black")
 ```
 
 <div class="figure" style="text-align: center">
-<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-21-1.png" alt="Histogram with categories represented by fill." width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-21)Histogram with categories represented by fill.</p>
+<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-22-1.png" alt="Histogram with categories represented by fill." width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-22)Histogram with categories represented by fill.</p>
 </div>
 
 By default, the categories are positioned stacked on top of each other. The function `geom_area()` gives a similar effect when `stat = "bin"`.
@@ -611,7 +625,7 @@ By default, the categories are positioned stacked on top of each other. The func
 
 ```r
 # area plot
-ggplot(survey_data, mapping = aes(x = wait_time, fill = issue_category)) +
+ggplot(gapminder, aes(x = lifeExp, fill = continent)) +
   geom_area(stat = "bin", 
             boundary = 0, 
             binwidth = 15, 
@@ -619,8 +633,8 @@ ggplot(survey_data, mapping = aes(x = wait_time, fill = issue_category)) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-22-1.png" alt="Stacked area plot." width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-22)Stacked area plot.</p>
+<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-23-1.png" alt="Stacked area plot." width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-23)Stacked area plot.</p>
 </div>
 
 #### Comparing distributions
@@ -631,26 +645,21 @@ If you want to compare more than one distribution, you can set the `position` ar
 ```r
 # dodged histogram
 histogram_dodge <- 
-  ggplot(survey_data, aes(x = wait_time, 
-                          fill = issue_category,
-                          colour = issue_category))+
+ggplot(gapminder, aes(x = lifeExp, fill = continent)) +
   geom_histogram(boundary = 0, 
-                 binwidth = 15, 
-                 position = "dodge") +
-  scale_x_continuous(name = "Wait time (seconds)",
-                     breaks = seq(0, 600, 60)) +
+                 binwidth = 20,
+                 color = "black",
+                 position = "dodge")+
   ggtitle("Dodged Histogram")
 
 # frequency plot
 freqpoly_plot <- 
-  ggplot(survey_data, aes(x = wait_time,
-                          fill = issue_category,
-                          colour = issue_category)) +
-  geom_freqpoly(binwidth = 15, 
+ggplot(gapminder, aes(x = lifeExp, colour = continent)) +
+  geom_freqpoly(binwidth = 20, 
                 boundary = 0,
-                size = 1) +
-  scale_x_continuous(name = "Wait time (seconds)",
-                     breaks = seq(0, 600, 60)) +
+                size = 2) +
+  scale_x_continuous(name = "Life Expecancy",
+                     breaks = seq(0, 100, 20)) +
   ggtitle("Frequency")
 
 # put plots together
@@ -659,8 +668,8 @@ histogram_dodge + freqpoly_plot +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-23-1.png" alt="Different ways to plot the distribution of a continuous variable for multiple groups." width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-23)Different ways to plot the distribution of a continuous variable for multiple groups.</p>
+<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-24-1.png" alt="Different ways to plot the distribution of a continuous variable for multiple groups." width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-24)Different ways to plot the distribution of a continuous variable for multiple groups.</p>
 </div>
 
 #### Violin plot
@@ -669,7 +678,7 @@ Another way to compare groups of continuous variables is the violin plot. This i
 
 
 ```r
-ggplot(survey_data, aes(x = issue_category, y = wait_time)) +
+ggplot(gapminder, aes(x = continent, y = lifeExp)) +
   geom_violin()
 ```
 
@@ -684,7 +693,7 @@ Boxplots serve a similar purpose to violin plots. They don't show you the shape 
 
 
 ```r
-ggplot(survey_data, aes(x = issue_category, y = wait_time)) +
+ggplot(gapminder, aes(x = continent, y = lifeExp)) +
  geom_boxplot()
 ```
 
@@ -701,14 +710,13 @@ Violin plots are frequently layered with other geoms that represent the mean or 
 ```r
 # add fill and colour to the mapping
 
-ggplot(survey_data,  aes(x = issue_category, 
-                         y = wait_time,
-                         fill = issue_category,
-                         colour = issue_category)) +
-  scale_x_discrete(name = "Issue Category") +
-  scale_y_continuous(name = "Wait Time (seconds)",
-                     breaks = seq(0, 600, 60)) +
-  coord_cartesian(ylim = c(0, 360)) +
+ggplot(gapminder, aes(x = continent, y = lifeExp,
+                      fill = continent,
+                      colour = continent)) +
+  scale_x_discrete(name = "Continent") +
+  scale_y_continuous(name = "Life Expectancy",
+                     breaks = seq(0, 100, 10)) +
+  coord_cartesian(ylim = c(0, 100)) +
   guides(fill = "none", colour = "none") + 
   # add a line at median (50%) score
   geom_violin(alpha = 0.4, 
@@ -739,7 +747,7 @@ The function to create a scatterplot is called `geom_point()`.
 
 
 ```r
-ggplot(survey_data, aes(x = wait_time, y = call_time)) +
+ggplot(gapminder, aes(x = lifeExp, y = gdpPercap)) +
   geom_point()
 ```
 
@@ -750,18 +758,18 @@ ggplot(survey_data, aes(x = wait_time, y = call_time)) +
 
 #### Trendlines
 
-In Figure \@ref(fig:layers), we emphasised the relationship between wait time and call time with a trendline created by `geom_smooth()` using the argument `method = lm` ("lm" stands for "linear model" or a straight line relationship). You can also set `method = loess` to visualise a non-linear relationship.
+In Figure \@ref(fig:layers), we emphasised the relationship with a trendline created by `geom_smooth()` using the argument `method = lm` ("lm" stands for "linear model" or a straight line relationship). You can also set `method = loess` to visualise a non-linear relationship.
 
 
 ```r
 lm_plot <- 
-  ggplot(survey_data, aes(x = wait_time, y = call_time)) +
+  ggplot(gapminder, aes(x = lifeExp, y = gdpPercap)) +
   geom_point(alpha = 0.2) +
   geom_smooth(method = lm) +
   ggtitle("method = lm")
 
 loess_plot <- 
-  ggplot(survey_data, aes(x = wait_time, y = call_time)) +
+  ggplot(gapminder, aes(x = lifeExp, y = gdpPercap)) +
   geom_point(alpha = 0.2) +
   geom_smooth(method = loess) +
   ggtitle("method = loess")
@@ -775,23 +783,23 @@ lm_plot + loess_plot
 ```
 
 <div class="figure" style="text-align: center">
-<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-24-1.png" alt="Different ways to show the relationship between two continuous variables." width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-24)Different ways to show the relationship between two continuous variables.</p>
+<img src="03-intro-to-viz_files/figure-html/unnamed-chunk-25-1.png" alt="Different ways to show the relationship between two continuous variables." width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-25)Different ways to show the relationship between two continuous variables.</p>
 </div>
 
 ::: {.warning data-latex=""}
 If there isn't much data at the extremes of the x-axis, the curve can be very uncertain. This is represented by the wider shaded area, which means that the true relationship might be anywhere within that area. Add the argument `se = FALSE` to `geom_smooth()` to remove this "standard error" shading.
 :::
 
-### Ordinal variables
+### Overplotting
 
-When you have a limited range of numeric values, such as an ordinal rating scale, sometimes overlapping data makes it difficult to see what is going on in a point plot. For example, the plot below shows satisfaction ratings by call time but because all the ratings are 1, 2, 3, 4 or 5, it makes it hard to see exactly how many data points there are at each point.
+When you have a limited range of numeric values, such as an ordinal rating scale or categorical variables, sometimes overlapping data makes it difficult to see what is going on in a point plot. For example, the plot below shows test result by age, but it makes it hard to see exactly how many data points there are at each point.
 
 In this section, we'll explore a few options for dealing with this.
 
 
 ```r
-ggplot(survey_data, aes(x = call_time, y = satisfaction)) + 
+ggplot(covid_testing, aes(x = result, y = age)) + 
   geom_point()
 ```
 
@@ -806,8 +814,8 @@ You can use `geom_jitter()` to move the points around a bit to make them easier 
 
 
 ```r
-ggplot(survey_data, aes(x = call_time, y = satisfaction)) +
-  geom_jitter(width = 0, height = .2, alpha = 0.5)
+ggplot(covid_testing, aes(x = result, y = age)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.4)
 ```
 
 <div class="figure" style="text-align: center">
@@ -817,19 +825,19 @@ ggplot(survey_data, aes(x = call_time, y = satisfaction)) +
 
 #### Facets
 
-Alternatively, you can use `facet_wrap()` to create a separate plot for each level of satisfaction. `facet_wrap()` uses the tilde (\~) symbol, which you can roughly translate as "by", e.g., facet the plot *by* satisfaction rating. The `labeller` function controls the labels above each plot. `label_both` specifies that we want both the variable name (satisfaction) and the value (e.g., 1) printed on the plot to make it easier to read.
+Alternatively, you can use `facet_wrap()` to create a separate plot for each test result `facet_wrap()` uses the tilde (\~) symbol, which you can roughly translate as "by", e.g., facet the plot *by* test result. The `labeller` function controls the labels above each plot. `label_both` specifies that we want both the variable name (result) and the value (e.g., invalid) printed on the plot to make it easier to read.
 
 
 ```r
-ggplot(survey_data, aes(x = call_time)) +
+ggplot(covid_testing, aes(x = age)) +
   geom_histogram(binwidth = 10, 
                  boundary = 0, 
                  fill = "dodgerblue", 
                  color = "black") +
-  facet_wrap(~satisfaction, 
+  facet_wrap(~result, 
              ncol = 1, # try changing this to 2 
-             labeller = label_both) +
-  scale_x_continuous(name = "Call Time (seconds)",
+             labeller = label_both, scales = "free_y") +
+  scale_x_continuous(name = "Subject age at test",
                      breaks = seq(0, 600, 30))
 ```
 
@@ -841,6 +849,18 @@ ggplot(survey_data, aes(x = call_time)) +
 ::: {.info data-latex=""}
 These are not, by any means, all the plot types that you can make in R. This chapter just gave you a basic overview. The [further resources](#resources-viz) section at the end of this chapter lists many resources, but the [R Graph Gallery](http://www.r-graph-gallery.com/){target="_blank"} is an especially useful one to get inspiration for the kinds of beautiful plots you can make in R.
 :::
+
+## Further Resources {#resources-viz}
+
+-   [R Markdown Cheat Sheet](https://www.rstudio.org/links/r_markdown_cheat_sheet)
+-   [ggplot2 cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf). <!--
+    -   [R Markdown reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+    -->
+-   [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) by Yihui Xie, J. J. Allaire, & Garrett Grolemund
+-   [Chapter 27: R Markdown](https://r4ds.had.co.nz/r-markdown.html) of *R for Data Science*
+- [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/)
+- [Data visualization: A practical introduction](https://socviz.co/)
+- [BBC Visual and Data Journalism cookbook for R graphics](https://bbc.github.io/rcookbook/)
 
 ## Glossary {#glossary-day1}
 
@@ -909,13 +929,4 @@ These are not, by any means, all the plot types that you can make in R. This cha
 
 
 
-## Further Resources {#resources-viz}
 
--   [R Markdown Cheat Sheet](https://www.rstudio.org/links/r_markdown_cheat_sheet)
--   [ggplot2 cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf). <!--
-    -   [R Markdown reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
-    -->
--   [R Markdown Tutorial](https://rmarkdown.rstudio.com/lesson-1.html)
--   [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) by Yihui Xie, J. J. Allaire, & Garrett Grolemund
--   [Chapter 27: R Markdown](https://r4ds.had.co.nz/r-markdown.html) of *R for Data Science*
--   [Project Structure](https://slides.djnavarro.net/project-structure/) by Danielle Navarro

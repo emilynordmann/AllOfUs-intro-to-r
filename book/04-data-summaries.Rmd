@@ -1,0 +1,326 @@
+
+# Data summaries {#session-2-1}
+
+## Intended Learning Outcomes {#ilo-intro}
+
+By the end of this chapter you should be able to:
+
+* Calculate descriptive statistics for a range of data types
+
+## Set-up
+
+Open your course project and do the following:
+
+* Create and save a new R Markdown document named `chapter_4.Rmd` get rid of the default template text from line 11 onwards.
+* Add the below code to the set-up chunk and then run the code to load the packages and data.
+
+```{r warning = FALSE, message=FALSE}
+library(tidyverse)
+library(patchwork)
+library(psych)
+library(medicaldata)
+data("opt")
+```
+
+For this chapter, we're going to use the `opt` dataset from the `medicaldata` package that contains data on an RCT looking at whether treatment of maternal periodontal disease can reduce risk of preterm birth and low birth weight. There are a lot of variables in this dataset, use `?opt` to find out more about what they mean. 
+
+## Counting groups
+
+For categorical variables, the only descriptive statistic we can calculate is a count. The code below uses the `%>%` operator and can be read as:
+
+-   Start with the dataset `opt` *and then;*
+
+-   Group it by the variable `Black` *and then;*
+
+-   Count the number of observations in each group *and then;*
+
+-   Remove the grouping
+
+```{r demo_stats, eval =FALSE}
+opt %>%
+  group_by(Black) %>%
+  count() %>%
+  ungroup()
+```
+
+```{r demo_statsb, echo=FALSE}
+opt %>%
+  group_by(Black) %>%
+  count() %>%
+  ungroup() %>%
+  knitr::kable(align = "c")
+```
+
+
+`group_by()` does not result in surface level changes to the dataset, rather, it changes the underlying structure so that if groups are specified, whatever functions called next are performed separately on each level of the grouping variable. This grouping remains in the object that is created so it is important to remove it with `ungroup()` to avoid future operations on the object unknowingly being performed by groups. 
+
+The above code therefore counts the number of observations in each group of the variable `Black`. If you just need the total number of observations, you could remove the `group_by()` and `ungroup()` lines, which would perform the operation on the whole dataset, rather than by groups:
+
+```{r demo_stats2, eval=FALSE}
+opt %>%
+  count()
+```
+
+```{r demo_stats2b, echo = FALSE}
+opt %>%
+  count() %>%
+  knitr::kable(align = "c")
+```
+
+## Summarise
+
+For numeric data, we can use an increased range of functions. For example, we may wish to calculate the mean age (and SD) of the sample and we can do so using the function `summarise()` from the `dplyr` tidyverse package.
+
+```{r age1, eval = FALSE}
+opt %>%
+  summarise(mean_age = mean(Age),
+            sd_age = sd(Age),
+            n_values = n())
+```
+
+```{r age1b, echo = FALSE}
+opt %>%
+  summarise(mean_age = mean(Age),
+            sd_age = sd(Age),
+            n_values = n()) %>%
+  knitr::kable(align = "c", digits = 2)
+```
+
+This code produces summary data in the form of a column named `mean_age` that contains the result of calculating the mean of the variable `age`. It then creates `sd_age` which does the same but for standard deviation. Finally, it uses the function `n()` to add the number of values used to calculate the statistic in a column named `n_values` - this is a useful sanity check whenever you make summary statistics.
+
+Note that the above code will not save the result of this operation, it will simply output the result in the console. If you wish to save it for future use, you can store it in an object by using the `<-` notation and print it later by typing the object name.
+
+```{r age2}
+age_stats <- opt %>%
+  summarise(mean_age = mean(Age),
+            sd_age = sd(Age),
+            n_values = n())
+```
+
+Finally, the `group_by()` function will work in the same way when calculating summary statistics -- the output of the function that is called after `group_by()` will be produced for each level of the grouping variable.
+
+```{r demo3, eval=FALSE}
+opt %>%
+  group_by(Black) %>%
+  summarise(mean_age = mean(Age),
+            sd_age = sd(Age),
+            n_values = n()) %>%
+  ungroup()
+```
+
+```{r demo3b, echo=FALSE}
+opt %>%
+  group_by(Black) %>%
+  summarise(mean_age = mean(Age),
+            sd_age = sd(Age),
+            n_values = n()) %>%
+  ungroup() %>%
+    knitr::kable(align = "c", digits = 2)
+```
+
+## Pipes {#pipes-first}
+
+Before we go further, let's take a quick detour to formally introduce the `r glossary("pipe")`. Pipes allow you to send the output from one function straight into another function. Specifically, they send the result of the function before `%>%` to be the first argument of the function after `%>%`. It can be useful to translate the pipe as "**and then**". It's easier to show than tell, so let's look at an example.
+
+```{r eval = FALSE}
+# without pipe
+summarise(opt,
+          mean_bmi = mean(BMI), 
+          median_bmi = median(BMI))
+
+# with pipe
+opt %>%
+  summarise(mean_bmi = mean(BMI), 
+          median_bmi = median(BMI))
+```
+
+Notice that `summarise()` no longer needs the first argument to be the data table, it is pulled in from the pipe. The power of the pipe may not be obvious now, but it will soon prove its worth. 
+
+## Alternatives
+
+The method we've used above is pure `r pkg("tidyverse")`. The good thing about this approach is that the output it creates is easy to work with and can be used with a range of different functions (for example, you can calculate a table of descriptives and then use this as the data set for a ggplot). However, there are lots of alternatives and they're useful to know because a) you'll see them when you try to Google for help and b) some of them are easier or have additional functionality.
+
+### Base R
+
+Rather than embedding the functions within `summarise()` you can call the summary functions straight from Base R. Let's also clear up what that `$` notation is doing. The dollar sign allows you to select items from an object, such as columns from a table. The left-hand side is the object, and the right-hand side is the item. So in the below code, we're calculating the mean of the `Age` column that is present in the data set `opt`.
+
+```{r}
+mean(opt$Age)
+median(opt$Age)
+```
+
+Base R also contains the function `summary()` which will print a summary of all the variables in the dataset (actually there's so many variables in this dataset it will omit a few but we'll ignore that for now). `summary()` is very useful for getting a quick overview of the dataset and to check for any potential problems, e.g., do the minimum and maximum values look right? Does any variable have missing data (NAs)?
+
+```{r eval = FALSE}
+summary(opt)
+```
+
+### psych::describe()
+
+The function `describe()` from the `r pkg("psych")` is incredibly useful because it quickly produces a range of descriptive statistics, including standard error which is otherwise a faff to compute in R because there is no base function for standard error like there is for e.g., `sd()`.
+
+By default, `describe()` computes stats for all variables in the data set which probably isn't what you need and in the case of this dataset, would produce a monstrously long output. Instead, we can use `select()` from the `r pkg("tidyverse")` to select the columns we want to describe and then pass these to `describe()`. We may also want to drop some of the columns in the default `describe()` table which we can again do with `select()` - hopefully the power of the `%>%` begins to be obvious.
+
+```{r}
+describe_table <- opt %>%
+  select(Age, BMI)%>%
+  describe() %>%
+  select(-vars)
+```
+
+```{r echo = FALSE}
+describe_table %>%
+  kableExtra::kable(align = "c")
+```
+
+
+Finally, because `describe()` isn't tidyverse, we can't use `group_by()` with it however, there is also a grouped version, `describeBy()`. 
+
+```{r}
+describebytable <- opt %>%
+  select(Group, Age, BMI) %>%
+  describeBy(group = "Group") 
+
+describebytable
+```
+
+The object this creates is different to what we've created so far. Rather than a single data frame or tibble, this creates a `r glossary("list")`. Lists can contain multiple objects, datasets, and data types but it does mean they're a little bit harder to work with and we need to use the `$` notation to pull out specific objects in the list before we can manipulate them. The tab autocomplete function can be very useful here to help you get the name of each object exactly right.
+
+```{r}
+describebytable$C
+```
+
+If you want to get rid of the row that contains `Group` (because the descriptives aren't informative) and the `vars` column (which again, isn't hugely helpful), then it requires a little bit of extra wrangling. Using the `%>%` pipe, we pass the table to `filter()` and ask it to return all rows where `vars` does not (`!=`) equal 1 and then we use `select()` to drop (`-`) the column `vars`.
+
+```{r}
+describebytable$`C` %>%
+  filter(vars != 1) %>%
+  select(-vars)
+```
+
+## Ordinal data
+
+Sometimes you will data that is represented as numbers, but is really ordinal data. The `opt` data contains data relating to the Apgar score, which the help documentation and Google tells me is a summary of a newborn infant's 'Appearance, Pulse, Grimace, Activity, Respiration' at 1 minute. For each trait, a score of 0, 1, or 2 is assigned. For example:
+
+Grimace response or reflex irritability is a term describing response to stimulation, such as a mild pinch:
+
+* If there is no reaction, the infant scores 0 for reflex irritability.
+* If there is grimacing, the infant scores 1 for reflex irritability.
+* If there is grimacing and a cough, sneeze, or vigorous cry, the infant scores 2 for reflex irritability.
+
+The scores for all traits are then added up:
+
+* Less than or equal to 3: Critically low 
+* 4-6: Fairly low 
+* greater than or equal to 7: Normal
+
+So whilst this looks like a number, it's really not because you can't be sure that the difference between a score of 0 and 1 is the same as the difference between 1 and 2. But currently, R doesn't know this, as far as R is concerned, if it looks like a number and walks like a number and smells like a number, it's going to treat it as a number.
+
+```{r}
+opt %>%
+  select(Apgar1, Apgar5) %>%
+  describe()
+```
+
+```{r}
+opt %>%
+  select(Apgar1, Apgar5) %>%
+  summary()
+```
+
+
+If medical researchers are anything like psychologists, they will ignore the fact that the Apgar score is ordinal, treat it like a real number, calculate a full range of descriptive statistics and use it in parametric statistical tests. However, this isn't really right. 
+
+Instead, you can convert the variable to a `r glossary("factor")`, or category using the function `mutate()` from the `r pkg("tidyverse")` package `r pkg("dplyr")`.
+
+Note that because we save the result of the operation to a dataset of the same name, it will overwrite the original object. In this example, we've chosen to create new variables with the factored data but we could also have chosen to overwrite the original `Apgar1` and `Apgar5` variables by providing the existing names on the left-hand side. Think carefully about whether you want to overwrite existing variables or create new ones.
+
+```{r}
+opt <- opt %>%
+  mutate(Apgar1_factor = as.factor(Apgar1),
+         Apgar5_factor = as.factor(Apgar5))
+```
+
+Now that these variables are categories, `summary()` provides counts rather than means etc:
+
+```{r}
+opt %>%
+  select(Apgar1_factor, Apgar5_factor) %>%
+  summary()
+```
+
+You can also use `ggplot()` to plot the number of babies with each score:
+
+```{r}
+ggplot(opt, aes(x = Apgar1_factor)) +
+  geom_bar()
+```
+
+Or use the factor as a new grouping variable:
+
+```{r}
+ggplot(opt, aes(x = Apgar5_factor, fill = Black)) +
+  geom_bar(position = "dodge")
+```
+
+## Missing values
+
+#### Ignore missing values
+
+Some of the variables have missing data. If we try and compute mean BMI it  returns `NA`. This is because `NA` basically means "I don't know", and the sum of 100 and "I don't know" is "I don't know", not 100. However, when you're calculating means, you often want to just ignore missing values. Set `na.rm = TRUE` in the summary function to remove missing values before calculating.
+
+```{r eval = TRUE, error=TRUE}
+# code that will return NA
+opt %>%
+  summarise(mean_bmi = mean(BMI))
+
+# ignore missing values to return mean
+opt %>%
+  summarise(mean_bmi = mean(BMI, na.rm = TRUE))
+```
+
+#### Count missing values
+
+If you want to find out how many missing or non-missing values there are in a column, use the `is.na()` function to get a `r glossary("logical")` vector of whether or not each value is missing, and use `sum()` to count how many values are TRUE or `mean()` to calculate the proportion of TRUE values.
+
+```{r}
+opt %>%
+  group_by(Black) %>%
+  summarise(
+    n_valid = sum(!is.na(Apgar5_factor)),
+    n_missing = sum(is.na(Apgar5_factor)),
+    prop_missing = mean(is.na(Apgar5_factor))
+  )
+```
+
+#### Omit missing values
+
+You may also want to remove rows that have missing values and only work from complete datasets. `drop_na()` will remove any row that has a missing observation. You can use `drop_na()` on the entire dataset which will remove any row that has *any* missing value, or you can specify to only remove rows that are missing a specific value.
+
+```{r}
+# remove any rows with any missing values
+complete_data <- opt %>%
+  drop_na()
+
+# remove any rows that are missing a value for sales
+complete_bmi <- opt %>%
+  drop_na(BMI)
+
+```
+
+Missing data can be quite difficult to deal with depending on how it is represented. As always, no amount of coding expertise can make up for not understanding the structure and idiosyncrasies of your data. 
+
+## Glossary {#glossary-intro}
+
+`r glossary_table()`
+
+## Further resources {#resources-summary}
+
+* [Data transformation cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)
+* [Chapter 5: Data Transformation ](http://r4ds.had.co.nz/transform.html) in *R for Data Science*
+* [Tidy Text](https://www.tidytextmining.com/index.html)
+
+
+
+
+
