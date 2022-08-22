@@ -31,7 +31,7 @@ library(patchwork)
 library(gapminder)
 library(plotly)
 library(gganimate)
-gapminder_wide <- read_csv(file = "data/gapminder_wide.csv")
+gapminder_wide <- read_csv("https://raw.githubusercontent.com/emilynordmann/AllOfUs-intro-to-r/main/book/data/gapminder_wide.csv")
 ```
 
 ## Modified Gapminder dataset
