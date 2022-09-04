@@ -8,6 +8,10 @@ By the end of the chapter you should be able to:
 * Understand the grammar of ggplot
 * Produce and customize a range of visualizations
 
+## Reading
+
+Before you work through this chapter, read [Principles of Effective Data Visualisation](https://www.cell.com/patterns/fulltext/S2666-3899(20)30189-6).
+
 ## Organising a project {#projects}
 
 Before we write any code, first, we need to get organised. `r glossary("project", "Projects")` in RStudio are a way to group all the files you need for one project. Most projects include scripts, data files, and output files like the PDF report created by the script or images.
@@ -113,9 +117,9 @@ Run your code using method 3. You should see the packages load in the console.
 
 ## Loading data
 
-If you're using the All of Us data, you'll load in the data from the workbench but it's useful to know how to import data into R more genrally. Broadly speaking there are three types of data you can load when working in R:
+If you're using the *All of Us* Researcher Workbench, you'll load in the data from the Researcher Workbench but it's useful to know how to import data into R more generally. Broadly speaking there are three types of data you can load when working in R:
 
-1.  Built-in data sets that come with the packages you install that are useful for reproducible demos. Common ones you will see when you Google help documentation are `mtcars` and `diamonds` but we'll be using datasets from the `medicaldata` packahe that are built specifically for teaching data skills to health researchers.
+1.  Built-in data sets that come with the packages you install that are useful for reproducible demos. Common ones you will see when you Google help documentation are `mtcars` and `diamonds` but we'll be using datasets from the `medicaldata` package that are built specifically for teaching data skills to health researchers.
 2.  Data sets stored online and accessed via a URL.
 3.  Data sets stored locally on your computer.
 

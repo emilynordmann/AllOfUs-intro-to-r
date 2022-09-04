@@ -1,5 +1,5 @@
 
-# Advanced data viz
+# Advanced Data Viz
 
 ## Intended Learning Outcomes {#ilo-intro}
 
@@ -7,6 +7,12 @@ By the end of this chapter you should be able to:
 
 * Transform simple data sets from wide-form to long-form
 * Create and customize advanced types of plots
+
+## Reading
+
+Before working through this chapter, read [Data Types in R](https://statsandr.com/blog/data-types-in-r/).
+
+## Sources
 
 For the final chapter, we're going to do an adapted version of materials taken from:
 
@@ -249,7 +255,7 @@ So far when we have produced plots with colors, the colors were the only way tha
 
 The code below adds `fill = continent` to the histograms and use the Viridis color palette to customize the colors. Specifying a `fill` variable means that by default, R produces a legend for that variable. 
 
-```{r warning=FALSE, fig.cap="Faceted histogram with redundant legend", warning = FALSE}
+```{r warning=FALSE, fig.cap="Faceted histogram with redundant legend", warning = FALSE, message  = FALSE}
 ggplot(gapminder_long, aes(x = lifeExp, fill = continent)) +
   geom_histogram(colour = "black") +
   facet_wrap(~continent, nrow = 5) +
@@ -260,7 +266,7 @@ ggplot(gapminder_long, aes(x = lifeExp, fill = continent)) +
 
 However, the use of color is redundant with the facet labels, so you can remove this legend with the `guides` function to make better use of the plot space:
 
-```{r warning=FALSE, fig.cap="Faceted histogram with redundant legend removed", warning = FALSE}
+```{r warning=FALSE, fig.cap="Faceted histogram with redundant legend removed", warning = FALSE, message  = FALSE}
 ggplot(gapminder_long, aes(x = lifeExp, fill = continent)) +
   geom_histogram(colour = "black") +
   facet_wrap(~continent, nrow = 5) +
@@ -444,11 +450,13 @@ gapminder %>%
 
 :::
 
-## End of course
+## End of workbook
 
-And we're done! Our aim with this course isn't for you to be fully proficient in R at this point. If you're new to coding, it's entirely unrealistic and unhelpful for any course to claim that you can fully learn to code in the space of a couple of weeks. Instead, we hope that we have demystified some of the many unwritten (or badly explained) rules and conventions you need to know to use R so that you have the tools to continue learning R more independently.
+And we're done with the workbook! Our aim with this course isn't for you to be fully proficient in R at this point. If you're new to coding, it's entirely unrealistic and unhelpful for any course to claim that you can fully learn to code in the space of a couple of weeks. Instead, we hope that we have demystified some of the many unwritten (or badly explained) rules and conventions you need to know to use R so that you have the tools to continue learning R more independently.
 
 ### Next steps
+
+To complete the course, please attend the second office hour session and complete the completion quiz.
 
 In this course, we focused heavily on data visualization because it provides a concrete, tangible output for your efforts. This is great for beginners because it helps map the code to the output, but also if you're anything like Emily, making pretty graphs is motivating. Our second course "Data wrangling and analysis" (due to run in Feb 2023) will build on the skills you've learned here and go deeper into how to clean, wrangle, and process your data, as well as how to perform some basic regression analyses.  
 

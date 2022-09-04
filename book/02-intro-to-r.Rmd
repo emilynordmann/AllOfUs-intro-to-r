@@ -365,6 +365,10 @@ Coding involves making a **lot** of errors. We've already mentioned this in Sect
 | read_csv("my_data.csv")   | could not find function read_csv               | I forgot to load the tidyverse before I used the function read_csv | library(tidyverse)        |
 | read_csv("my_data")       | 'my_data\` does not exist in working directory | I forgot to add the file extension .csv to the name of the file.   | read_csv("my_data.csv")   |
 
+## Reading
+
+Once you've finished this chapter, read [23 Rstudio Tips, Tricks, and Shortcuts](https://www.dataquest.io/blog/rstudio-tips-tricks-shortcuts/).
+
 ## Glossary {#glossary-intro}
 
 `r glossary_table()`

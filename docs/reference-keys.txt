@@ -42,6 +42,8 @@ fig:unnamed-chunk-10
 fig:plotly
 fig:anim-demo
 instructors
+progress
+course-overview
 installing-r
 intended-learning-outcomes
 intro-r-rstudio
@@ -81,10 +83,12 @@ googling
 vignettes
 setup-check
 error-logs
+reading
 glossary-intro
 resources-intro
 intro-viz
 ilo-viz
+reading-1
 projects
 project-start
 start-a-project-cloud
@@ -130,7 +134,12 @@ jitter-plot
 facets
 resources-viz
 glossary-day1
+live-office-hour-1
+schedule-and-zoom-link
+content
+pre-requisites
 session-2-1
+reading-2
 set-up
 counting-groups
 summarise
@@ -145,6 +154,8 @@ count-missing-values
 omit-missing-values
 resources-summary
 advanced-data-viz
+reading-3
+sources
 set-up-1
 modified-gapminder-dataset
 wide-to-long-format
@@ -161,6 +172,11 @@ split-violin-plots
 raincloud-plots
 interactive-plots
 animated-plots
-end-of-course
+end-of-workbook
 next-steps
+live-office-hour-2
+schedule-and-zoom-link-1
+content-1
+pre-requisites-1
+completion-quiz
 glossary

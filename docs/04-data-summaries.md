@@ -7,6 +7,10 @@ By the end of this chapter you should be able to:
 
 * Calculate descriptive statistics for a range of data types
 
+## Reading
+
+Before you work through this chapter, read [Data Organization in Spreadsheets](https://www-tandfonline-com.ezproxy.lib.gla.ac.uk/doi/full/10.1080/00031305.2017.1375989).
+
 ## Set-up
 
 Open your course project and do the following:

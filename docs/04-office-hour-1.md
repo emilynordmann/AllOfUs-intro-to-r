@@ -1,0 +1,18 @@
+
+# Live Office Hour 1
+
+## Schedule and Zoom link
+
+* The first live office hour session will take place on X Xth November at x - ypm via [Zoom](). 
+* There is no passcode but the waiting room will be enabled. Please ensure that your Zoom name is set to the name that you used to register with the *All of Us* Researcher Academy otherwise you may not be allowed entry to the session.
+
+## Content
+
+Live office hours are primarily an opportunity for you to ask questions to the instructors, get support with any problems you have been having, or request additional information on any aspect of the course so far.
+
+* Emily will lead a Q&A session on material covered in the workbook from Week 1 whilst * Javan will lead a Q&A session on how the skills you have learned transfer to the *All of Us* Researcher Workbench. 
+
+## Pre-requisites
+
+* Before joining the office hour, please ensure that you have worked through all the material from Week 1 - consult the [Progress Tracker](\@ref(progress)) if you're not sure what you need to do.
+* You can ask questions on the day, but you can also complete the Q&A form in advance to let your instructors know what you would like the session to focus on.
