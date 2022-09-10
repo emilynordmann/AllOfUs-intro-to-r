@@ -1,8 +1,8 @@
 --- 
-title: "Intro to R and Data Vizualisation" # edit
+title: "Intro to R and Data Visualization" # edit
 #subtitle: "optional" 
 author: "Emily Nordmann & Javan Carter" # edit
-date: "2022-09-04"
+date: "2022-09-10"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
@@ -11,7 +11,7 @@ bibliography: [book.bib, packages.bib]
 csl: include/apa.csl
 link-citations: yes
 description: | # edit
-  The accompanying book for the *All of Us* Research Program Intro to R and Data Vizualisation course.
+  The accompanying book for the *All of Us* Research Program Intro to R and Data Visualization course.
 url: https://emilynordmann.github.io/AllOfUs-intro-to-r # edit
 github-repo: emilynordmann/AllOfUs-intro-to-r # edit
 cover-image: images/logos/logo.png # replace with your logo
