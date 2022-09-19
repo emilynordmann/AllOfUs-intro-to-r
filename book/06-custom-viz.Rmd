@@ -28,7 +28,7 @@ You may find it particularly helpful to read both of these sources in full as a 
 
 Open your course project and do the following:
 
-* Create and save a new R Markdown document named `chapter_5.Rmd`, get rid of the default template text from line 11 onwards.
+* Create and save a new R Markdown document named `chapter_6.Rmd`, get rid of the default template text from line 11 onwards.
 * Add the below code to the set-up chunk and then run the code to load the packages and data.
 
 ```{r warning = FALSE, message=FALSE}
