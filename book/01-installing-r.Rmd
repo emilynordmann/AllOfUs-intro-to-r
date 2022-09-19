@@ -9,6 +9,12 @@ By the end of this chapter you should be able to :
 
 Whilst you will use the *All of Us* Researcher Workbench to conduct analyses on the *All of Us* database, having access to a regular copy of R on your machine that you can use free-of-charge will be helpful for learning R.
 
+## Walkthrough video
+
+We encourage you to read the workbook and attempt each step on your own before watching the video as this will help consolidate your learning.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hR4Bv8Ptqog" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Installing R and RStudio is usually straightforward. The sections below explain how and in addition to the walkthrough video, [there is a helpful YouTube video here](https://www.youtube.com/watch?v=lVKMsaWju8w){target="_blank"}. If you run into difficulties (for example if you don't have admin rights to your machine), we recommend using [RStudio Cloud](https://rstudio.cloud/). RStudio Cloud has almost all of the same features as a local installation of R but runs in your browser. There are some differences with how you import and export data and manage projects between the cloud and a local installation, however, for the most part the differences are minimal. 
 
 ## R and RStudio {#intro-r-rstudio}

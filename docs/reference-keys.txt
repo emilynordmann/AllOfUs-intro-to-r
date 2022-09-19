@@ -46,6 +46,7 @@ progress
 course-overview
 installing-r
 intended-learning-outcomes
+walkthrough-video
 intro-r-rstudio
 installing-base-r
 installing-rstudio

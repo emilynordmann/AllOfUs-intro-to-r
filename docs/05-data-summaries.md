@@ -15,7 +15,7 @@ Before you work through this chapter, read [Data Organization in Spreadsheets](h
 
 Open your course project and do the following:
 
-* Create and save a new R Markdown document named `chapter_4.Rmd` get rid of the default template text from line 11 onwards.
+* Create and save a new R Markdown document named `chapter_5.Rmd` get rid of the default template text from line 11 onwards.
 * Add the below code to the set-up chunk and then run the code to load the packages and data.
 
 
