@@ -1,15 +1,22 @@
 
 # Data Summaries {#session-2-1}
 
-## Intended Learning Outcomes {#ilo-intro}
+## Intended Learning Outcomes {#ilo-summaries}
 
 By the end of this chapter you should be able to:
 
 * Calculate descriptive statistics for a range of data types
+* Manage missing values
 
 ## Reading
 
 Before you work through this chapter, read [Data Organization in Spreadsheets](https://www-tandfonline-com.ezproxy.lib.gla.ac.uk/doi/full/10.1080/00031305.2017.1375989).
+
+## Walkthrough video
+
+We encourage you to read the workbook and attempt each step on your own before watching the video as this will help consolidate your learning.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/euuAGl6uCVo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Set-up
 
@@ -722,7 +729,7 @@ complete_bmi <- opt %>%
 
 Missing data can be quite difficult to deal with depending on how it is represented. As always, no amount of coding expertise can make up for not understanding the structure and idiosyncrasies of your data. 
 
-## Glossary {#glossary-intro}
+## Glossary {#glossary-summary}
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
  <thead>

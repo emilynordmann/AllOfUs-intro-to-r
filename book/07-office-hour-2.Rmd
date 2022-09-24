@@ -3,8 +3,8 @@
 
 ## Schedule and Zoom link
 
-* The second live office hour session will take place on X Xth November at x - ypm via [Zoom](). 
-* There is no passcode but the waiting room will be enabled. Please ensure that your Zoom name is set to the name that you used to register with the *All of Us* Researcher Academy otherwise you may not be allowed entry to the session.
+* The second live office hour session will take place on Wednesday 9th November 2pm EST via [Zoom](). 
+* The passcode is [] and the waiting room will be enabled. Please ensure that your Zoom name is set to the name that you used to register with the *All of Us* Researcher Academy otherwise you may not be allowed entry to the session.
 
 ## Content
 

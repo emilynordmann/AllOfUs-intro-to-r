@@ -110,13 +110,21 @@
 <p>Please note that if you're completely new to R, you may not fully understand everything in this chapter first time. Almost all of the concepts will be further explained again throughout this course and you will feel more comfortable with them with continued practice. We would recommend re-reading this chapter towards the end of the course and you will likely understand a lot more.</p>
 <p>Download the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf">RStudio IDE Cheatsheet</a>.</p>
 </div>
-<div id="intro-r-rstudio" class="section level2" number="2.2">
+<div id="walkthrough-video-1" class="section level2" number="2.2">
 <h2>
-<span class="header-section-number">2.2</span> R and RStudio<a class="anchor" aria-label="anchor" href="#intro-r-rstudio"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.2</span> Walkthrough video<a class="anchor" aria-label="anchor" href="#walkthrough-video-1"><i class="fas fa-link"></i></a>
 </h2>
-<div id="rstudio_ide" class="section level3" number="2.2.1">
+<p>We encourage you to read the workbook and attempt each step on your own before watching the video as this will help consolidate your learning.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-JpSA5wCavE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+<div id="intro-r-rstudio" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> R and RStudio<a class="anchor" aria-label="anchor" href="#intro-r-rstudio"><i class="fas fa-link"></i></a>
+</h2>
+<div id="rstudio_ide" class="section level3" number="2.3.1">
 <h3>
-<span class="header-section-number">2.2.1</span> RStudio<a class="anchor" aria-label="anchor" href="#rstudio_ide"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.3.1</span> RStudio<a class="anchor" aria-label="anchor" href="#rstudio_ide"><i class="fas fa-link"></i></a>
 </h3>
 <p>When you installed R, that gave your computer the ability to process the R programming language, and also installed an app called "R". We will never use that app. Instead, we will use <a href="http://www.rstudio.com" target="_blank">RStudio</a>. RStudio is arranged with up to four window <a class="glossary" target="_blank" title='RStudio is arranged with four window "panes".' href="https://psyteachr.github.io/glossary/p#panes">panes</a>.</p>
 <p>By default, the upper left pane is the <strong>source pane</strong>, where you view, write, and edit code from files and view data tables in a spreadsheet format. When you first open RStudio, this pane won't display until we open a document or load in some data - don't worry, we'll get to that soon.</p>
@@ -127,12 +135,12 @@ Figure 2.1: The RStudio IDE
 </p>
 </div>
 <p>The lower left pane is the <strong>console pane</strong>, where you can type in commands and view output messages. You can write code in the console to test it out. The code will run and can create objects in the environment, but the code itself won't be saved. You need to write your code into a script in the source pane to save it.</p>
-<p>The right panes have several different tabs that show you information about your code. The most used tabs in the upper right pane are the <strong>Environment</strong> tab and the <strong>Help</strong> tab. The environment tab lists some information about the <a class="glossary" target="_blank" title="A word that identifies and stores the value of some data for later use." href="https://psyteachr.github.io/glossary/o#object">objects</a> that you have defined in your code. We'll learn more about the Help tab in Section <a href="intro.html#function-help">2.4.4</a>.</p>
-<p>In the lower right pane, the most used tabs are the <strong>Files</strong> tab for directory structure, the <strong>Plots</strong> tab for plots made in a script, the <strong>Packages</strong> tab for managing add-on packages (see Section <a href="intro.html#packages">2.4</a>), and the <strong>Viewer</strong> tab to display reports created by your scripts. You can change the location of panes and what tabs are shown under <strong><code>Preferences &gt; Pane Layout</code></strong> although if you're new to R, we'd suggest just keeping the defaults for now so that your screen looks like our screen.</p>
+<p>The right panes have several different tabs that show you information about your code. The most used tabs in the upper right pane are the <strong>Environment</strong> tab and the <strong>Help</strong> tab. The environment tab lists some information about the <a class="glossary" target="_blank" title="A word that identifies and stores the value of some data for later use." href="https://psyteachr.github.io/glossary/o#object">objects</a> that you have defined in your code. We'll learn more about the Help tab in Section <a href="intro.html#function-help">2.5.4</a>.</p>
+<p>In the lower right pane, the most used tabs are the <strong>Files</strong> tab for directory structure, the <strong>Plots</strong> tab for plots made in a script, the <strong>Packages</strong> tab for managing add-on packages (see Section <a href="intro.html#packages">2.5</a>), and the <strong>Viewer</strong> tab to display reports created by your scripts. You can change the location of panes and what tabs are shown under <strong><code>Preferences &gt; Pane Layout</code></strong> although if you're new to R, we'd suggest just keeping the defaults for now so that your screen looks like our screen.</p>
 </div>
-<div id="intro-reproducibility" class="section level3" number="2.2.2">
+<div id="intro-reproducibility" class="section level3" number="2.3.2">
 <h3>
-<span class="header-section-number">2.2.2</span> Reproducibility<a class="anchor" aria-label="anchor" href="#intro-reproducibility"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.3.2</span> Reproducibility<a class="anchor" aria-label="anchor" href="#intro-reproducibility"><i class="fas fa-link"></i></a>
 </h3>
 <p>One of the main reasons to learn R is that you can create <a class="glossary" target="_blank" title="The extent to which the findings of a study can be repeated in some other context" href="https://psyteachr.github.io/glossary/r#reproducibility">reproducible</a> reports. This involves writing scripts that transform data, create summaries and visualisations, and embed them in a report in a way that always gives you the same results.</p>
 <p>When you do things reproducibly, others (and future you) can understand and check your work. You can also reuse your work more easily. For example, if you need to run the same set of analyses each year on a new cohort of data, a reproducible report allows you to download the new data and create the report within seconds. It might take a little longer to set up the report in the first instance with reproducible methods, but the time it saves you in the long run is invaluable.</p>
@@ -151,16 +159,16 @@ Figure 2.1: The RStudio IDE
 </ul>
 </div>
 </div>
-<div id="themes-and-accessiblilty" class="section level3" number="2.2.3">
+<div id="themes-and-accessiblilty" class="section level3" number="2.3.3">
 <h3>
-<span class="header-section-number">2.2.3</span> Themes and accessiblilty<a class="anchor" aria-label="anchor" href="#themes-and-accessiblilty"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.3.3</span> Themes and accessiblilty<a class="anchor" aria-label="anchor" href="#themes-and-accessiblilty"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can customise how R Studio looks to make it work for you. Click <code>Tools</code> - <code>Global Options</code> - <code>Appearance</code>. You can change the default font, font size, and general appearance of R Studio, including using dark mode. Play around with the settings and see what you prefer - you're going to spend a lot of time with R, it might as well look nice!</p>
 </div>
 </div>
-<div id="intro-sessions" class="section level2" number="2.3">
+<div id="intro-sessions" class="section level2" number="2.4">
 <h2>
-<span class="header-section-number">2.3</span> Sessions<a class="anchor" aria-label="anchor" href="#intro-sessions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.4</span> Sessions<a class="anchor" aria-label="anchor" href="#intro-sessions"><i class="fas fa-link"></i></a>
 </h2>
 <p>If you have the above settings configured correctly, when you open up RStudio and start writing code, loading packages, and creating objects, you will be doing so in a new session and your Environment tab should be completely empty. If you find that your code isn't working and you can't figure out why, it might be worth restarting your R session. This will clear the environment and detach all loaded packages - think of it like restarting your phone. There are several ways that you can restart R:</p>
 <ul>
@@ -172,9 +180,9 @@ Figure 2.1: The RStudio IDE
 </ul>
 <p>Try doing each of these now. Additionally, now would be a good time to create a notebook where you can keep a record of useful hints and tips and things to try when your code isn't working. Add "restart R session" to this notebook as your first item.</p>
 </div>
-<div id="packages" class="section level2" number="2.4">
+<div id="packages" class="section level2" number="2.5">
 <h2>
-<span class="header-section-number">2.4</span> Packages and functions<a class="anchor" aria-label="anchor" href="#packages"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5</span> Packages and functions<a class="anchor" aria-label="anchor" href="#packages"><i class="fas fa-link"></i></a>
 </h2>
 <p>When you install R you will have access to a range of <a class="glossary" target="_blank" title="A named section of code that can be reused." href="https://psyteachr.github.io/glossary/f#function">functions</a> including options for <a class="glossary" target="_blank" title="The process of preparing data for visualisation and statistical analysis." href="https://psyteachr.github.io/glossary/d#data-wrangling">data wrangling</a> and statistical analysis. The functions that are included in the default installation are typically referred to as <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages." href="https://psyteachr.github.io/glossary/b#base-r">base R</a> and you can think of them like the default apps that come pre-loaded on your phone.</p>
 <p>A <a class="glossary" target="_blank" title="A named section of code that can be reused." href="https://psyteachr.github.io/glossary/f#function">function</a> is a name that refers to some code you can reuse. We'll be using functions that are provided in packages, but you can also write your own functions.</p>
@@ -185,9 +193,9 @@ Figure 2.1: The RStudio IDE
 <p>One of the great things about R, however, is that it is <strong>user extensible</strong>: anyone can create a new add-on that extends its functionality. There are currently thousands of <a class="glossary" target="_blank" title="A group of R functions." href="https://psyteachr.github.io/glossary/p#package">packages</a> that R users have created to solve many different kinds of problems, or just simply to have fun. For example, there are packages for data visualisation, machine learning, interactive dashboards, web scraping, and playing games such as Sudoku.</p>
 <p>Add-on packages are not distributed with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install PokemonGo on your smartphone. The main repository where packages reside is called <a class="glossary" target="_blank" title="The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R." href="https://psyteachr.github.io/glossary/c#cran">CRAN</a>, the Comprehensive R Archive Network.</p>
 <p>There is an important distinction between <strong>installing</strong> a package and <strong>loading</strong> a package.</p>
-<div id="install-package" class="section level3" number="2.4.1">
+<div id="install-package" class="section level3" number="2.5.1">
 <h3>
-<span class="header-section-number">2.4.1</span> Installing a package<a class="anchor" aria-label="anchor" href="#install-package"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.1</span> Installing a package<a class="anchor" aria-label="anchor" href="#install-package"><i class="fas fa-link"></i></a>
 </h3>
 <!--
 <div class="small_right"><img src="images/memes/pokemon.gif" /></div>
@@ -224,9 +232,9 @@ Figure 2.1: The RStudio IDE
 <code class="sourceCode R"><span class="co"># install data viz package </span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"psyteachr/introdataviz"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="loading-a-package" class="section level3" number="2.4.2">
+<div id="loading-a-package" class="section level3" number="2.5.2">
 <h3>
-<span class="header-section-number">2.4.2</span> Loading a package<a class="anchor" aria-label="anchor" href="#loading-a-package"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.2</span> Loading a package<a class="anchor" aria-label="anchor" href="#loading-a-package"><i class="fas fa-link"></i></a>
 </h3>
 <p>This is done using the <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> function. This is like <strong>launching</strong> an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. For example, when you run <code><a href="https://patchwork.data-imaginist.com">library(patchwork)</a></code> within a session, the functions in the package referred to by <code>patchwork</code> will be made available for your R session. The next time you start R, you will need to run <code><a href="https://patchwork.data-imaginist.com">library(patchwork)</a></code> again if you want to access that package.</p>
 <p>After installing the<code class="package">tidyverse</code> package, you can load it for your current R session as follows:</p>
@@ -237,9 +245,9 @@ Figure 2.1: The RStudio IDE
 <p>You can use the convention <code>package::function()</code> to indicate in which add-on package a function resides. For instance, if you see <code><span class="fu">readr</span><span class="fu">::</span><span class="fu"><a target="_blank" href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="op">)</span></code>, that refers to the function <code><span class="fu">read_csv</span><span class="op">(</span><span class="op">)</span></code> in the <code class="package">readr</code> add-on package. If the package is loaded using <code><a href="https://rdrr.io/r/base/library.html">library()</a></code>, you don't have to specify the package name before a function unless there is a <a class="glossary" target="_blank" title="Having two packages loaded that have a function with the same name." href="https://psyteachr.github.io/glossary/c#conflict">conflict</a> (e.g., you have two packages loaded that have a function with the same name).</p>
 </div>
 </div>
-<div id="tidyverse" class="section level3" number="2.4.3">
+<div id="tidyverse" class="section level3" number="2.5.3">
 <h3>
-<span class="header-section-number">2.4.3</span> Tidyverse<a class="anchor" aria-label="anchor" href="#tidyverse"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.3</span> Tidyverse<a class="anchor" aria-label="anchor" href="#tidyverse"><i class="fas fa-link"></i></a>
 </h3>
 <p><code class="package">tidyverse</code>is a meta-package that loads several packages we'll be using in every chapter in this course:</p>
 <ul>
@@ -261,9 +269,9 @@ Figure 2.1: The RStudio IDE
 <code class="package">purrr</code>, for repeating things</li>
 </ul>
 </div>
-<div id="function-help" class="section level3" number="2.4.4">
+<div id="function-help" class="section level3" number="2.5.4">
 <h3>
-<span class="header-section-number">2.4.4</span> Function Help<a class="anchor" aria-label="anchor" href="#function-help"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.4</span> Function Help<a class="anchor" aria-label="anchor" href="#function-help"><i class="fas fa-link"></i></a>
 </h3>
 <p>When you load the <code class="package">tidyverse</code> it automatically loads all of the above packages, however, it can be helpful to know which package a function comes from if you need to Google it. If a <a class="glossary" target="_blank" title="A named section of code that can be reused." href="https://psyteachr.github.io/glossary/f#function">function</a> is in <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages." href="https://psyteachr.github.io/glossary/b#base-r">base R</a> or a loaded package, you can type <code>?function_name</code> in the console to access the help file. At the top of the help it will give you the function and package name.</p>
 <p>If the package isn't loaded, use <code>?package_name::function_name</code> or specify the package in the <code>help()</code> function. When you aren't sure what package the function is in, use the shortcut <code>??function_name</code>.</p>
@@ -299,9 +307,9 @@ Figure 2.1: The RStudio IDE
 </ul>
 </div>
 </div>
-<div id="arguments" class="section level3" number="2.4.5">
+<div id="arguments" class="section level3" number="2.5.5">
 <h3>
-<span class="header-section-number">2.4.5</span> Arguments<a class="anchor" aria-label="anchor" href="#arguments"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.5</span> Arguments<a class="anchor" aria-label="anchor" href="#arguments"><i class="fas fa-link"></i></a>
 </h3>
 <p>Most functions allow/require you to specify one or more <a class="glossary" target="_blank" title="A variable that provides input to a function." href="https://psyteachr.github.io/glossary/a#argument">arguments</a>. These are options that you can set. You can look up the arguments/options that a function has by using the help documentation. Some arguments are required, and some are optional. Optional arguments will often use a default (normally specified in the help documentation) if you do not enter any value.</p>
 <p>As an example, look at the help documentation for the function <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> which randomly samples items from a list.</p>
@@ -328,9 +336,9 @@ Why are my letters different to your letters?
 <pre><code>## [1] "t" "k" "j" "k" "m"</code></pre>
 <p>This time R has still produced 5 random letters, but now this set of letters has two instances of "k". Always remember to use the help documentation to help you understand what arguments a function requires.</p>
 </div>
-<div id="argument-names" class="section level3" number="2.4.6">
+<div id="argument-names" class="section level3" number="2.5.6">
 <h3>
-<span class="header-section-number">2.4.6</span> Argument names<a class="anchor" aria-label="anchor" href="#argument-names"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.6</span> Argument names<a class="anchor" aria-label="anchor" href="#argument-names"><i class="fas fa-link"></i></a>
 </h3>
 <p>In the above examples, we have written out the argument names in our code (i.e., <code>x</code>, <code>size</code>, <code>replace</code>), however, this is not strictly necessary. The following two lines of code would both produce the same result (although each time you run <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> it will produce a slightly different result, because it's random, but they would still work the same):</p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
@@ -343,9 +351,9 @@ Why are my letters different to your letters?
 <p>When you are first learning R, you may find it useful to write out the argument names as it can help you remember and understand what each part of the function is doing. However, as your skills progress you may find it quicker to omit the argument names and you will also see examples of code online that do not use argument names, so it is important to be able to understand which argument each bit of code is referring to (or look up the help documentation to check).</p>
 <p>In this course, we will always write out the argument names the first time we use each function. However, in subsequent uses they may be omitted.</p>
 </div>
-<div id="tab-auto-complete" class="section level3" number="2.4.7">
+<div id="tab-auto-complete" class="section level3" number="2.5.7">
 <h3>
-<span class="header-section-number">2.4.7</span> Tab auto-complete<a class="anchor" aria-label="anchor" href="#tab-auto-complete"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.7</span> Tab auto-complete<a class="anchor" aria-label="anchor" href="#tab-auto-complete"><i class="fas fa-link"></i></a>
 </h3>
 <p>One very useful feature of R Studio is tab auto-complete for functions (see Figure <a href="intro.html#fig:img-autocomplete">2.2</a>). If you write the name of the function and then press the tab key, R Studio will show you the arguments that function takes along with a brief description. If you press enter on the argument name it will fill in the name for you, just like auto-complete on your phone. This is incredibly useful when you are first learning R and you should remember to use this feature frequently.</p>
 <div class="figure" style="text-align: center">
@@ -356,9 +364,9 @@ Figure 2.2: Tab auto-complete
 </div>
 </div>
 </div>
-<div id="objects" class="section level2" number="2.5">
+<div id="objects" class="section level2" number="2.6">
 <h2>
-<span class="header-section-number">2.5</span> Objects<a class="anchor" aria-label="anchor" href="#objects"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.6</span> Objects<a class="anchor" aria-label="anchor" href="#objects"><i class="fas fa-link"></i></a>
 </h2>
 <p>A large part of your coding will involve creating and manipulating objects. Objects contain stuff. That stuff can be numbers, words, or the result of operations and analyses. You assign content to an object using <code>&lt;-</code>.</p>
 <p>Run the following code in the console, but change the values of <code>name</code> and <code>age</code> to your own details and change <code>new_year</code> to a holiday or date you care about.</p>
@@ -387,26 +395,26 @@ Figure 2.2: Tab auto-complete
 <span class="va">full_name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">name</span>, <span class="st">"Nordmann"</span><span class="op">)</span>
 <span class="va">how_long</span> <span class="op">&lt;-</span> <span class="va">new_year</span> <span class="op">-</span> <span class="va">today</span></code></pre></div>
 </div>
-<div id="help" class="section level2" number="2.6">
+<div id="help" class="section level2" number="2.7">
 <h2>
-<span class="header-section-number">2.6</span> Getting help<a class="anchor" aria-label="anchor" href="#help"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.7</span> Getting help<a class="anchor" aria-label="anchor" href="#help"><i class="fas fa-link"></i></a>
 </h2>
 <p>You will feel like you need a <em>lot</em> of help when you're starting to learn. This won't really go away; it's impossible to memorise everything. The goal is to learn enough about the structure of R that you can look things up quickly. This is why we'll introduce specialised jargon in the glossary; it's easier to google "convert <a class="glossary" target="_blank" title="A data type representing strings of text." href="https://psyteachr.github.io/glossary/c#character">character</a> to <a class="glossary" target="_blank" title="A data type representing a real decimal number or integer." href="https://psyteachr.github.io/glossary/n#numeric">numeric</a> in R" than "make numbers in quotes be actual numbers not words". In addition to the function help described above, here's some additional resources you should use often.</p>
-<div id="package-reference-manuals" class="section level3" number="2.6.1">
+<div id="package-reference-manuals" class="section level3" number="2.7.1">
 <h3>
-<span class="header-section-number">2.6.1</span> Package reference manuals<a class="anchor" aria-label="anchor" href="#package-reference-manuals"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.7.1</span> Package reference manuals<a class="anchor" aria-label="anchor" href="#package-reference-manuals"><i class="fas fa-link"></i></a>
 </h3>
 <p>Start up help in a browser by entering <code><a href="https://rdrr.io/r/utils/help.start.html">help.start()</a></code> in the console. Click on "Packages" under "Reference" to see a list of packages. Scroll down to the <code>readxl</code> package and click on it to see a list of the functions that are available in that package.</p>
 </div>
-<div id="googling" class="section level3" number="2.6.2">
+<div id="googling" class="section level3" number="2.7.2">
 <h3>
-<span class="header-section-number">2.6.2</span> Googling<a class="anchor" aria-label="anchor" href="#googling"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.7.2</span> Googling<a class="anchor" aria-label="anchor" href="#googling"><i class="fas fa-link"></i></a>
 </h3>
 <p>If the function help doesn't help, or you're not even sure what function you need, try Googling your question. It will take some practice to be able to use the right jargon in your search terms to get what you want. It helps to put "R" or "tidyverse" in the search text, or the name of the relevant package, like <code class="package">ggplot2</code>.</p>
 </div>
-<div id="vignettes" class="section level3" number="2.6.3">
+<div id="vignettes" class="section level3" number="2.7.3">
 <h3>
-<span class="header-section-number">2.6.3</span> Vignettes<a class="anchor" aria-label="anchor" href="#vignettes"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.7.3</span> Vignettes<a class="anchor" aria-label="anchor" href="#vignettes"><i class="fas fa-link"></i></a>
 </h3>
 <p>Many packages, especially <a href="https://www.tidyverse.org/packages/" target="_blank">tidyverse</a> ones, have helpful websites with vignettes explaining how to use their functions. Some of the vignettes are also available inside R. You can access them from a package's help page or with the <code><a href="https://rdrr.io/r/utils/vignette.html">vignette()</a></code> function.</p>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
@@ -417,9 +425,9 @@ Figure 2.2: Tab auto-complete
 <span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span><span class="op">(</span><span class="st">"ggplot2-specs"</span>, package <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
-<div id="setup-check" class="section level2" number="2.7">
+<div id="setup-check" class="section level2" number="2.8">
 <h2>
-<span class="header-section-number">2.7</span> Set-up check<a class="anchor" aria-label="anchor" href="#setup-check"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.8</span> Set-up check<a class="anchor" aria-label="anchor" href="#setup-check"><i class="fas fa-link"></i></a>
 </h2>
 <p>Restart your R session and then run the below code. If you have managed to install and update all software and packages as required, it should run without issue and produce the below histograms. It will also produce the messages <code>stat_bin() using bins = 30. Pick better value with binwidth</code> and <code>Warning: Removed 28 rows containing non-finite values (stat_bin)</code>. These look like errors but they're not - we'll explain what these mean in the next chapter.</p>
 <p>If you get the error <code>there is no package called...</code>, install the package it says you don't have.</p>
@@ -448,11 +456,11 @@ Figure 2.2: Tab auto-complete
 <pre><code>## Warning: Removed 6 rows containing non-finite values (stat_bin).</code></pre>
 <div class="inline-figure"><img src="02-intro-to-r_files/figure-html/unnamed-chunk-6-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="error-logs" class="section level2" number="2.8">
+<div id="error-logs" class="section level2" number="2.9">
 <h2>
-<span class="header-section-number">2.8</span> Error logs<a class="anchor" aria-label="anchor" href="#error-logs"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.9</span> Error logs<a class="anchor" aria-label="anchor" href="#error-logs"><i class="fas fa-link"></i></a>
 </h2>
-<p>Coding involves making a <strong>lot</strong> of errors. We've already mentioned this in Section <a href="intro.html#help">2.6</a>. We weren't joking! Getting good at R really means getting good at spotting typos and finding extra or missing commas. When you're first learning to code, it can be useful to keep an error log. This will feel like it is slowing you down but it will serve you well in the long-run. Not only will it give you a list of common errors and how to fix them, but you'll also start to notice the patterns in the errors you get.</p>
+<p>Coding involves making a <strong>lot</strong> of errors. We've already mentioned this in Section <a href="intro.html#help">2.7</a>. We weren't joking! Getting good at R really means getting good at spotting typos and finding extra or missing commas. When you're first learning to code, it can be useful to keep an error log. This will feel like it is slowing you down but it will serve you well in the long-run. Not only will it give you a list of common errors and how to fix them, but you'll also start to notice the patterns in the errors you get.</p>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
 <col width="15%">
@@ -482,15 +490,15 @@ Figure 2.2: Tab auto-complete
 </tbody>
 </table></div>
 </div>
-<div id="reading" class="section level2" number="2.9">
+<div id="reading" class="section level2" number="2.10">
 <h2>
-<span class="header-section-number">2.9</span> Reading<a class="anchor" aria-label="anchor" href="#reading"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.10</span> Reading<a class="anchor" aria-label="anchor" href="#reading"><i class="fas fa-link"></i></a>
 </h2>
 <p>Once you've finished this chapter, read <a href="https://www.dataquest.io/blog/rstudio-tips-tricks-shortcuts/">23 Rstudio Tips, Tricks, and Shortcuts</a>.</p>
 </div>
-<div id="glossary-intro" class="section level2" number="2.10">
+<div id="glossary-intro" class="section level2" number="2.11">
 <h2>
-<span class="header-section-number">2.10</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-intro"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.11</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-intro"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <thead><tr>
@@ -625,9 +633,9 @@ A type of data structure that collects values with the same data type, like T/F 
 </tbody>
 </table></div>
 </div>
-<div id="resources-intro" class="section level2" number="2.11">
+<div id="resources-intro" class="section level2" number="2.12">
 <h2>
-<span class="header-section-number">2.11</span> Further Resources<a class="anchor" aria-label="anchor" href="#resources-intro"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.12</span> Further Resources<a class="anchor" aria-label="anchor" href="#resources-intro"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf">RStudio IDE Cheatsheet</a></li>
@@ -844,38 +852,39 @@ $( document ).ready(function() {
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#intro"><span class="header-section-number">2</span> Intro to R and RStudio</a></li>
 <li><a class="nav-link" href="#ilo-intro"><span class="header-section-number">2.1</span> Intended Learning Outcomes</a></li>
+<li><a class="nav-link" href="#walkthrough-video-1"><span class="header-section-number">2.2</span> Walkthrough video</a></li>
 <li>
-<a class="nav-link" href="#intro-r-rstudio"><span class="header-section-number">2.2</span> R and RStudio</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#rstudio_ide"><span class="header-section-number">2.2.1</span> RStudio</a></li>
-<li><a class="nav-link" href="#intro-reproducibility"><span class="header-section-number">2.2.2</span> Reproducibility</a></li>
-<li><a class="nav-link" href="#themes-and-accessiblilty"><span class="header-section-number">2.2.3</span> Themes and accessiblilty</a></li>
+<a class="nav-link" href="#intro-r-rstudio"><span class="header-section-number">2.3</span> R and RStudio</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#rstudio_ide"><span class="header-section-number">2.3.1</span> RStudio</a></li>
+<li><a class="nav-link" href="#intro-reproducibility"><span class="header-section-number">2.3.2</span> Reproducibility</a></li>
+<li><a class="nav-link" href="#themes-and-accessiblilty"><span class="header-section-number">2.3.3</span> Themes and accessiblilty</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#intro-sessions"><span class="header-section-number">2.3</span> Sessions</a></li>
+<li><a class="nav-link" href="#intro-sessions"><span class="header-section-number">2.4</span> Sessions</a></li>
 <li>
-<a class="nav-link" href="#packages"><span class="header-section-number">2.4</span> Packages and functions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#install-package"><span class="header-section-number">2.4.1</span> Installing a package</a></li>
-<li><a class="nav-link" href="#loading-a-package"><span class="header-section-number">2.4.2</span> Loading a package</a></li>
-<li><a class="nav-link" href="#tidyverse"><span class="header-section-number">2.4.3</span> Tidyverse</a></li>
-<li><a class="nav-link" href="#function-help"><span class="header-section-number">2.4.4</span> Function Help</a></li>
-<li><a class="nav-link" href="#arguments"><span class="header-section-number">2.4.5</span> Arguments</a></li>
-<li><a class="nav-link" href="#argument-names"><span class="header-section-number">2.4.6</span> Argument names</a></li>
-<li><a class="nav-link" href="#tab-auto-complete"><span class="header-section-number">2.4.7</span> Tab auto-complete</a></li>
+<a class="nav-link" href="#packages"><span class="header-section-number">2.5</span> Packages and functions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#install-package"><span class="header-section-number">2.5.1</span> Installing a package</a></li>
+<li><a class="nav-link" href="#loading-a-package"><span class="header-section-number">2.5.2</span> Loading a package</a></li>
+<li><a class="nav-link" href="#tidyverse"><span class="header-section-number">2.5.3</span> Tidyverse</a></li>
+<li><a class="nav-link" href="#function-help"><span class="header-section-number">2.5.4</span> Function Help</a></li>
+<li><a class="nav-link" href="#arguments"><span class="header-section-number">2.5.5</span> Arguments</a></li>
+<li><a class="nav-link" href="#argument-names"><span class="header-section-number">2.5.6</span> Argument names</a></li>
+<li><a class="nav-link" href="#tab-auto-complete"><span class="header-section-number">2.5.7</span> Tab auto-complete</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#objects"><span class="header-section-number">2.5</span> Objects</a></li>
+<li><a class="nav-link" href="#objects"><span class="header-section-number">2.6</span> Objects</a></li>
 <li>
-<a class="nav-link" href="#help"><span class="header-section-number">2.6</span> Getting help</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#package-reference-manuals"><span class="header-section-number">2.6.1</span> Package reference manuals</a></li>
-<li><a class="nav-link" href="#googling"><span class="header-section-number">2.6.2</span> Googling</a></li>
-<li><a class="nav-link" href="#vignettes"><span class="header-section-number">2.6.3</span> Vignettes</a></li>
+<a class="nav-link" href="#help"><span class="header-section-number">2.7</span> Getting help</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#package-reference-manuals"><span class="header-section-number">2.7.1</span> Package reference manuals</a></li>
+<li><a class="nav-link" href="#googling"><span class="header-section-number">2.7.2</span> Googling</a></li>
+<li><a class="nav-link" href="#vignettes"><span class="header-section-number">2.7.3</span> Vignettes</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#setup-check"><span class="header-section-number">2.7</span> Set-up check</a></li>
-<li><a class="nav-link" href="#error-logs"><span class="header-section-number">2.8</span> Error logs</a></li>
-<li><a class="nav-link" href="#reading"><span class="header-section-number">2.9</span> Reading</a></li>
-<li><a class="nav-link" href="#glossary-intro"><span class="header-section-number">2.10</span> Glossary</a></li>
-<li><a class="nav-link" href="#resources-intro"><span class="header-section-number">2.11</span> Further Resources</a></li>
+<li><a class="nav-link" href="#setup-check"><span class="header-section-number">2.8</span> Set-up check</a></li>
+<li><a class="nav-link" href="#error-logs"><span class="header-section-number">2.9</span> Error logs</a></li>
+<li><a class="nav-link" href="#reading"><span class="header-section-number">2.10</span> Reading</a></li>
+<li><a class="nav-link" href="#glossary-intro"><span class="header-section-number">2.11</span> Glossary</a></li>
+<li><a class="nav-link" href="#resources-intro"><span class="header-section-number">2.12</span> Further Resources</a></li>
 </ul>
 
       <div class="book-extra">
@@ -893,7 +902,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Intro to R and Data Visualization</strong>" was written by Emily Nordmann &amp; Javan Carter. It was last built on 2022-09-19.</p>
+    <p>"<strong>Intro to R and Data Visualization</strong>" was written by Emily Nordmann &amp; Javan Carter. It was last built on 2022-09-24.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

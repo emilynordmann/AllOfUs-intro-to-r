@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 5 Data Summaries | Intro to R and Data Visualization</title>
 <meta name="author" content="Emily Nordmann &amp; Javan Carter">
-<meta name="description" content="5.1 Intended Learning Outcomes By the end of this chapter you should be able to: Calculate descriptive statistics for a range of data types  5.2 Reading Before you work through this chapter, read...">
+<meta name="description" content="5.1 Intended Learning Outcomes By the end of this chapter you should be able to: Calculate descriptive statistics for a range of data types Manage missing values  5.2 Reading Before you work...">
 <meta name="generator" content="bookdown 0.25 with bs4_book()">
 <meta property="og:title" content="Chapter 5 Data Summaries | Intro to R and Data Visualization">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://emilynordmann.github.io/AllOfUs-intro-to-r/session-2-1.html">
 <meta property="og:image" content="https://emilynordmann.github.io/AllOfUs-intro-to-r/images/logos/logo.png">
-<meta property="og:description" content="5.1 Intended Learning Outcomes By the end of this chapter you should be able to: Calculate descriptive statistics for a range of data types  5.2 Reading Before you work through this chapter, read...">
+<meta property="og:description" content="5.1 Intended Learning Outcomes By the end of this chapter you should be able to: Calculate descriptive statistics for a range of data types Manage missing values  5.2 Reading Before you work...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 5 Data Summaries | Intro to R and Data Visualization">
-<meta name="twitter:description" content="5.1 Intended Learning Outcomes By the end of this chapter you should be able to: Calculate descriptive statistics for a range of data types  5.2 Reading Before you work through this chapter, read...">
+<meta name="twitter:description" content="5.1 Intended Learning Outcomes By the end of this chapter you should be able to: Calculate descriptive statistics for a range of data types Manage missing values  5.2 Reading Before you work...">
 <meta name="twitter:image" content="https://emilynordmann.github.io/AllOfUs-intro-to-r/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -97,13 +97,14 @@
 <h1>
 <span class="header-section-number">5</span> Data Summaries<a class="anchor" aria-label="anchor" href="#session-2-1"><i class="fas fa-link"></i></a>
 </h1>
-<div id="ilo-intro" class="section level2" number="5.1">
+<div id="ilo-summaries" class="section level2" number="5.1">
 <h2>
-<span class="header-section-number">5.1</span> Intended Learning Outcomes<a class="anchor" aria-label="anchor" href="#ilo-intro"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1</span> Intended Learning Outcomes<a class="anchor" aria-label="anchor" href="#ilo-summaries"><i class="fas fa-link"></i></a>
 </h2>
 <p>By the end of this chapter you should be able to:</p>
 <ul>
 <li>Calculate descriptive statistics for a range of data types</li>
+<li>Manage missing values</li>
 </ul>
 </div>
 <div id="reading-2" class="section level2" number="5.2">
@@ -112,9 +113,17 @@
 </h2>
 <p>Before you work through this chapter, read <a href="https://www-tandfonline-com.ezproxy.lib.gla.ac.uk/doi/full/10.1080/00031305.2017.1375989">Data Organization in Spreadsheets</a>.</p>
 </div>
-<div id="set-up" class="section level2" number="5.3">
+<div id="walkthrough-video-3" class="section level2" number="5.3">
 <h2>
-<span class="header-section-number">5.3</span> Set-up<a class="anchor" aria-label="anchor" href="#set-up"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3</span> Walkthrough video<a class="anchor" aria-label="anchor" href="#walkthrough-video-3"><i class="fas fa-link"></i></a>
+</h2>
+<p>We encourage you to read the workbook and attempt each step on your own before watching the video as this will help consolidate your learning.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/euuAGl6uCVo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+<div id="set-up" class="section level2" number="5.4">
+<h2>
+<span class="header-section-number">5.4</span> Set-up<a class="anchor" aria-label="anchor" href="#set-up"><i class="fas fa-link"></i></a>
 </h2>
 <p>Open your course project and do the following:</p>
 <ul>
@@ -129,9 +138,9 @@
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"opt"</span><span class="op">)</span></code></pre></div>
 <p>For this chapter, we're going to use the <code>opt</code> dataset from the <code>medicaldata</code> package that contains data on an RCT looking at whether treatment of maternal periodontal disease can reduce risk of preterm birth and low birth weight. There are a lot of variables in this dataset, use <code><a href="https://higgi13425.github.io/medicaldata/reference/opt.html">?opt</a></code> to find out more about what they mean.</p>
 </div>
-<div id="counting-groups" class="section level2" number="5.4">
+<div id="counting-groups" class="section level2" number="5.5">
 <h2>
-<span class="header-section-number">5.4</span> Counting groups<a class="anchor" aria-label="anchor" href="#counting-groups"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.5</span> Counting groups<a class="anchor" aria-label="anchor" href="#counting-groups"><i class="fas fa-link"></i></a>
 </h2>
 <p>For categorical variables, the only descriptive statistic we can calculate is a count. The code below uses the <code>%&gt;%</code> operator and can be read as:</p>
 <ul>
@@ -191,9 +200,9 @@ n
 </tr></tbody>
 </table></div>
 </div>
-<div id="summarise" class="section level2" number="5.5">
+<div id="summarise" class="section level2" number="5.6">
 <h2>
-<span class="header-section-number">5.5</span> Summarise<a class="anchor" aria-label="anchor" href="#summarise"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6</span> Summarise<a class="anchor" aria-label="anchor" href="#summarise"><i class="fas fa-link"></i></a>
 </h2>
 <p>For numeric data, we can use an increased range of functions. For example, we may wish to calculate the mean age (and SD) of the sample and we can do so using the function <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> from the <code>dplyr</code> tidyverse package.</p>
 <div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
@@ -287,9 +296,9 @@ Yes
 </tbody>
 </table></div>
 </div>
-<div id="pipes-first" class="section level2" number="5.6">
+<div id="pipes-first" class="section level2" number="5.7">
 <h2>
-<span class="header-section-number">5.6</span> Pipes<a class="anchor" aria-label="anchor" href="#pipes-first"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.7</span> Pipes<a class="anchor" aria-label="anchor" href="#pipes-first"><i class="fas fa-link"></i></a>
 </h2>
 <p>Before we go further, let's take a quick detour to formally introduce the <a class="glossary" target="_blank" title="A way to order your code in a more readable format using the symbol %&gt;%" href="https://psyteachr.github.io/glossary/p#pipe">pipe</a>. Pipes allow you to send the output from one function straight into another function. Specifically, they send the result of the function before <code>%&gt;%</code> to be the first argument of the function after <code>%&gt;%</code>. It can be useful to translate the pipe as "<strong>and then</strong>". It's easier to show than tell, so let's look at an example.</p>
 <div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
@@ -304,14 +313,14 @@ Yes
           median_bmi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">BMI</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>Notice that <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> no longer needs the first argument to be the data table, it is pulled in from the pipe. The power of the pipe may not be obvious now, but it will soon prove its worth.</p>
 </div>
-<div id="alternatives" class="section level2" number="5.7">
+<div id="alternatives" class="section level2" number="5.8">
 <h2>
-<span class="header-section-number">5.7</span> Alternatives<a class="anchor" aria-label="anchor" href="#alternatives"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8</span> Alternatives<a class="anchor" aria-label="anchor" href="#alternatives"><i class="fas fa-link"></i></a>
 </h2>
 <p>The method we've used above is pure <code class="package">tidyverse</code>. The good thing about this approach is that the output it creates is easy to work with and can be used with a range of different functions (for example, you can calculate a table of descriptives and then use this as the data set for a ggplot). However, there are lots of alternatives and they're useful to know because a) you'll see them when you try to Google for help and b) some of them are easier or have additional functionality.</p>
-<div id="base-r" class="section level3" number="5.7.1">
+<div id="base-r" class="section level3" number="5.8.1">
 <h3>
-<span class="header-section-number">5.7.1</span> Base R<a class="anchor" aria-label="anchor" href="#base-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.1</span> Base R<a class="anchor" aria-label="anchor" href="#base-r"><i class="fas fa-link"></i></a>
 </h3>
 <p>Rather than embedding the functions within <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> you can call the summary functions straight from Base R. Let's also clear up what that <code>$</code> notation is doing. The dollar sign allows you to select items from an object, such as columns from a table. The left-hand side is the object, and the right-hand side is the item. So in the below code, we're calculating the mean of the <code>Age</code> column that is present in the data set <code>opt</code>.</p>
 <div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
@@ -323,9 +332,9 @@ Yes
 <div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">opt</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="psychdescribe" class="section level3" number="5.7.2">
+<div id="psychdescribe" class="section level3" number="5.8.2">
 <h3>
-<span class="header-section-number">5.7.2</span> psych::describe()<a class="anchor" aria-label="anchor" href="#psychdescribe"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.2</span> psych::describe()<a class="anchor" aria-label="anchor" href="#psychdescribe"><i class="fas fa-link"></i></a>
 </h3>
 <p>The function <code><a href="https://rdrr.io/pkg/psych/man/describe.html">describe()</a></code> from the <code class="package">psych</code> is incredibly useful because it quickly produces a range of descriptive statistics, including standard error which is otherwise a faff to compute in R because there is no base function for standard error like there is for e.g., <code><a href="https://rdrr.io/r/stats/sd.html">sd()</a></code>.</p>
 <p>By default, <code><a href="https://rdrr.io/pkg/psych/man/describe.html">describe()</a></code> computes stats for all variables in the data set which probably isn't what you need and in the case of this dataset, would produce a monstrously long output. Instead, we can use <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> from the <code class="package">tidyverse</code> to select the columns we want to describe and then pass these to <code><a href="https://rdrr.io/pkg/psych/man/describe.html">describe()</a></code>. We may also want to drop some of the columns in the default <code><a href="https://rdrr.io/pkg/psych/man/describe.html">describe()</a></code> table which we can again do with <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> - hopefully the power of the <code>%&gt;%</code> begins to be obvious.</p>
@@ -799,9 +808,9 @@ BMI
 </div>
 </div>
 </div>
-<div id="ordinal-data" class="section level2" number="5.8">
+<div id="ordinal-data" class="section level2" number="5.9">
 <h2>
-<span class="header-section-number">5.8</span> Ordinal data<a class="anchor" aria-label="anchor" href="#ordinal-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.9</span> Ordinal data<a class="anchor" aria-label="anchor" href="#ordinal-data"><i class="fas fa-link"></i></a>
 </h2>
 <p>Sometimes you will data that is represented as numbers, but is really ordinal data. The <code>opt</code> data contains data relating to the Apgar score, which the help documentation and Google tells me is a summary of a newborn infant's 'Appearance, Pulse, Grimace, Activity, Respiration' at 1 minute. For each trait, a score of 0, 1, or 2 is assigned. For example:</p>
 <p>Grimace response or reflex irritability is a term describing response to stimulation, such as a mild pinch:</p>
@@ -1001,13 +1010,13 @@ Apgar5
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="05-data-summaries_files/figure-html/unnamed-chunk-15-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="missing-values" class="section level2" number="5.9">
+<div id="missing-values" class="section level2" number="5.10">
 <h2>
-<span class="header-section-number">5.9</span> Missing values<a class="anchor" aria-label="anchor" href="#missing-values"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10</span> Missing values<a class="anchor" aria-label="anchor" href="#missing-values"><i class="fas fa-link"></i></a>
 </h2>
-<div id="ignore-missing-values" class="section level4" number="5.9.0.1">
+<div id="ignore-missing-values" class="section level4" number="5.10.0.1">
 <h4>
-<span class="header-section-number">5.9.0.1</span> Ignore missing values<a class="anchor" aria-label="anchor" href="#ignore-missing-values"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.0.1</span> Ignore missing values<a class="anchor" aria-label="anchor" href="#ignore-missing-values"><i class="fas fa-link"></i></a>
 </h4>
 <p>Some of the variables have missing data. If we try and compute mean BMI it returns <code>NA</code>. This is because <code>NA</code> basically means "I don't know", and the sum of 100 and "I don't know" is "I don't know", not 100. However, when you're calculating means, you often want to just ignore missing values. Set <code>na.rm = TRUE</code> in the summary function to remove missing values before calculating.</p>
 <div class="sourceCode" id="cb102"><pre class="downlit sourceCode r">
@@ -1047,9 +1056,9 @@ mean_bmi
 </table></div>
 </div>
 </div>
-<div id="count-missing-values" class="section level4" number="5.9.0.2">
+<div id="count-missing-values" class="section level4" number="5.10.0.2">
 <h4>
-<span class="header-section-number">5.9.0.2</span> Count missing values<a class="anchor" aria-label="anchor" href="#count-missing-values"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.0.2</span> Count missing values<a class="anchor" aria-label="anchor" href="#count-missing-values"><i class="fas fa-link"></i></a>
 </h4>
 <p>If you want to find out how many missing or non-missing values there are in a column, use the <code><a href="https://rdrr.io/r/base/NA.html">is.na()</a></code> function to get a <a class="glossary" target="_blank" title="A data type representing TRUE or FALSE values." href="https://psyteachr.github.io/glossary/l#logical">logical</a> vector of whether or not each value is missing, and use <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code> to count how many values are TRUE or <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> to calculate the proportion of TRUE values.</p>
 <div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
@@ -1109,9 +1118,9 @@ Yes
 </table></div>
 </div>
 </div>
-<div id="omit-missing-values" class="section level4" number="5.9.0.3">
+<div id="omit-missing-values" class="section level4" number="5.10.0.3">
 <h4>
-<span class="header-section-number">5.9.0.3</span> Omit missing values<a class="anchor" aria-label="anchor" href="#omit-missing-values"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.0.3</span> Omit missing values<a class="anchor" aria-label="anchor" href="#omit-missing-values"><i class="fas fa-link"></i></a>
 </h4>
 <p>You may also want to remove rows that have missing values and only work from complete datasets. <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code> will remove any row that has a missing observation. You can use <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code> on the entire dataset which will remove any row that has <em>any</em> missing value, or you can specify to only remove rows that are missing a specific value.</p>
 <div class="sourceCode" id="cb104"><pre class="downlit sourceCode r">
@@ -1125,9 +1134,9 @@ Yes
 <p>Missing data can be quite difficult to deal with depending on how it is represented. As always, no amount of coding expertise can make up for not understanding the structure and idiosyncrasies of your data.</p>
 </div>
 </div>
-<div id="glossary-intro" class="section level2" number="5.10">
+<div id="glossary-summary" class="section level2" number="5.11">
 <h2>
-<span class="header-section-number">5.10</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-intro"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.11</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-summary"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <thead><tr>
@@ -1174,9 +1183,9 @@ A way to order your code in a more readable format using the symbol %&gt;%
 </tbody>
 </table></div>
 </div>
-<div id="resources-summary" class="section level2" number="5.11">
+<div id="resources-summary" class="section level2" number="5.12">
 <h2>
-<span class="header-section-number">5.11</span> Further resources<a class="anchor" aria-label="anchor" href="#resources-summary"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.12</span> Further resources<a class="anchor" aria-label="anchor" href="#resources-summary"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf">Data transformation cheat sheet</a></li>
@@ -1395,22 +1404,23 @@ $( document ).ready(function() {
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#session-2-1"><span class="header-section-number">5</span> Data Summaries</a></li>
-<li><a class="nav-link" href="#ilo-intro"><span class="header-section-number">5.1</span> Intended Learning Outcomes</a></li>
+<li><a class="nav-link" href="#ilo-summaries"><span class="header-section-number">5.1</span> Intended Learning Outcomes</a></li>
 <li><a class="nav-link" href="#reading-2"><span class="header-section-number">5.2</span> Reading</a></li>
-<li><a class="nav-link" href="#set-up"><span class="header-section-number">5.3</span> Set-up</a></li>
-<li><a class="nav-link" href="#counting-groups"><span class="header-section-number">5.4</span> Counting groups</a></li>
-<li><a class="nav-link" href="#summarise"><span class="header-section-number">5.5</span> Summarise</a></li>
-<li><a class="nav-link" href="#pipes-first"><span class="header-section-number">5.6</span> Pipes</a></li>
+<li><a class="nav-link" href="#walkthrough-video-3"><span class="header-section-number">5.3</span> Walkthrough video</a></li>
+<li><a class="nav-link" href="#set-up"><span class="header-section-number">5.4</span> Set-up</a></li>
+<li><a class="nav-link" href="#counting-groups"><span class="header-section-number">5.5</span> Counting groups</a></li>
+<li><a class="nav-link" href="#summarise"><span class="header-section-number">5.6</span> Summarise</a></li>
+<li><a class="nav-link" href="#pipes-first"><span class="header-section-number">5.7</span> Pipes</a></li>
 <li>
-<a class="nav-link" href="#alternatives"><span class="header-section-number">5.7</span> Alternatives</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#base-r"><span class="header-section-number">5.7.1</span> Base R</a></li>
-<li><a class="nav-link" href="#psychdescribe"><span class="header-section-number">5.7.2</span> psych::describe()</a></li>
+<a class="nav-link" href="#alternatives"><span class="header-section-number">5.8</span> Alternatives</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#base-r"><span class="header-section-number">5.8.1</span> Base R</a></li>
+<li><a class="nav-link" href="#psychdescribe"><span class="header-section-number">5.8.2</span> psych::describe()</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#ordinal-data"><span class="header-section-number">5.8</span> Ordinal data</a></li>
-<li><a class="nav-link" href="#missing-values"><span class="header-section-number">5.9</span> Missing values</a></li>
-<li><a class="nav-link" href="#glossary-intro"><span class="header-section-number">5.10</span> Glossary</a></li>
-<li><a class="nav-link" href="#resources-summary"><span class="header-section-number">5.11</span> Further resources</a></li>
+<li><a class="nav-link" href="#ordinal-data"><span class="header-section-number">5.9</span> Ordinal data</a></li>
+<li><a class="nav-link" href="#missing-values"><span class="header-section-number">5.10</span> Missing values</a></li>
+<li><a class="nav-link" href="#glossary-summary"><span class="header-section-number">5.11</span> Glossary</a></li>
+<li><a class="nav-link" href="#resources-summary"><span class="header-section-number">5.12</span> Further resources</a></li>
 </ul>
 
       <div class="book-extra">
@@ -1428,7 +1438,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Intro to R and Data Visualization</strong>" was written by Emily Nordmann &amp; Javan Carter. It was last built on 2022-09-19.</p>
+    <p>"<strong>Intro to R and Data Visualization</strong>" was written by Emily Nordmann &amp; Javan Carter. It was last built on 2022-09-24.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

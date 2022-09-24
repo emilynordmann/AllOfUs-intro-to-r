@@ -16,6 +16,12 @@ Please note that if you're completely new to R, you may not fully understand eve
 
 Download the [RStudio IDE Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf).
 
+## Walkthrough video
+
+We encourage you to read the workbook and attempt each step on your own before watching the video as this will help consolidate your learning.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-JpSA5wCavE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## R and RStudio {#intro-r-rstudio}
 
 ### RStudio {#rstudio_ide}

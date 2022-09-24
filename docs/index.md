@@ -2,7 +2,7 @@
 title: "Intro to R and Data Visualization" # edit
 #subtitle: "optional" 
 author: "Emily Nordmann & Javan Carter" # edit
-date: "2022-09-19"
+date: "2022-09-24"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
@@ -55,7 +55,8 @@ This course is designed to be completed over approximately three weeks. To help 
 
 This video gives an overview of the course syllabus and requirements. It is important that you watch this video before starting the course.
 
+* Download the Course Overview [PowerPoint slides](course_materials/course_overview.pptx)
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PpByWITwfqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
      

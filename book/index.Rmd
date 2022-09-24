@@ -62,7 +62,8 @@ This course is designed to be completed over approximately three weeks. To help 
 
 This video gives an overview of the course syllabus and requirements. It is important that you watch this video before starting the course.
 
+* Download the Course Overview [PowerPoint slides](course_materials/course_overview.pptx)
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PpByWITwfqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
      

@@ -17,7 +17,7 @@ We encourage you to read the workbook and attempt each step on your own before w
 
 Installing R and RStudio is usually straightforward. The sections below explain how and in addition to the walkthrough video, [there is a helpful YouTube video here](https://www.youtube.com/watch?v=lVKMsaWju8w){target="_blank"}. If you run into difficulties (for example if you don't have admin rights to your machine), we recommend using [RStudio Cloud](https://rstudio.cloud/). RStudio Cloud has almost all of the same features as a local installation of R but runs in your browser. There are some differences with how you import and export data and manage projects between the cloud and a local installation, however, for the most part the differences are minimal. 
 
-## R and RStudio {#intro-r-rstudio}
+## R and RStudio {#intro-rstudio}
 
 R is a programming language that you will write code in and RStudio is an Integrated Development Environment (`r glossary("IDE")`) which makes working in  R easier. Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it would be much harder without things like spell-checking and formatting and you wouldn't be able to use some of the advanced features that Word has developed. In a similar way, you can use R without R Studio (sometimes referred to as "Base R") but we wouldn't recommend it. RStudio serves as a text editor, file manager, spreadsheet viewer, and more. The key thing to remember is that although you will do all of your work using RStudio for this course, you are actually using two pieces of software which means that from time-to-time, both of them may have separate updates.
 

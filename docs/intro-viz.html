@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 3 Intro to data viz | Intro to R and Data Visualization</title>
 <meta name="author" content="Emily Nordmann &amp; Javan Carter">
-<meta name="description" content="3.1 Intended Learning Outcomes By the end of the chapter you should be able to: Create and manage projects Understand the grammar of ggplot Produce and customize a range of visualizations  3.2...">
+<meta name="description" content="3.1 Intended Learning Outcomes By the end of the chapter you should be able to: Create and manage projects Understand the grammar of ggplot Produce and customize a range of visualizations This is...">
 <meta name="generator" content="bookdown 0.25 with bs4_book()">
 <meta property="og:title" content="Chapter 3 Intro to data viz | Intro to R and Data Visualization">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://emilynordmann.github.io/AllOfUs-intro-to-r/intro-viz.html">
 <meta property="og:image" content="https://emilynordmann.github.io/AllOfUs-intro-to-r/images/logos/logo.png">
-<meta property="og:description" content="3.1 Intended Learning Outcomes By the end of the chapter you should be able to: Create and manage projects Understand the grammar of ggplot Produce and customize a range of visualizations  3.2...">
+<meta property="og:description" content="3.1 Intended Learning Outcomes By the end of the chapter you should be able to: Create and manage projects Understand the grammar of ggplot Produce and customize a range of visualizations This is...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 3 Intro to data viz | Intro to R and Data Visualization">
-<meta name="twitter:description" content="3.1 Intended Learning Outcomes By the end of the chapter you should be able to: Create and manage projects Understand the grammar of ggplot Produce and customize a range of visualizations  3.2...">
+<meta name="twitter:description" content="3.1 Intended Learning Outcomes By the end of the chapter you should be able to: Create and manage projects Understand the grammar of ggplot Produce and customize a range of visualizations This is...">
 <meta name="twitter:image" content="https://emilynordmann.github.io/AllOfUs-intro-to-r/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -107,6 +107,7 @@
 <li>Understand the grammar of ggplot</li>
 <li>Produce and customize a range of visualizations</li>
 </ul>
+<p>This is the longest chapter in the course. If you've got some experience with RStudio you'll likely progress quite quickly through the first section that deals with projects and loading data. If you're completely new to R, you might want to plan to do this chapter in two sessions</p>
 </div>
 <div id="reading-1" class="section level2" number="3.2">
 <h2>
@@ -114,9 +115,17 @@
 </h2>
 <p>Before you work through this chapter, read <a href="https://www.cell.com/patterns/fulltext/S2666-3899(20)30189-6">Principles of Effective Data Visualisation</a>.</p>
 </div>
-<div id="projects" class="section level2" number="3.3">
+<div id="walkthrough-video-2" class="section level2" number="3.3">
 <h2>
-<span class="header-section-number">3.3</span> Organising a project<a class="anchor" aria-label="anchor" href="#projects"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.3</span> Walkthrough video<a class="anchor" aria-label="anchor" href="#walkthrough-video-2"><i class="fas fa-link"></i></a>
+</h2>
+<p>We encourage you to read the workbook and attempt each step on your own before watching the video as this will help consolidate your learning.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UMIq9h8Di8k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+<div id="projects" class="section level2" number="3.4">
+<h2>
+<span class="header-section-number">3.4</span> Organising a project<a class="anchor" aria-label="anchor" href="#projects"><i class="fas fa-link"></i></a>
 </h2>
 <p>Before we write any code, first, we need to get organised. <a class="glossary" target="_blank" title="A way to organise related files in RStudio" href="https://psyteachr.github.io/glossary/p#project">Projects</a> in RStudio are a way to group all the files you need for one project. Most projects include scripts, data files, and output files like the PDF report created by the script or images.</p>
 <p>The folder that R will look in by default to find and save files is known as the <a class="glossary" target="_blank" title="The filepath where R is currently reading and writing files." href="https://psyteachr.github.io/glossary/w#working-directory">working directory</a>. You can set the working directory manually to the folder you want to work in with menu commands:</p>
@@ -124,9 +133,9 @@
 <li><strong><code>Session &gt; Set Working Directory &gt; Choose Directory...</code></strong></li>
 </ul>
 <p>However, there's a better way of organizing your files by using Projects in RStudio. How you set-up a new project depends on whether you're working from a local installation or on RStudio Cloud.</p>
-<div id="project-start" class="section level3" number="3.3.1">
+<div id="project-start" class="section level3" number="3.4.1">
 <h3>
-<span class="header-section-number">3.3.1</span> Start a Project (local)<a class="anchor" aria-label="anchor" href="#project-start"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.4.1</span> Start a Project (local)<a class="anchor" aria-label="anchor" href="#project-start"><i class="fas fa-link"></i></a>
 </h3>
 <p>To create a new project for a local installation:</p>
 <ul>
@@ -143,9 +152,9 @@ Figure 3.1: Starting a new project.
 </p>
 </div>
 </div>
-<div id="start-a-project-cloud" class="section level3" number="3.3.2">
+<div id="start-a-project-cloud" class="section level3" number="3.4.2">
 <h3>
-<span class="header-section-number">3.3.2</span> Start a Project (cloud)<a class="anchor" aria-label="anchor" href="#start-a-project-cloud"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.4.2</span> Start a Project (cloud)<a class="anchor" aria-label="anchor" href="#start-a-project-cloud"><i class="fas fa-link"></i></a>
 </h3>
 <p>If you're working on the cloud:</p>
 <ul>
@@ -165,14 +174,14 @@ Figure 3.2: Starting a new project in the cloud.
 </div>
 </div>
 </div>
-<div id="rmarkdown" class="section level2" number="3.4">
+<div id="rmarkdown" class="section level2" number="3.5">
 <h2>
-<span class="header-section-number">3.4</span> R Markdown<a class="anchor" aria-label="anchor" href="#rmarkdown"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.5</span> R Markdown<a class="anchor" aria-label="anchor" href="#rmarkdown"><i class="fas fa-link"></i></a>
 </h2>
-<p>For this course we will use <a class="glossary" target="_blank" title="The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code." href="https://psyteachr.github.io/glossary/r#r-markdown">R Markdown</a> to write and save our code in, which is similar to the Jupyter notebooks that the workbench uses. We won't have time to cover too many of the features of R Markdown but it's an incredibly powerful format that allows you to create fully reproducible reports where all text, code, and analysis is contained within the one document. You can also use it to create websites, online books (like this one), presentations, and Shiny apps. If you'd like to learn more about R Markdown, there's links to additional resources in Section <a href="intro-viz.html#resources-viz">3.11</a>.</p>
-<div id="new-document" class="section level3" number="3.4.1">
+<p>For this course we will use <a class="glossary" target="_blank" title="The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code." href="https://psyteachr.github.io/glossary/r#r-markdown">R Markdown</a> to write and save our code in, which is similar to the Jupyter notebooks that the workbench uses. We won't have time to cover too many of the features of R Markdown but it's an incredibly powerful format that allows you to create fully reproducible reports where all text, code, and analysis is contained within the one document. You can also use it to create websites, online books (like this one), presentations, and Shiny apps. If you'd like to learn more about R Markdown, there's links to additional resources in Section <a href="intro-viz.html#resources-viz">3.12</a>.</p>
+<div id="new-document" class="section level3" number="3.5.1">
 <h3>
-<span class="header-section-number">3.4.1</span> New document<a class="anchor" aria-label="anchor" href="#new-document"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.5.1</span> New document<a class="anchor" aria-label="anchor" href="#new-document"><i class="fas fa-link"></i></a>
 </h3>
 <p>To open a new R Markdown document click:</p>
 <ul>
@@ -195,15 +204,15 @@ Figure 3.3: New R Markdown text
 </li>
 </ul>
 </div>
-<div id="code-chunks" class="section level3" number="3.4.2">
+<div id="code-chunks" class="section level3" number="3.5.2">
 <h3>
-<span class="header-section-number">3.4.2</span> Code chunks<a class="anchor" aria-label="anchor" href="#code-chunks"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.5.2</span> Code chunks<a class="anchor" aria-label="anchor" href="#code-chunks"><i class="fas fa-link"></i></a>
 </h3>
 <p>What you have created is a subtitle and a <strong>code chunk</strong>. In R Markdown, anything written in a grey code chunk is assumed to be code, and anything written in the white space (between the code chunks) is regarded as normal text (the actual colours will depend on which theme you have applied, but we will refer to the default white and grey). This makes it easy to combine both text and code in one document.</p>
 <div class="dangerous">
 <p>When you create a new code chunk you should notice that the grey box starts and ends with three back ticks ```. One common mistake is to accidentally delete these back ticks. Remember, code chunks and text entry are different colours - if the colour of certain parts of your Markdown doesn't look right, check that you haven't deleted the back ticks.</p>
 </div>
-<p>In your code chunk, write the code to load some of the packages that you installed Section <a href="intro.html#packages">2.4</a></p>
+<p>In your code chunk, write the code to load some of the packages that you installed Section <a href="intro.html#packages">2.5</a></p>
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com">patchwork</a></span><span class="op">)</span>
@@ -211,9 +220,9 @@ Figure 3.3: New R Markdown text
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://higgi13425.github.io/medicaldata/">medicaldata</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span></code></pre></div>
 </div>
-<div id="running-code" class="section level3" number="3.4.3">
+<div id="running-code" class="section level3" number="3.5.3">
 <h3>
-<span class="header-section-number">3.4.3</span> Running code<a class="anchor" aria-label="anchor" href="#running-code"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.5.3</span> Running code<a class="anchor" aria-label="anchor" href="#running-code"><i class="fas fa-link"></i></a>
 </h3>
 <p>When you're working in an R Markdown document, there are several ways to run your lines of code.</p>
 <ol style="list-style-type: decimal">
@@ -224,9 +233,9 @@ Figure 3.3: New R Markdown text
 <p>Run your code using method 3. You should see the packages load in the console.</p>
 </div>
 </div>
-<div id="loading-data" class="section level2" number="3.5">
+<div id="loading-data" class="section level2" number="3.6">
 <h2>
-<span class="header-section-number">3.5</span> Loading data<a class="anchor" aria-label="anchor" href="#loading-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.6</span> Loading data<a class="anchor" aria-label="anchor" href="#loading-data"><i class="fas fa-link"></i></a>
 </h2>
 <p>If you're using the <em>All of Us</em> Researcher Workbench, you'll load in the data from the Researcher Workbench but it's useful to know how to import data into R more generally. Broadly speaking there are three types of data you can load when working in R:</p>
 <ol style="list-style-type: decimal">
@@ -235,9 +244,9 @@ Figure 3.3: New R Markdown text
 <li>Data sets stored locally on your computer.</li>
 </ol>
 <p>We'll start with 1 and move to 2 and 3 soon.</p>
-<div id="built-in-data" class="section level3" number="3.5.1">
+<div id="built-in-data" class="section level3" number="3.6.1">
 <h3>
-<span class="header-section-number">3.5.1</span> Built-in data<a class="anchor" aria-label="anchor" href="#built-in-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.6.1</span> Built-in data<a class="anchor" aria-label="anchor" href="#built-in-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>The <code><span class="fu"><a target="_blank" href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="op">)</span></code> function lists the data sets available.</p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
@@ -261,9 +270,9 @@ Figure 3.3: New R Markdown text
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"COVID-19 cases"</span>,
        y <span class="op">=</span> <span class="st">"Number of cases"</span>, x <span class="op">=</span> <span class="st">"Day after pandemic"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="loading-online" class="section level3" number="3.5.2">
+<div id="loading-online" class="section level3" number="3.6.2">
 <h3>
-<span class="header-section-number">3.5.2</span> Online sources<a class="anchor" aria-label="anchor" href="#loading-online"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.6.2</span> Online sources<a class="anchor" aria-label="anchor" href="#loading-online"><i class="fas fa-link"></i></a>
 </h3>
 <p>Now, let's try loading data that is stored online. Create a code chunk in your document and copy, paste, and run the below code. This code loads the <code>gapminder</code> dataset that is contained in the <code class="package">gapminder</code> package, except we've saved it as a <code>.csv</code> file and uploaded it to GitHub for the purposes of this exercise. The dataset contains an excerpt of the Gapminder data on life expectancy, GDP per capita, and population by country from 1952 to 2007.</p>
 <ul>
@@ -293,9 +302,9 @@ could not find function "read_csv"</p>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
-<div id="rmd-knit" class="section level2" number="3.6">
+<div id="rmd-knit" class="section level2" number="3.7">
 <h2>
-<span class="header-section-number">3.6</span> Knitting your file<a class="anchor" aria-label="anchor" href="#rmd-knit"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.7</span> Knitting your file<a class="anchor" aria-label="anchor" href="#rmd-knit"><i class="fas fa-link"></i></a>
 </h2>
 <p>Before we move on to focus on visualisation, we are going to <a class="glossary" target="_blank" title="To create an HTML, PDF, or Word document from an R Markdown (Rmd) document" href="https://psyteachr.github.io/glossary/k#knit">knit</a>, or compile, the file into a document type of our choosing. To knit your file click:</p>
 <ul>
@@ -314,11 +323,11 @@ could not find function "read_csv"</p>
 <p>As you work through this course, we encourage you to use the Markdown document to take notes on the code and the output you create so that you have a complete single record of the work you've done. In particular, use headings and new code chunks to separate tasks, and if (when) you experience an error, make a note of how you fixed it.</p>
 <p>Ok, let's get started properly.</p>
 </div>
-<div id="building-plots" class="section level2" number="3.7">
+<div id="building-plots" class="section level2" number="3.8">
 <h2>
-<span class="header-section-number">3.7</span> Building plots<a class="anchor" aria-label="anchor" href="#building-plots"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.8</span> Building plots<a class="anchor" aria-label="anchor" href="#building-plots"><i class="fas fa-link"></i></a>
 </h2>
-<p>There are multiple approaches to data visualisation in R; in this course we will use the popular package <code class="package">ggplot2</code>, which is part of the larger <code>tidyverse</code> collection of packages. A grammar of graphics (the "gg" in "ggplot") is a standardised way to describe the components of a graphic. <code class="package">ggplot2</code> uses a layered grammar of graphics, in which plots are built up in a series of layers. It may be helpful to think about any picture as having multiple elements that sit semi-transparently over each other. A good analogy is old animated movies where artists would create a background and then add moveable elements on top of the background via transparencies.</p>
+<p>There are multiple approaches to data visualization in R; in this course we will use the popular package <code class="package">ggplot2</code>, which is part of the larger <code>tidyverse</code> collection of packages. A grammar of graphics (the "gg" in "ggplot") is a standardised way to describe the components of a graphic. <code class="package">ggplot2</code> uses a layered grammar of graphics, in which plots are built up in a series of layers. It may be helpful to think about any picture as having multiple elements that sit semi-transparently over each other. A good analogy is old animated movies where artists would create a background and then add moveable elements on top of the background via transparencies.</p>
 <p>Figure <a href="intro-viz.html#fig:layers">3.4</a> displays the evolution of a simple scatterplot using this layered approach. First, the plot space is built (layer 1); the variables are specified (layer 2); the type of visualisation (known as a <code>geom</code>) that is desired for these variables is specified (layer 3) - in this case <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code> is called to visualise individual data points; a second geom is added to include a line of best fit (layer 4), the axis labels are edited for readability (layer 5), and finally, a theme is applied to change the overall appearance of the plot (layer 6).</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:layers"></span>
@@ -334,13 +343,13 @@ Figure 3.5: Final plot with scatterplot layer removed.
 </p>
 </div>
 </div>
-<div id="plot-setup" class="section level2" number="3.8">
+<div id="plot-setup" class="section level2" number="3.9">
 <h2>
-<span class="header-section-number">3.8</span> Plot setup<a class="anchor" aria-label="anchor" href="#plot-setup"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.9</span> Plot setup<a class="anchor" aria-label="anchor" href="#plot-setup"><i class="fas fa-link"></i></a>
 </h2>
-<div id="plot-setup-data" class="section level3" number="3.8.1">
+<div id="plot-setup-data" class="section level3" number="3.9.1">
 <h3>
-<span class="header-section-number">3.8.1</span> Data<a class="anchor" aria-label="anchor" href="#plot-setup-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.9.1</span> Data<a class="anchor" aria-label="anchor" href="#plot-setup-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>Every plot starts with the <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> function and a data table. If your data are not loaded or you have a typo in your code, this will give you an error message. It's best to check your plot after each step, so that you can figure out where errors are more easily.</p>
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
@@ -352,9 +361,9 @@ Figure 3.6: A blank ggplot.
 </p>
 </div>
 </div>
-<div id="mapping" class="section level3" number="3.8.2">
+<div id="mapping" class="section level3" number="3.9.2">
 <h3>
-<span class="header-section-number">3.8.2</span> Mapping<a class="anchor" aria-label="anchor" href="#mapping"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.9.2</span> Mapping<a class="anchor" aria-label="anchor" href="#mapping"><i class="fas fa-link"></i></a>
 </h3>
 <p>The next <a class="glossary" target="_blank" title="A variable that provides input to a function." href="https://psyteachr.github.io/glossary/a#argument">argument</a> to <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> is the <code>mapping</code>. This tells the plot which columns in the data should be represented by, or "mapped" to, different aspects of the plot, such as the x-axis, y-axis, line colour, object fill, or line style. These aspects, or "aesthetics", are listing inside the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> function.</p>
 <p>Set the arguments <code>x</code> and <code>y</code> to the names of the columns you want to be plotted on those axes. Here, we want to plot the wait time on the x-axis and the call time on the y-axis.</p>
@@ -376,9 +385,9 @@ Figure 3.7: A blank plot with x- and y- axes mapped.
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">gapminder</span>,  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">lifeExp</span>, <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
-<div id="geoms" class="section level3" number="3.8.3">
+<div id="geoms" class="section level3" number="3.9.3">
 <h3>
-<span class="header-section-number">3.8.3</span> Geoms<a class="anchor" aria-label="anchor" href="#geoms"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.9.3</span> Geoms<a class="anchor" aria-label="anchor" href="#geoms"><i class="fas fa-link"></i></a>
 </h3>
 <p>Now we can add our plot elements in layers. These are referred to as <a class="glossary" target="_blank" title="The geometric style in which data are displayed, such as boxplot, density, or histogram." href="https://psyteachr.github.io/glossary/g#geom">geoms</a> and their functions start with <code>geom_</code>. You <strong>add</strong> layers onto the base plot created by <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> with a plus (<code>+</code>).</p>
 <div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
@@ -401,9 +410,9 @@ Figure 3.8: Adding a scatterplot with geom_point().
 ## ! Cannot use `+.gg()` with a single argument. Did you accidentally put + on a new line?</code></pre>
 </div>
 </div>
-<div id="multiple-geoms" class="section level3" number="3.8.4">
+<div id="multiple-geoms" class="section level3" number="3.9.4">
 <h3>
-<span class="header-section-number">3.8.4</span> Multiple geoms<a class="anchor" aria-label="anchor" href="#multiple-geoms"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.9.4</span> Multiple geoms<a class="anchor" aria-label="anchor" href="#multiple-geoms"><i class="fas fa-link"></i></a>
 </h3>
 <p>Part of the power of <code class="package">ggplot2</code> is that you can add more than one geom to a plot by adding on extra layers and so it quickly becomes possible to make complex and informative visualisations. Importantly, the layers display in the order you set them up. The code below uses the same geoms to produce a scatterplot with a line of best fit but orders them differently.</p>
 <div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
@@ -423,9 +432,9 @@ Figure 3.9: Points first versus line first.
 </p>
 </div>
 </div>
-<div id="saving-plots" class="section level3" number="3.8.5">
+<div id="saving-plots" class="section level3" number="3.9.5">
 <h3>
-<span class="header-section-number">3.8.5</span> Saving plots<a class="anchor" aria-label="anchor" href="#saving-plots"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.9.5</span> Saving plots<a class="anchor" aria-label="anchor" href="#saving-plots"><i class="fas fa-link"></i></a>
 </h3>
 <p>Just like you can save numbers and data tables to objects, you can also save the output of <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code>. The code below produces the same plots we created above but saves them to objects named <code>point_first</code> and <code>line_first</code>. If you run this code, the plots won't display like they have done before. Instead, you'll see the object names appear in the environment pane.</p>
 <div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
@@ -443,9 +452,9 @@ Figure 3.9: Points first versus line first.
 <code class="sourceCode R"><span class="va">point_first</span> <span class="co"># view first plot</span>
 <span class="va">line_first</span> <span class="co"># view second plot</span></code></pre></div>
 </div>
-<div id="combining-plots" class="section level3" number="3.8.6">
+<div id="combining-plots" class="section level3" number="3.9.6">
 <h3>
-<span class="header-section-number">3.8.6</span> Combining plots<a class="anchor" aria-label="anchor" href="#combining-plots"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.9.6</span> Combining plots<a class="anchor" aria-label="anchor" href="#combining-plots"><i class="fas fa-link"></i></a>
 </h3>
 <p>One of the reasons to save your plots to objects is so that you can combine multiple plots using functions from the <code>patchwork</code> package. The below code produces the above plot by combining the two plots with <code>+</code> and then specifying that we want the plots produced on a single row with the <code>nrow</code> argument in <code><a href="https://patchwork.data-imaginist.com/reference/plot_layout.html">plot_layout()</a></code>.</p>
 <div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
@@ -458,22 +467,22 @@ Figure 3.10: Combining plots with patchwork.
 </p>
 </div>
 </div>
-<div id="saving-plots-to-disk" class="section level3" number="3.8.7">
+<div id="saving-plots-to-disk" class="section level3" number="3.9.7">
 <h3>
-<span class="header-section-number">3.8.7</span> Saving plots to disk<a class="anchor" aria-label="anchor" href="#saving-plots-to-disk"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.9.7</span> Saving plots to disk<a class="anchor" aria-label="anchor" href="#saving-plots-to-disk"><i class="fas fa-link"></i></a>
 </h3>
 <p>Another reason to save you plots to an object is so that you can save them to disk using <code><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave()</a></code>. The <code>filename</code> argument specifies what the name of the file you save will be - it must have a file extension although you can choose the image format (e.g., .png, .jpeg). The resulting file will save into your project directory. There are many more options to <code><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave()</a></code> that allow you to specify the height, width, and resolution of the image you save.</p>
 <div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span>filename <span class="op">=</span> <span class="st">"my_plot.png"</span>, plot <span class="op">=</span> <span class="va">point_first</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
-<div id="customising-plots" class="section level2" number="3.9">
+<div id="customising-plots" class="section level2" number="3.10">
 <h2>
-<span class="header-section-number">3.9</span> Customising plots<a class="anchor" aria-label="anchor" href="#customising-plots"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.10</span> Customising plots<a class="anchor" aria-label="anchor" href="#customising-plots"><i class="fas fa-link"></i></a>
 </h2>
-<div id="format-axes" class="section level3" number="3.9.1">
+<div id="format-axes" class="section level3" number="3.10.1">
 <h3>
-<span class="header-section-number">3.9.1</span> Format axes<a class="anchor" aria-label="anchor" href="#format-axes"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.10.1</span> Format axes<a class="anchor" aria-label="anchor" href="#format-axes"><i class="fas fa-link"></i></a>
 </h3>
 <p>Now we need to make the axes look neater. There are several functions you can use to change the axis labels, but the most powerful ones are the <code>scale_</code> functions. You need to use a scale function that matches the data you're plotting on that axis and this is where it becomes particularly important to know what type of data you're working with. Both of the axes here are <a class="glossary" target="_blank" title="Data that can take on any values between other existing values." href="https://psyteachr.github.io/glossary/c#continuous">continuous</a>, so we'll use <code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous()</a></code> and <code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous()</a></code>.</p>
 <p>The <code>name</code> argument changes the axis label. The <code>breaks</code> argument sets the major units and needs a <a class="glossary" target="_blank" title="A type of data structure that collects values with the same data type, like T/F values, numbers, or strings." href="https://psyteachr.github.io/glossary/v#vector">vector</a> of possible values, which can extend beyond the range of the data (e.g., <code>wait time</code> only goes up to 350, but we can specify breaks up to 600 in case we wanted to reuse our code with new data with different values). The <code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code> function creates a sequence of numbers <code>from</code> one <code>to</code> another <code>by</code> specified steps.</p>
@@ -496,9 +505,9 @@ Figure 3.11: Formatting plot axes with scale_ functions.
 <p>Check the help for <code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">?scale_x_continuous</a></code> to see how you would set the minor units or specify how many breaks you want instead.</p>
 </div>
 </div>
-<div id="axis-limits" class="section level3" number="3.9.2">
+<div id="axis-limits" class="section level3" number="3.10.2">
 <h3>
-<span class="header-section-number">3.9.2</span> Axis limits<a class="anchor" aria-label="anchor" href="#axis-limits"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.10.2</span> Axis limits<a class="anchor" aria-label="anchor" href="#axis-limits"><i class="fas fa-link"></i></a>
 </h3>
 <p>If you want to change the minimum and maximum values on an axis, use the <code><a href="https://ggplot2.tidyverse.org/reference/coord_cartesian.html">coord_cartesian()</a></code> function. Many plots make more sense if the minimum and maximum values represent the range of possible values, even if those values aren't present in the data. Here, life expectancy and GDP can't be less than 0, so we'll set the minimum values to 0 and the maximum values to the first break above the highest value.</p>
 <div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
@@ -522,9 +531,9 @@ Figure 3.12: Changing the axis limits.
 <p>You can also set the <code>limits</code> argument inside the <code>scale_</code> functions, but this actually removes any data that falls outside these limits, rather than cropping your plot, and this can change the appearance of certain types of plots like violin plots and density plots.</p>
 </div>
 </div>
-<div id="themes" class="section level3" number="3.9.3">
+<div id="themes" class="section level3" number="3.10.3">
 <h3>
-<span class="header-section-number">3.9.3</span> Themes<a class="anchor" aria-label="anchor" href="#themes"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.10.3</span> Themes<a class="anchor" aria-label="anchor" href="#themes"><i class="fas fa-link"></i></a>
 </h3>
 <p><code class="package">ggplot2</code> comes with several built-in themes, such as <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal()</a></code> and <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw()</a></code>, but the <code class="package"><a href="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/" target="_blank">ggthemes</a></code> package provides even more themes to match different software, such as GoogleDocs or Stata, or publications, such as the Economist or the Wall Street Journal. Let's add the GoogleDocs theme, but change the font size to 18 with the <code>base_size</code> argument.</p>
 <p>It's also worth highlighting that this code is starting to look quite complicated because of the number of layers, but because we've built it up slowly it should (hopefully!) make sense. If you see examples of <code class="package">ggplot2</code> code online that you'd like to adapt, build the plot up layer by layer and it will make it easier to understand what each layer adds.</p>
@@ -548,20 +557,20 @@ Figure 3.13: Changing the theme.
 </div>
 </div>
 </div>
-<div id="appropriate-plots" class="section level2" number="3.10">
+<div id="appropriate-plots" class="section level2" number="3.11">
 <h2>
-<span class="header-section-number">3.10</span> Appropriate plots<a class="anchor" aria-label="anchor" href="#appropriate-plots"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11</span> Appropriate plots<a class="anchor" aria-label="anchor" href="#appropriate-plots"><i class="fas fa-link"></i></a>
 </h2>
 <p>Now that you know how to build up a plot by layers and customize its appearance, you're ready to learn about some more plot types. Different types of data require different types of plots, so this section is organised by data type.</p>
 <p>The <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">ggplot2 cheat sheet</a> is a great resource to help you find plots appropriate to your data, based on how many variables you're plotting and what type they are. The examples below all use the same customer satisfaction data, but each plot communicates something different.</p>
 <p>We don't expect you to memorize all of the plot types or the methods for customizing them, but it will be helpful to try out the code in the examples below for yourself, changing values to test your understanding.</p>
-<div id="counting-categories" class="section level3" number="3.10.1">
+<div id="counting-categories" class="section level3" number="3.11.1">
 <h3>
-<span class="header-section-number">3.10.1</span> Counting categories<a class="anchor" aria-label="anchor" href="#counting-categories"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.1</span> Counting categories<a class="anchor" aria-label="anchor" href="#counting-categories"><i class="fas fa-link"></i></a>
 </h3>
-<div id="bar-plot" class="section level4" number="3.10.1.1">
+<div id="bar-plot" class="section level4" number="3.11.1.1">
 <h4>
-<span class="header-section-number">3.10.1.1</span> Bar plot<a class="anchor" aria-label="anchor" href="#bar-plot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.1.1</span> Bar plot<a class="anchor" aria-label="anchor" href="#bar-plot"><i class="fas fa-link"></i></a>
 </h4>
 <p>If you want to count the number of things per category, you can use <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code>. You only need to provide a <code>x</code> mapping to <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code> because by default <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code> uses the number of observations in each group of <code>x</code> and the value for <code>y</code>, so you don't need to tell it what to put on the y-axis.</p>
 <div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
@@ -570,14 +579,14 @@ Figure 3.13: Changing the theme.
 <div class="inline-figure"><img src="03-intro-to-viz_files/figure-html/unnamed-chunk-15-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div id="one-continuous-variable" class="section level3" number="3.10.2">
+<div id="one-continuous-variable" class="section level3" number="3.11.2">
 <h3>
-<span class="header-section-number">3.10.2</span> One continuous variable<a class="anchor" aria-label="anchor" href="#one-continuous-variable"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.2</span> One continuous variable<a class="anchor" aria-label="anchor" href="#one-continuous-variable"><i class="fas fa-link"></i></a>
 </h3>
 <p>If you have a continuous variable, like the number of seconds callers have to wait, you can use <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code> or <code><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density()</a></code> to show the distribution. Just like <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code> you are only required to specify the <code>x</code> variable.</p>
-<div id="histogram" class="section level4" number="3.10.2.1">
+<div id="histogram" class="section level4" number="3.11.2.1">
 <h4>
-<span class="header-section-number">3.10.2.1</span> Histogram<a class="anchor" aria-label="anchor" href="#histogram"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.2.1</span> Histogram<a class="anchor" aria-label="anchor" href="#histogram"><i class="fas fa-link"></i></a>
 </h4>
 <p>A histogram splits the data into "bins" along the x-axis and shows the count of how many observations are in each bin along the y-axis (the covid testing data is from a children's hospital).</p>
 <div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
@@ -620,9 +629,9 @@ Figure 3.15: Histogram with custom styles.
 </p>
 </div>
 </div>
-<div id="frequency-plot" class="section level4" number="3.10.2.2">
+<div id="frequency-plot" class="section level4" number="3.11.2.2">
 <h4>
-<span class="header-section-number">3.10.2.2</span> Frequency plot<a class="anchor" aria-label="anchor" href="#frequency-plot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.2.2</span> Frequency plot<a class="anchor" aria-label="anchor" href="#frequency-plot"><i class="fas fa-link"></i></a>
 </h4>
 <p>Rather than plotting each bin as a bar, you can connect a line across the top of each bin using a frequency plot. The function <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_freqpoly()</a></code> works the same as <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code>, except it can't take a <code>fill</code> argument because it's just a line.</p>
 <div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
@@ -633,9 +642,9 @@ Figure 3.15: Histogram with custom styles.
                 color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="03-intro-to-viz_files/figure-html/unnamed-chunk-20-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="density-plot" class="section level4" number="3.10.2.3">
+<div id="density-plot" class="section level4" number="3.11.2.3">
 <h4>
-<span class="header-section-number">3.10.2.3</span> Density plot<a class="anchor" aria-label="anchor" href="#density-plot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.2.3</span> Density plot<a class="anchor" aria-label="anchor" href="#density-plot"><i class="fas fa-link"></i></a>
 </h4>
 <p>If the distribution is smooth, a density plot is often a better way to show the distribution. A density plot doesn't need the <code>binwidth</code> or <code>boundary</code> arguments because it doesn't split the data into bins, but it can have <code>fill</code>.</p>
 <div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
@@ -646,14 +655,14 @@ Figure 3.15: Histogram with custom styles.
 <div class="inline-figure"><img src="03-intro-to-viz_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div id="grouped-continuous-variables" class="section level3" number="3.10.3">
+<div id="grouped-continuous-variables" class="section level3" number="3.11.3">
 <h3>
-<span class="header-section-number">3.10.3</span> Grouped continuous variables<a class="anchor" aria-label="anchor" href="#grouped-continuous-variables"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.3</span> Grouped continuous variables<a class="anchor" aria-label="anchor" href="#grouped-continuous-variables"><i class="fas fa-link"></i></a>
 </h3>
 <p>There are several ways to compare continuous data across groups. Which you choose depends on what point you are trying to make with the plot.</p>
-<div id="subdividing-distributions" class="section level4" number="3.10.3.1">
+<div id="subdividing-distributions" class="section level4" number="3.11.3.1">
 <h4>
-<span class="header-section-number">3.10.3.1</span> Subdividing distributions<a class="anchor" aria-label="anchor" href="#subdividing-distributions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.3.1</span> Subdividing distributions<a class="anchor" aria-label="anchor" href="#subdividing-distributions"><i class="fas fa-link"></i></a>
 </h4>
 <p>In previous plots, we have used <code>fill</code> purely for visual reasons, e.g., we have changed the colour of the histogram bars to make them look nicer. However, you can also use <code>fill</code> to represent another variable so that the colours become meaningful.</p>
 <p>Setting the <code>fill</code> aesthetic in the mapping will produce different coloured bars for each category of the <code>fill</code> variable, in this case <code>issue_category</code>.</p>
@@ -683,9 +692,9 @@ Figure 3.17: Stacked area plot.
 </p>
 </div>
 </div>
-<div id="comparing-distributions" class="section level4" number="3.10.3.2">
+<div id="comparing-distributions" class="section level4" number="3.11.3.2">
 <h4>
-<span class="header-section-number">3.10.3.2</span> Comparing distributions<a class="anchor" aria-label="anchor" href="#comparing-distributions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.3.2</span> Comparing distributions<a class="anchor" aria-label="anchor" href="#comparing-distributions"><i class="fas fa-link"></i></a>
 </h4>
 <p>If you want to compare more than one distribution, you can set the <code>position</code> argument of <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code> to "dodge" to put the bars for each group next to each other instead of stacking them. However, this can look confusing with several categories. Instead, use<code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_freqpoly()</a></code> to plot a line connecting the top of each bin.</p>
 <div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
@@ -718,9 +727,9 @@ Figure 3.18: Different ways to plot the distribution of a continuous variable fo
 </p>
 </div>
 </div>
-<div id="violin-plot" class="section level4" number="3.10.3.3">
+<div id="violin-plot" class="section level4" number="3.11.3.3">
 <h4>
-<span class="header-section-number">3.10.3.3</span> Violin plot<a class="anchor" aria-label="anchor" href="#violin-plot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.3.3</span> Violin plot<a class="anchor" aria-label="anchor" href="#violin-plot"><i class="fas fa-link"></i></a>
 </h4>
 <p>Another way to compare groups of continuous variables is the violin plot. This is like a density plot, but rotated 90 degrees and mirrored - the fatter the violin, the larger proportion of data points there are at that value.</p>
 <div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
@@ -733,9 +742,9 @@ Figure 3.19: Violin-plot.
 </p>
 </div>
 </div>
-<div id="boxplot" class="section level4" number="3.10.3.4">
+<div id="boxplot" class="section level4" number="3.11.3.4">
 <h4>
-<span class="header-section-number">3.10.3.4</span> Boxplot<a class="anchor" aria-label="anchor" href="#boxplot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.3.4</span> Boxplot<a class="anchor" aria-label="anchor" href="#boxplot"><i class="fas fa-link"></i></a>
 </h4>
 <p>Boxplots serve a similar purpose to violin plots. They don't show you the shape of the distribution, but rather some statistics about it. The middle line represents the <a class="glossary" target="_blank" title="The middle number in a distribution where half of the values are larger and half are smaller." href="https://psyteachr.github.io/glossary/m#median">median</a>; half the data are above this line and half below it. The box encloses the 25th to 75th percentiles of the data, so 50% of the data falls inside the box. The "whiskers" extending above and below the box extend 1.5 times the height of the box, although you can change this with the <code>coef</code> argument. The points show <a class="glossary" target="_blank" title="A data point that is extremely distant from most of the other data points" href="https://psyteachr.github.io/glossary/o#outlier">outliers</a> -- individual data points that fall outside of this range.</p>
 <div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
@@ -748,9 +757,9 @@ Figure 3.20: Basic boxplot.
 </p>
 </div>
 </div>
-<div id="combo-plots" class="section level4" number="3.10.3.5">
+<div id="combo-plots" class="section level4" number="3.11.3.5">
 <h4>
-<span class="header-section-number">3.10.3.5</span> Combo plots<a class="anchor" aria-label="anchor" href="#combo-plots"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.3.5</span> Combo plots<a class="anchor" aria-label="anchor" href="#combo-plots"><i class="fas fa-link"></i></a>
 </h4>
 <p>Violin plots are frequently layered with other geoms that represent the mean or median values in the data. This is a lot of code, to help your understanding a) run it layer by layer to see how it builds up and b) change the values throughout the code</p>
 <div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
@@ -784,14 +793,14 @@ Figure 3.21: Violin plots combined with different methods to represent means and
 </div>
 </div>
 </div>
-<div id="two-continuous-variables" class="section level3" number="3.10.4">
+<div id="two-continuous-variables" class="section level3" number="3.11.4">
 <h3>
-<span class="header-section-number">3.10.4</span> Two continuous variables<a class="anchor" aria-label="anchor" href="#two-continuous-variables"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.4</span> Two continuous variables<a class="anchor" aria-label="anchor" href="#two-continuous-variables"><i class="fas fa-link"></i></a>
 </h3>
 <p>When you want to see how two continuous variables are related, set one as the x-axis and the other as the y-axis. Usually, if one variable causes the other, you plot the cause on the x-axis and the effect on the y-axis. Here, we want to see if longer wait times cause the calls to be longer.</p>
-<div id="scatterplot" class="section level4" number="3.10.4.1">
+<div id="scatterplot" class="section level4" number="3.11.4.1">
 <h4>
-<span class="header-section-number">3.10.4.1</span> Scatterplot<a class="anchor" aria-label="anchor" href="#scatterplot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.4.1</span> Scatterplot<a class="anchor" aria-label="anchor" href="#scatterplot"><i class="fas fa-link"></i></a>
 </h4>
 <p>The function to create a scatterplot is called <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>.</p>
 <div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
@@ -804,9 +813,9 @@ Figure 3.22: Scatterplot with geom_point().
 </p>
 </div>
 </div>
-<div id="trendlines" class="section level4" number="3.10.4.2">
+<div id="trendlines" class="section level4" number="3.11.4.2">
 <h4>
-<span class="header-section-number">3.10.4.2</span> Trendlines<a class="anchor" aria-label="anchor" href="#trendlines"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.4.2</span> Trendlines<a class="anchor" aria-label="anchor" href="#trendlines"><i class="fas fa-link"></i></a>
 </h4>
 <p>In Figure <a href="intro-viz.html#fig:layers">3.4</a>, we emphasised the relationship with a trendline created by <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code> using the argument <code>method = lm</code> ("lm" stands for "linear model" or a straight line relationship). You can also set <code>method = loess</code> to visualise a non-linear relationship.</p>
 <div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
@@ -836,9 +845,9 @@ Figure 3.23: Different ways to show the relationship between two continuous vari
 </div>
 </div>
 </div>
-<div id="overplotting" class="section level3" number="3.10.5">
+<div id="overplotting" class="section level3" number="3.11.5">
 <h3>
-<span class="header-section-number">3.10.5</span> Overplotting<a class="anchor" aria-label="anchor" href="#overplotting"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.5</span> Overplotting<a class="anchor" aria-label="anchor" href="#overplotting"><i class="fas fa-link"></i></a>
 </h3>
 <p>When you have a limited range of numeric values, such as an ordinal rating scale or categorical variables, sometimes overlapping data makes it difficult to see what is going on in a point plot. For example, the plot below shows test result by age, but it makes it hard to see exactly how many data points there are at each point.</p>
 <p>In this section, we'll explore a few options for dealing with this.</p>
@@ -851,9 +860,9 @@ Figure 3.23: Different ways to show the relationship between two continuous vari
 Figure 3.24: Overlapping data.
 </p>
 </div>
-<div id="jitter-plot" class="section level4" number="3.10.5.1">
+<div id="jitter-plot" class="section level4" number="3.11.5.1">
 <h4>
-<span class="header-section-number">3.10.5.1</span> Jitter plot<a class="anchor" aria-label="anchor" href="#jitter-plot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.5.1</span> Jitter plot<a class="anchor" aria-label="anchor" href="#jitter-plot"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can use <code><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">geom_jitter()</a></code> to move the points around a bit to make them easier to see. You can also set alpha transparency. Here, the x-axis is continuous, so there is no need to jitter the <code>width</code>, but the y-axis is ordinal categories, so the <code>height</code> is jittered between -0.2 and +0.2 away from the true y-value. It can help to play around with these values to understand what the jitter is doing.</p>
 <div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
@@ -866,9 +875,9 @@ Figure 3.25: Jitter plot.
 </p>
 </div>
 </div>
-<div id="facets" class="section level4" number="3.10.5.2">
+<div id="facets" class="section level4" number="3.11.5.2">
 <h4>
-<span class="header-section-number">3.10.5.2</span> Facets<a class="anchor" aria-label="anchor" href="#facets"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11.5.2</span> Facets<a class="anchor" aria-label="anchor" href="#facets"><i class="fas fa-link"></i></a>
 </h4>
 <p>Alternatively, you can use <code><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap()</a></code> to create a separate plot for each test result <code><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap()</a></code> uses the tilde (~) symbol, which you can roughly translate as "by", e.g., facet the plot <em>by</em> test result. The <code>labeller</code> function controls the labels above each plot. <code>label_both</code> specifies that we want both the variable name (result) and the value (e.g., invalid) printed on the plot to make it easier to read.</p>
 <div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
@@ -894,9 +903,9 @@ Figure 3.26: A histogram with facets.
 </div>
 </div>
 </div>
-<div id="resources-viz" class="section level2" number="3.11">
+<div id="resources-viz" class="section level2" number="3.12">
 <h2>
-<span class="header-section-number">3.11</span> Further Resources<a class="anchor" aria-label="anchor" href="#resources-viz"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.12</span> Further Resources<a class="anchor" aria-label="anchor" href="#resources-viz"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><a href="https://www.rstudio.org/links/r_markdown_cheat_sheet">R Markdown Cheat Sheet</a></li>
@@ -915,9 +924,9 @@ Figure 3.26: A histogram with facets.
 <li><a href="https://bbc.github.io/rcookbook/">BBC Visual and Data Journalism cookbook for R graphics</a></li>
 </ul>
 </div>
-<div id="glossary-day1" class="section level2" number="3.12">
+<div id="glossary-day1" class="section level2" number="3.13">
 <h2>
-<span class="header-section-number">3.12</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-day1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.13</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-day1"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <thead><tr>
@@ -1247,56 +1256,57 @@ $( document ).ready(function() {
 <li><a class="nav-link" href="#intro-viz"><span class="header-section-number">3</span> Intro to data viz</a></li>
 <li><a class="nav-link" href="#ilo-viz"><span class="header-section-number">3.1</span> Intended Learning Outcomes</a></li>
 <li><a class="nav-link" href="#reading-1"><span class="header-section-number">3.2</span> Reading</a></li>
+<li><a class="nav-link" href="#walkthrough-video-2"><span class="header-section-number">3.3</span> Walkthrough video</a></li>
 <li>
-<a class="nav-link" href="#projects"><span class="header-section-number">3.3</span> Organising a project</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#project-start"><span class="header-section-number">3.3.1</span> Start a Project (local)</a></li>
-<li><a class="nav-link" href="#start-a-project-cloud"><span class="header-section-number">3.3.2</span> Start a Project (cloud)</a></li>
+<a class="nav-link" href="#projects"><span class="header-section-number">3.4</span> Organising a project</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#project-start"><span class="header-section-number">3.4.1</span> Start a Project (local)</a></li>
+<li><a class="nav-link" href="#start-a-project-cloud"><span class="header-section-number">3.4.2</span> Start a Project (cloud)</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#rmarkdown"><span class="header-section-number">3.4</span> R Markdown</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#new-document"><span class="header-section-number">3.4.1</span> New document</a></li>
-<li><a class="nav-link" href="#code-chunks"><span class="header-section-number">3.4.2</span> Code chunks</a></li>
-<li><a class="nav-link" href="#running-code"><span class="header-section-number">3.4.3</span> Running code</a></li>
+<a class="nav-link" href="#rmarkdown"><span class="header-section-number">3.5</span> R Markdown</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#new-document"><span class="header-section-number">3.5.1</span> New document</a></li>
+<li><a class="nav-link" href="#code-chunks"><span class="header-section-number">3.5.2</span> Code chunks</a></li>
+<li><a class="nav-link" href="#running-code"><span class="header-section-number">3.5.3</span> Running code</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#loading-data"><span class="header-section-number">3.5</span> Loading data</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#built-in-data"><span class="header-section-number">3.5.1</span> Built-in data</a></li>
-<li><a class="nav-link" href="#loading-online"><span class="header-section-number">3.5.2</span> Online sources</a></li>
+<a class="nav-link" href="#loading-data"><span class="header-section-number">3.6</span> Loading data</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#built-in-data"><span class="header-section-number">3.6.1</span> Built-in data</a></li>
+<li><a class="nav-link" href="#loading-online"><span class="header-section-number">3.6.2</span> Online sources</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#rmd-knit"><span class="header-section-number">3.6</span> Knitting your file</a></li>
-<li><a class="nav-link" href="#building-plots"><span class="header-section-number">3.7</span> Building plots</a></li>
+<li><a class="nav-link" href="#rmd-knit"><span class="header-section-number">3.7</span> Knitting your file</a></li>
+<li><a class="nav-link" href="#building-plots"><span class="header-section-number">3.8</span> Building plots</a></li>
 <li>
-<a class="nav-link" href="#plot-setup"><span class="header-section-number">3.8</span> Plot setup</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#plot-setup-data"><span class="header-section-number">3.8.1</span> Data</a></li>
-<li><a class="nav-link" href="#mapping"><span class="header-section-number">3.8.2</span> Mapping</a></li>
-<li><a class="nav-link" href="#geoms"><span class="header-section-number">3.8.3</span> Geoms</a></li>
-<li><a class="nav-link" href="#multiple-geoms"><span class="header-section-number">3.8.4</span> Multiple geoms</a></li>
-<li><a class="nav-link" href="#saving-plots"><span class="header-section-number">3.8.5</span> Saving plots</a></li>
-<li><a class="nav-link" href="#combining-plots"><span class="header-section-number">3.8.6</span> Combining plots</a></li>
-<li><a class="nav-link" href="#saving-plots-to-disk"><span class="header-section-number">3.8.7</span> Saving plots to disk</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#customising-plots"><span class="header-section-number">3.9</span> Customising plots</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#format-axes"><span class="header-section-number">3.9.1</span> Format axes</a></li>
-<li><a class="nav-link" href="#axis-limits"><span class="header-section-number">3.9.2</span> Axis limits</a></li>
-<li><a class="nav-link" href="#themes"><span class="header-section-number">3.9.3</span> Themes</a></li>
+<a class="nav-link" href="#plot-setup"><span class="header-section-number">3.9</span> Plot setup</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#plot-setup-data"><span class="header-section-number">3.9.1</span> Data</a></li>
+<li><a class="nav-link" href="#mapping"><span class="header-section-number">3.9.2</span> Mapping</a></li>
+<li><a class="nav-link" href="#geoms"><span class="header-section-number">3.9.3</span> Geoms</a></li>
+<li><a class="nav-link" href="#multiple-geoms"><span class="header-section-number">3.9.4</span> Multiple geoms</a></li>
+<li><a class="nav-link" href="#saving-plots"><span class="header-section-number">3.9.5</span> Saving plots</a></li>
+<li><a class="nav-link" href="#combining-plots"><span class="header-section-number">3.9.6</span> Combining plots</a></li>
+<li><a class="nav-link" href="#saving-plots-to-disk"><span class="header-section-number">3.9.7</span> Saving plots to disk</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#appropriate-plots"><span class="header-section-number">3.10</span> Appropriate plots</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#counting-categories"><span class="header-section-number">3.10.1</span> Counting categories</a></li>
-<li><a class="nav-link" href="#one-continuous-variable"><span class="header-section-number">3.10.2</span> One continuous variable</a></li>
-<li><a class="nav-link" href="#grouped-continuous-variables"><span class="header-section-number">3.10.3</span> Grouped continuous variables</a></li>
-<li><a class="nav-link" href="#two-continuous-variables"><span class="header-section-number">3.10.4</span> Two continuous variables</a></li>
-<li><a class="nav-link" href="#overplotting"><span class="header-section-number">3.10.5</span> Overplotting</a></li>
+<a class="nav-link" href="#customising-plots"><span class="header-section-number">3.10</span> Customising plots</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#format-axes"><span class="header-section-number">3.10.1</span> Format axes</a></li>
+<li><a class="nav-link" href="#axis-limits"><span class="header-section-number">3.10.2</span> Axis limits</a></li>
+<li><a class="nav-link" href="#themes"><span class="header-section-number">3.10.3</span> Themes</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#resources-viz"><span class="header-section-number">3.11</span> Further Resources</a></li>
-<li><a class="nav-link" href="#glossary-day1"><span class="header-section-number">3.12</span> Glossary</a></li>
+<li>
+<a class="nav-link" href="#appropriate-plots"><span class="header-section-number">3.11</span> Appropriate plots</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#counting-categories"><span class="header-section-number">3.11.1</span> Counting categories</a></li>
+<li><a class="nav-link" href="#one-continuous-variable"><span class="header-section-number">3.11.2</span> One continuous variable</a></li>
+<li><a class="nav-link" href="#grouped-continuous-variables"><span class="header-section-number">3.11.3</span> Grouped continuous variables</a></li>
+<li><a class="nav-link" href="#two-continuous-variables"><span class="header-section-number">3.11.4</span> Two continuous variables</a></li>
+<li><a class="nav-link" href="#overplotting"><span class="header-section-number">3.11.5</span> Overplotting</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#resources-viz"><span class="header-section-number">3.12</span> Further Resources</a></li>
+<li><a class="nav-link" href="#glossary-day1"><span class="header-section-number">3.13</span> Glossary</a></li>
 </ul>
 
       <div class="book-extra">
@@ -1314,7 +1324,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Intro to R and Data Visualization</strong>" was written by Emily Nordmann &amp; Javan Carter. It was last built on 2022-09-19.</p>
+    <p>"<strong>Intro to R and Data Visualization</strong>" was written by Emily Nordmann &amp; Javan Carter. It was last built on 2022-09-24.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

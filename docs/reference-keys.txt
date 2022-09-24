@@ -47,7 +47,7 @@ course-overview
 installing-r
 intended-learning-outcomes
 walkthrough-video
-intro-r-rstudio
+intro-rstudio
 installing-base-r
 installing-rstudio
 installing-rtools
@@ -65,6 +65,8 @@ cannot-open-file
 rstudio-cloud
 intro
 ilo-intro
+walkthrough-video-1
+intro-r-rstudio
 rstudio_ide
 intro-reproducibility
 themes-and-accessiblilty
@@ -90,6 +92,7 @@ resources-intro
 intro-viz
 ilo-viz
 reading-1
+walkthrough-video-2
 projects
 project-start
 start-a-project-cloud
@@ -140,7 +143,9 @@ schedule-and-zoom-link
 content
 pre-requisites
 session-2-1
+ilo-summaries
 reading-2
+walkthrough-video-3
 set-up
 counting-groups
 summarise
@@ -153,10 +158,12 @@ missing-values
 ignore-missing-values
 count-missing-values
 omit-missing-values
+glossary-summary
 resources-summary
 advanced-data-viz
 reading-3
 sources
+walkthrough-video-4
 set-up-1
 modified-gapminder-dataset
 wide-to-long-format
@@ -175,6 +182,7 @@ interactive-plots
 animated-plots
 end-of-workbook
 next-steps
+resources-adviz
 live-office-hour-2
 schedule-and-zoom-link-1
 content-1

@@ -8,9 +8,17 @@ By the end of the chapter you should be able to:
 * Understand the grammar of ggplot
 * Produce and customize a range of visualizations
 
+This is the longest chapter in the course. If you've got some experience with RStudio you'll likely progress quite quickly through the first section that deals with projects and loading data. If you're completely new to R, you might want to plan to do this chapter in two sessions
+
 ## Reading
 
 Before you work through this chapter, read [Principles of Effective Data Visualisation](https://www.cell.com/patterns/fulltext/S2666-3899(20)30189-6).
+
+## Walkthrough video
+
+We encourage you to read the workbook and attempt each step on your own before watching the video as this will help consolidate your learning. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UMIq9h8Di8k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Organising a project {#projects}
 
@@ -222,7 +230,7 @@ Ok, let's get started properly.
 
 ## Building plots
 
-There are multiple approaches to data visualisation in R; in this course we will use the popular package `r pkg("ggplot2")`, which is part of the larger `tidyverse` collection of packages. A grammar of graphics (the "gg" in "ggplot") is a standardised way to describe the components of a graphic. `r pkg("ggplot2")` uses a layered grammar of graphics, in which plots are built up in a series of layers. It may be helpful to think about any picture as having multiple elements that sit semi-transparently over each other. A good analogy is old animated movies where artists would create a background and then add moveable elements on top of the background via transparencies.
+There are multiple approaches to data visualization in R; in this course we will use the popular package `r pkg("ggplot2")`, which is part of the larger `tidyverse` collection of packages. A grammar of graphics (the "gg" in "ggplot") is a standardised way to describe the components of a graphic. `r pkg("ggplot2")` uses a layered grammar of graphics, in which plots are built up in a series of layers. It may be helpful to think about any picture as having multiple elements that sit semi-transparently over each other. A good analogy is old animated movies where artists would create a background and then add moveable elements on top of the background via transparencies.
 
 Figure \@ref(fig:layers) displays the evolution of a simple scatterplot using this layered approach. First, the plot space is built (layer 1); the variables are specified (layer 2); the type of visualisation (known as a `geom`) that is desired for these variables is specified (layer 3) - in this case `geom_point()` is called to visualise individual data points; a second geom is added to include a line of best fit (layer 4), the axis labels are edited for readability (layer 5), and finally, a theme is applied to change the overall appearance of the plot (layer 6).
 

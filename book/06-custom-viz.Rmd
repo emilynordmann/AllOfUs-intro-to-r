@@ -24,6 +24,12 @@ And:
 
 You may find it particularly helpful to read both of these sources in full as a further resource.
 
+## Walkthrough video
+
+We encourage you to read the workbook and attempt each step on your own before watching the video as this will help consolidate your learning.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FpeG9o0ZZBY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Set-up
 
 Open your course project and do the following:
@@ -244,7 +250,6 @@ Additionally, previously when we edited the main axis labels we used the `scale_
 ggplot(gapminder_long, aes(x = lifeExp)) +
   geom_histogram(colour = "black") +
   facet_wrap(~continent, nrow = 5) +
-  guides(fill = "none")+
   theme_minimal() +
   labs(y = NULL, title = "Life Expectancy by Continent")
 ```
@@ -278,7 +283,7 @@ ggplot(gapminder_long, aes(x = lifeExp, fill = continent)) +
 
 ## Advanced Plots
 
-For the advanced plots, we will use some custom functions: `geom_split_violin()` and `geom_flat_violin()`, which you can access through the `introdataviz` package. These functions are modified from [@raincloudplots].
+For the advanced plots, we will use some custom functions: `geom_split_violin()` and `geom_flat_violin()`, which you can access through the `introdataviz` package. These functions are modified from [Allen et al. (21)](https://wellcomeopenresearch.org/articles/4-63).
 
 ```{r, eval = FALSE}
 # how to install the introdataviz package to get split and half violin plots
@@ -466,7 +471,7 @@ In the meantime, if you'd like to continue learning we'd suggest the following s
 * Review the further resources provided at the end of each chapter. In particular, if you would like another online book to work through, we'd highly recommend [R for Data Science](https://r4ds.had.co.nz/), [R for Health Data Science](https://argoshare.is.ed.ac.uk/healthyr_book/), and the collection of materials provided by the [PsyTeachR team](https://psyteachr.github.io/).
 * Practice the skills and functions used in this course with different data sets. These could either be your own data sets or open data you find online or from R packages. If you have to do a little bit of wrangling in Excel to get the data in the format you need, don't feel bad - whatever gets you coding is a good thing and eventually you'll be able to have your entire workflow in R.
 
-## Further Resources {#resources-viz}
+## Further Resources {#resources-adviz}
 
 * [Applied Data Skils: Data visualisation](https://psyteachr.github.io/ads-v1/viz.html) (from the PsyTeachR team)
 * [Applied Data Skils: Customising visualisations](https://psyteachr.github.io/ads-v1/custom.html) (from the PsyTeachR team)
