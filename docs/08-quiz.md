@@ -6,6 +6,7 @@ To order to receive recognition from the *All of Us* Research Academy that you h
 * The quiz has 20 multiple-choice questions that will assess your knowledge of R. 
 * There is no time limit.
 * Your completion status is based on participation in the quiz, you do not need to achieve a minimum score.
+* Only Emily Nordmann will have access to your score and only the names of people who have participated in the quiz will be communicated to RTI for completion.
 * You can take the quiz as many times as you like.
 * The deadline for completing the quiz for recognition is Friday 18th November at midnight.
 
