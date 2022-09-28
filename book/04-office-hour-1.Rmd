@@ -16,4 +16,4 @@ Live office hours are primarily an opportunity for you to ask questions to the i
 ## Pre-requisites
 
 * Before joining the office hour, please ensure that you have worked through all the material from Week 1 - consult the [Progress Tracker](\@ref(progress) if you're not sure what you need to do.
-* You can ask questions on the day, but you can also complete the [Q&A form]() in advance to let your instructors know what you would like the session to focus on.
+* You can ask questions on the day, but you can also complete the [Q&A form](https://forms.gle/JhTghtpNgav3Sh1z6) in advance to let your instructors know what you would like the session to focus on.
