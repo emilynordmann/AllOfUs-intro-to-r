@@ -2,7 +2,7 @@
 title: "Intro to R and Data Visualization" # edit
 #subtitle: "optional" 
 author: "Emily Nordmann & Javan Carter" # edit
-date: "2022-09-28"
+date: "2022-10-25"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
@@ -42,7 +42,7 @@ In addition to the asynchronous content, there will be two live office hour sess
 <div class="small_right"><img src="images/javan.png" 
      alt="Dr. Javan K Carter" /></div>
      
-**Dr. Javan K Carter** is a bioinformaticist at RTI international. He researches genomic and transcriptomic data to understand genotype- phenotype correlation and genetic architecture of complex traits and diseases. Within RTI, he is the lead and co-lead informatics scientist for several projects and assists in a number of projects associated with various data types. He is also an evolutionary genomicist by training. He uses bash, JavaScript, and R as primary coding languages. He loves to teach and educate people on the wonders of computational biology and introduce people to coding for the first time!
+**Dr. Javan K. Carter** is a bioinformaticist at RTI International. He researches genomic and transcriptomic data to understand genotype- phenotype correlation and genetic architecture of complex traits and diseases. Within RTI, he is the lead and co-lead informatics scientist for several projects and assists in a number of projects associated with various data types. He is also an evolutionary genomicist by training. He uses bash, JavaScript, and R as primary coding languages. He loves to teach and educate people on the wonders of computational biology and introduce people to coding for the first time!
 
 ## Progress Tracker {#progress}
 

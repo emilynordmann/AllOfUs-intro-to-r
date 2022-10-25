@@ -1,7 +1,7 @@
 
 # Completion Quiz
 
-To order to receive recognition from the *All of Us* Research Academy that you have completed the course, you are required to participate in the completion quiz. 
+To order to receive recognition from the *All of Us* Researcher Academy that you have completed the course, you are required to participate in the completion quiz. 
 
 * The quiz has 20 multiple-choice questions that will assess your knowledge of R. 
 * There is no time limit.

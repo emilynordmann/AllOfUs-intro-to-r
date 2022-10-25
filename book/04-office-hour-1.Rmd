@@ -3,8 +3,8 @@
 
 ## Schedule and Zoom link
 
-* The first live office hour session will take place on Wednesday 2nd November 2pm EDT via [Zoom](). 
-* The passcode is [] and the waiting room will be enabled. Please ensure that your Zoom name is set to the name that you used to register with the *All of Us* Researcher Academy otherwise you may not be allowed entry to the session.
+* The first live office hour session will take place on Wednesday 2nd November 2pm EDT via [Zoom](https://rtiorg.zoom.us/j/96304233875?pwd=KzFzVkdZWDUxd3ZtV0ZHTG1Sb25NUT09). 
+* The password is **536664** and the waiting room will be enabled. Please ensure that your Zoom name is set to the name that you used to register with the *All of Us* Researcher Academy otherwise you may not be allowed entry to the session.
 
 ## Content
 
