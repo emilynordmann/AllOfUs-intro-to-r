@@ -22,9 +22,9 @@ We encourage you to read the workbook and attempt each step on your own before w
 
 ## Organising a project {#projects}
 
-Before we write any code, first, we need to get organised. <a class='glossary' target='_blank' title='A way to organise related files in RStudio' href='https://psyteachr.github.io/glossary/p#project'>Projects</a> in RStudio are a way to group all the files you need for one project. Most projects include scripts, data files, and output files like the PDF report created by the script or images.
+Before we write any code, first, we need to get organised. <a class='glossary'>Projects<span class='def'></span></a> in RStudio are a way to group all the files you need for one project. Most projects include scripts, data files, and output files like the PDF report created by the script or images.
 
-The folder that R will look in by default to find and save files is known as the <a class='glossary' target='_blank' title='The filepath where R is currently reading and writing files.' href='https://psyteachr.github.io/glossary/w#working-directory'>working directory</a>. You can set the working directory manually to the folder you want to work in with menu commands:
+The folder that R will look in by default to find and save files is known as the <a class='glossary'>working directory<span class='def'></span></a>. You can set the working directory manually to the folder you want to work in with menu commands:
 
 -   **`Session > Set Working Directory > Choose Directory...`**
 
@@ -66,7 +66,7 @@ Depending on your settings, you may also see a directory called `.Rproj.user`, w
 
 ## R Markdown {#rmarkdown}
 
-For this course we will use <a class='glossary' target='_blank' title='The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.' href='https://psyteachr.github.io/glossary/r#r-markdown'>R Markdown</a> to write and save our code in, which is similar to the Jupyter notebooks that the workbench uses. We won't have time to cover too many of the features of R Markdown but it's an incredibly powerful format that allows you to create fully reproducible reports where all text, code, and analysis is contained within the one document. You can also use it to create websites, online books (like this one), presentations, and Shiny apps. If you'd like to learn more about R Markdown, there's links to additional resources in Section \@ref(resources-viz).
+For this course we will use <a class='glossary'>R Markdown<span class='def'></span></a> to write and save our code in, which is similar to the Jupyter notebooks that the workbench uses. We won't have time to cover too many of the features of R Markdown but it's an incredibly powerful format that allows you to create fully reproducible reports where all text, code, and analysis is contained within the one document. You can also use it to create websites, online books (like this one), presentations, and Shiny apps. If you'd like to learn more about R Markdown, there's links to additional resources in Section \@ref(resources-viz).
 
 ### New document
 
@@ -76,7 +76,7 @@ To open a new R Markdown document click:
 
 You will be prompted to give it a title; call the document `Intro to data viz`. You can also change the author name. Keep the output format as HTML.
 
-Once you've opened a new document be sure to save it by clicking **`File > Save As...`**. Name this file something sensible like `chapter_3` (if you are on a Mac and can see the file <a class='glossary' target='_blank' title='The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).' href='https://psyteachr.github.io/glossary/e#extension'>extension</a>, name it `chapter_3.Rmd`). This file will automatically be saved in your project folder, i.e., your working directory, so you should now see this file appear in your file viewer pane.
+Once you've opened a new document be sure to save it by clicking **`File > Save As...`**. Name this file something sensible like `chapter_3` (if you are on a Mac and can see the file <a class='glossary'>extension<span class='def'></span></a>, name it `chapter_3.Rmd`). This file will automatically be saved in your project folder, i.e., your working directory, so you should now see this file appear in your file viewer pane.
 
 When you first open a new R Markdown document you will see a bunch of welcome text that looks like this:
 
@@ -134,7 +134,7 @@ We'll start with 1 and move to 2 and 3 soon.
 
 ### Built-in data
 
-The <code><span class='fu'><a target='_blank' href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='op'>)</span></code> function lists the data sets available.
+The <code><span><span class='fu'><a target='_blank' href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='op'>)</span></span></code> function lists the data sets available.
 
 
 ```r
@@ -145,14 +145,14 @@ data()
 data(package = "medicaldata")
 ```
 
-Type the name of a data set into the <a class='glossary' target='_blank' title='The pane in RStudio where you can type in commands and view output messages.' href='https://psyteachr.github.io/glossary/c#console'>console</a> to see the data. For example, type `?covid_testing` into the console to see the dataset description for `covid_testing`, which is a data set included with <code class='package'>medicaldata</code>.
+Type the name of a data set into the <a class='glossary'>console<span class='def'></span></a> to see the data. For example, type `?covid_testing` into the console to see the dataset description for `covid_testing`, which is a data set included with <code class='package'>medicaldata</code>.
 
 
 ```r
 ?covid_testing                
 ```
 
-You can also use the <code><span class='fu'><a target='_blank' href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='op'>)</span></code> function to load a dataset into your <a class='glossary' target='_blank' title='The interactive workspace where your script runs' href='https://psyteachr.github.io/glossary/g#global-environment'>global environment</a>.
+You can also use the <code><span><span class='fu'><a target='_blank' href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='op'>)</span></span></code> function to load a dataset into your <a class='glossary'>global environment<span class='def'></span></a>.
 
 
 ```r
@@ -209,7 +209,7 @@ ggplot(gapminder, aes(x = continent, y = lifeExp)) +
 
 ## Knitting your file {#rmd-knit}
 
-Before we move on to focus on visualisation, we are going to <a class='glossary' target='_blank' title='To create an HTML, PDF, or Word document from an R Markdown (Rmd) document' href='https://psyteachr.github.io/glossary/k#knit'>knit</a>, or compile, the file into a document type of our choosing. To knit your file click:
+Before we move on to focus on visualisation, we are going to <a class='glossary'>knit<span class='def'></span></a>, or compile, the file into a document type of our choosing. To knit your file click:
 
 -   **`Knit > Knit to HMTL`**
 
@@ -269,7 +269,7 @@ ggplot(data = gapminder)
 
 ### Mapping
 
-The next <a class='glossary' target='_blank' title='A variable that provides input to a function.' href='https://psyteachr.github.io/glossary/a#argument'>argument</a> to `ggplot()` is the `mapping`. This tells the plot which columns in the data should be represented by, or "mapped" to, different aspects of the plot, such as the x-axis, y-axis, line colour, object fill, or line style. These aspects, or "aesthetics", are listing inside the `aes()` function.
+The next <a class='glossary'>argument<span class='def'></span></a> to `ggplot()` is the `mapping`. This tells the plot which columns in the data should be represented by, or "mapped" to, different aspects of the plot, such as the x-axis, y-axis, line colour, object fill, or line style. These aspects, or "aesthetics", are listing inside the `aes()` function.
 
 Set the arguments `x` and `y` to the names of the columns you want to be plotted on those axes. Here, we want to plot the wait time on the x-axis and the call time on the y-axis.
 
@@ -288,7 +288,7 @@ ggplot(
 </div>
 
 ::: {.info data-latex=""}
-In the example above, we wrote out the names of the <a class='glossary' target='_blank' title='A variable that provides input to a function.' href='https://psyteachr.github.io/glossary/a#argument'>arguments</a> `data` and `mapping`, but in practice, almost everyone omits them. Just make sure you put the data and mapping in the right order.
+In the example above, we wrote out the names of the <a class='glossary'>arguments<span class='def'></span></a> `data` and `mapping`, but in practice, almost everyone omits them. Just make sure you put the data and mapping in the right order.
 
 
 ```r
@@ -298,7 +298,7 @@ ggplot(gapminder,  aes(lifeExp, gdpPercap))
 
 ### Geoms
 
-Now we can add our plot elements in layers. These are referred to as <a class='glossary' target='_blank' title='The geometric style in which data are displayed, such as boxplot, density, or histogram.' href='https://psyteachr.github.io/glossary/g#geom'>geoms</a> and their functions start with `geom_`. You **add** layers onto the base plot created by `ggplot()` with a plus (`+`).
+Now we can add our plot elements in layers. These are referred to as <a class='glossary'>geoms<span class='def'></span></a> and their functions start with `geom_`. You **add** layers onto the base plot created by `ggplot()` with a plus (`+`).
 
 
 ```r
@@ -327,7 +327,8 @@ ggplot(gapminder, aes(x = lifeExp, y = gdpPercap))
 
 ```
 ## Error:
-## ! Cannot use `+.gg()` with a single argument. Did you accidentally put + on a new line?
+## ! Cannot use `+` with a single argument
+## ℹ Did you accidentally put `+` on a new line?
 ```
 :::
 
@@ -407,9 +408,9 @@ ggsave(filename = "my_plot.png", plot = point_first)
 
 ### Format axes
 
-Now we need to make the axes look neater. There are several functions you can use to change the axis labels, but the most powerful ones are the `scale_` functions. You need to use a scale function that matches the data you're plotting on that axis and this is where it becomes particularly important to know what type of data you're working with. Both of the axes here are <a class='glossary' target='_blank' title='Data that can take on any values between other existing values.' href='https://psyteachr.github.io/glossary/c#continuous'>continuous</a>, so we'll use `scale_x_continuous()` and `scale_y_continuous()`.
+Now we need to make the axes look neater. There are several functions you can use to change the axis labels, but the most powerful ones are the `scale_` functions. You need to use a scale function that matches the data you're plotting on that axis and this is where it becomes particularly important to know what type of data you're working with. Both of the axes here are <a class='glossary'>continuous<span class='def'></span></a>, so we'll use `scale_x_continuous()` and `scale_y_continuous()`.
 
-The `name` argument changes the axis label. The `breaks` argument sets the major units and needs a <a class='glossary' target='_blank' title='A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.' href='https://psyteachr.github.io/glossary/v#vector'>vector</a> of possible values, which can extend beyond the range of the data (e.g., `wait time` only goes up to 350, but we can specify breaks up to 600 in case we wanted to reuse our code with new data with different values). The `seq()` function creates a sequence of numbers `from` one `to` another `by` specified steps.
+The `name` argument changes the axis label. The `breaks` argument sets the major units and needs a <a class='glossary'>vector<span class='def'></span></a> of possible values, which can extend beyond the range of the data (e.g., `wait time` only goes up to 350, but we can specify breaks up to 600 in case we wanted to reuse our code with new data with different values). The `seq()` function creates a sequence of numbers `from` one `to` another `by` specified steps.
 
 
 ```r
@@ -423,7 +424,7 @@ ggplot(gapminder, aes(x = lifeExp, y = gdpPercap)) +
 ```
 
 ```
-## `geom_smooth()` using formula 'y ~ x'
+## `geom_smooth()` using formula = 'y ~ x'
 ```
 
 <div class="figure" style="text-align: center">
@@ -453,7 +454,7 @@ ggplot(gapminder, aes(x = lifeExp, y = gdpPercap)) +
 ```
 
 ```
-## `geom_smooth()` using formula 'y ~ x'
+## `geom_smooth()` using formula = 'y ~ x'
 ```
 
 <div class="figure" style="text-align: center">
@@ -486,7 +487,7 @@ ggplot(gapminder, aes(x = lifeExp, y = gdpPercap)) +
 ```
 
 ```
-## `geom_smooth()` using formula 'y ~ x'
+## `geom_smooth()` using formula = 'y ~ x'
 ```
 
 <div class="figure" style="text-align: center">
@@ -673,7 +674,17 @@ ggplot(gapminder, aes(x = lifeExp, colour = continent)) +
   scale_x_continuous(name = "Life Expecancy",
                      breaks = seq(0, 100, 20)) +
   ggtitle("Frequency")
+```
 
+```
+## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+## ℹ Please use `linewidth` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.
+```
+
+```r
 # put plots together
 histogram_dodge + freqpoly_plot + 
   plot_layout(nrow = 1, guides = "collect") # collects the legends together, try removing this
@@ -701,7 +712,7 @@ ggplot(gapminder, aes(x = continent, y = lifeExp)) +
 
 #### Boxplot
 
-Boxplots serve a similar purpose to violin plots. They don't show you the shape of the distribution, but rather some statistics about it. The middle line represents the <a class='glossary' target='_blank' title='The middle number in a distribution where half of the values are larger and half are smaller.' href='https://psyteachr.github.io/glossary/m#median'>median</a>; half the data are above this line and half below it. The box encloses the 25th to 75th percentiles of the data, so 50% of the data falls inside the box. The "whiskers" extending above and below the box extend 1.5 times the height of the box, although you can change this with the `coef` argument. The points show <a class='glossary' target='_blank' title='A data point that is extremely distant from most of the other data points' href='https://psyteachr.github.io/glossary/o#outlier'>outliers</a> -- individual data points that fall outside of this range.
+Boxplots serve a similar purpose to violin plots. They don't show you the shape of the distribution, but rather some statistics about it. The middle line represents the <a class='glossary'>median<span class='def'></span></a>; half the data are above this line and half below it. The box encloses the 25th to 75th percentiles of the data, so 50% of the data falls inside the box. The "whiskers" extending above and below the box extend 1.5 times the height of the box, although you can change this with the `coef` argument. The points show <a class='glossary'>outliers<span class='def'></span></a> -- individual data points that fall outside of this range.
 
 
 ```r
@@ -790,8 +801,8 @@ lm_plot + loess_plot
 ```
 
 ```
-## `geom_smooth()` using formula 'y ~ x'
-## `geom_smooth()` using formula 'y ~ x'
+## `geom_smooth()` using formula = 'y ~ x'
+## `geom_smooth()` using formula = 'y ~ x'
 ```
 
 <div class="figure" style="text-align: center">
@@ -885,56 +896,56 @@ These are not, by any means, all the plot types that you can make in R. This cha
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> [argument](https://psyteachr.github.io/glossary/a.html#argument){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> A variable that provides input to a function. </td>
+   <td style="text-align:left;"> argument </td>
+   <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [console](https://psyteachr.github.io/glossary/c.html#console){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> The pane in RStudio where you can type in commands and view output messages. </td>
+   <td style="text-align:left;"> console </td>
+   <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [continuous](https://psyteachr.github.io/glossary/c.html#continuous){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> Data that can take on any values between other existing values. </td>
+   <td style="text-align:left;"> continuous </td>
+   <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [extension](https://psyteachr.github.io/glossary/e.html#extension){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd). </td>
+   <td style="text-align:left;"> extension </td>
+   <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [geom](https://psyteachr.github.io/glossary/g.html#geom){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> The geometric style in which data are displayed, such as boxplot, density, or histogram. </td>
+   <td style="text-align:left;"> geom </td>
+   <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [global environment](https://psyteachr.github.io/glossary/g.html#global-environment){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> The interactive workspace where your script runs </td>
+   <td style="text-align:left;"> global environment </td>
+   <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [knit](https://psyteachr.github.io/glossary/k.html#knit){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> To create an HTML, PDF, or Word document from an R Markdown (Rmd) document </td>
+   <td style="text-align:left;"> knit </td>
+   <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [median](https://psyteachr.github.io/glossary/m.html#median){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> The middle number in a distribution where half of the values are larger and half are smaller. </td>
+   <td style="text-align:left;"> median </td>
+   <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [outlier](https://psyteachr.github.io/glossary/o.html#outlier){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> A data point that is extremely distant from most of the other data points </td>
+   <td style="text-align:left;"> outlier </td>
+   <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [project](https://psyteachr.github.io/glossary/p.html#project){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> A way to organise related files in RStudio </td>
+   <td style="text-align:left;"> project </td>
+   <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [r markdown](https://psyteachr.github.io/glossary/r.html#r-markdown){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code. </td>
+   <td style="text-align:left;"> R Markdown </td>
+   <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [vector](https://psyteachr.github.io/glossary/v.html#vector){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> A type of data structure that collects values with the same data type, like T/F values, numbers, or strings. </td>
+   <td style="text-align:left;"> vector </td>
+   <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [working directory](https://psyteachr.github.io/glossary/w.html#working-directory){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> The filepath where R is currently reading and writing files. </td>
+   <td style="text-align:left;"> working directory </td>
+   <td style="text-align:left;">  </td>
   </tr>
 </tbody>
 </table>

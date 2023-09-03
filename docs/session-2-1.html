@@ -7,7 +7,7 @@
 <title>Chapter 5 Data Summaries | Intro to R and Data Visualization</title>
 <meta name="author" content="Emily Nordmann &amp; Javan Carter">
 <meta name="description" content="5.1 Intended Learning Outcomes By the end of this chapter you should be able to: Calculate descriptive statistics for a range of data types Manage missing values  5.2 Reading Before you work...">
-<meta name="generator" content="bookdown 0.25 with bs4_book()">
+<meta name="generator" content="bookdown 0.34 with bs4_book()">
 <meta property="og:title" content="Chapter 5 Data Summaries | Intro to R and Data Visualization">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://emilynordmann.github.io/AllOfUs-intro-to-r/session-2-1.html">
@@ -19,11 +19,11 @@
 <meta name="twitter:image" content="https://emilynordmann.github.io/AllOfUs-intro-to-r/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
-<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.2/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -83,9 +83,8 @@
 <li><a class="" href="live-office-hour-2.html"><span class="header-section-number">7</span> Live Office Hour 2</a></li>
 <li><a class="" href="completion-quiz.html"><span class="header-section-number">8</span> Completion Quiz</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="glossary.html"><span class="header-section-number">A</span> Glossary</a></li>
+<li><a class="" href="ai-and-coding.html"><span class="header-section-number">A</span> AI and coding</a></li>
 <li><a class="" href="license.html">License</a></li>
-<li><a class="" href="references.html">References</a></li>
 </ul>
 
         <div class="book-extra">
@@ -130,12 +129,12 @@
 <li>Create and save a new R Markdown document named <code>chapter_5.Rmd</code> get rid of the default template text from line 11 onwards.</li>
 <li>Add the below code to the set-up chunk and then run the code to load the packages and data.</li>
 </ul>
-<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com">patchwork</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://personality-project.org/r/psych/">psych</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://higgi13425.github.io/medicaldata/">medicaldata</a></span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"opt"</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com">patchwork</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://personality-project.org/r/psych/">psych</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://higgi13425.github.io/medicaldata/">medicaldata</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"opt"</span><span class="op">)</span></span></code></pre></div>
 <p>For this chapter, we're going to use the <code>opt</code> dataset from the <code>medicaldata</code> package that contains data on an RCT looking at whether treatment of maternal periodontal disease can reduce risk of preterm birth and low birth weight. There are a lot of variables in this dataset, use <code><a href="https://higgi13425.github.io/medicaldata/reference/opt.html">?opt</a></code> to find out more about what they mean.</p>
 </div>
 <div id="counting-groups" class="section level2" number="5.5">
@@ -149,54 +148,38 @@
 <li><p>Count the number of observations in each group <em>and then;</em></p></li>
 <li><p>Remove the grouping</p></li>
 </ul>
-<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Black</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Black</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
-<thead><tr>
-<th style="text-align:center;">
-Black
-</th>
-<th style="text-align:center;">
-n
-</th>
+<thead><tr class="header">
+<th align="center">Black</th>
+<th align="center">n</th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:center;">
-No
-</td>
-<td style="text-align:center;">
-451
-</td>
+<tr class="odd">
+<td align="center">No</td>
+<td align="center">451</td>
 </tr>
-<tr>
-<td style="text-align:center;">
-Yes
-</td>
-<td style="text-align:center;">
-372
-</td>
+<tr class="even">
+<td align="center">Yes</td>
+<td align="center">372</td>
 </tr>
 </tbody>
 </table></div>
 <p><code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> does not result in surface level changes to the dataset, rather, it changes the underlying structure so that if groups are specified, whatever functions called next are performed separately on each level of the grouping variable. This grouping remains in the object that is created so it is important to remove it with <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup()</a></code> to avoid future operations on the object unknowingly being performed by groups.</p>
 <p>The above code therefore counts the number of observations in each group of the variable <code>Black</code>. If you just need the total number of observations, you could remove the <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup()</a></code> lines, which would perform the operation on the whole dataset, rather than by groups:</p>
-<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
-<thead><tr>
-<th style="text-align:center;">
-n
-</th>
+<thead><tr class="header">
+<th align="center">n</th>
 </tr></thead>
-<tbody><tr>
-<td style="text-align:center;">
-823
-</td>
+<tbody><tr class="odd">
+<td align="center">823</td>
 </tr></tbody>
 </table></div>
 </div>
@@ -205,93 +188,57 @@ n
 <span class="header-section-number">5.6</span> Summarise<a class="anchor" aria-label="anchor" href="#summarise"><i class="fas fa-link"></i></a>
 </h2>
 <p>For numeric data, we can use an increased range of functions. For example, we may wish to calculate the mean age (and SD) of the sample and we can do so using the function <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> from the <code>dplyr</code> tidyverse package.</p>
-<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Age</span><span class="op">)</span>,
-            sd_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Age</span><span class="op">)</span>,
-            n_values <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Age</span><span class="op">)</span>,</span>
+<span>            sd_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Age</span><span class="op">)</span>,</span>
+<span>            n_values <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
-<thead><tr>
-<th style="text-align:center;">
-mean_age
-</th>
-<th style="text-align:center;">
-sd_age
-</th>
-<th style="text-align:center;">
-n_values
-</th>
+<thead><tr class="header">
+<th align="center">mean_age</th>
+<th align="center">sd_age</th>
+<th align="center">n_values</th>
 </tr></thead>
-<tbody><tr>
-<td style="text-align:center;">
-25.98
-</td>
-<td style="text-align:center;">
-5.57
-</td>
-<td style="text-align:center;">
-823
-</td>
+<tbody><tr class="odd">
+<td align="center">25.98</td>
+<td align="center">5.57</td>
+<td align="center">823</td>
 </tr></tbody>
 </table></div>
 <p>This code produces summary data in the form of a column named <code>mean_age</code> that contains the result of calculating the mean of the variable <code>age</code>. It then creates <code>sd_age</code> which does the same but for standard deviation. Finally, it uses the function <code><a href="https://dplyr.tidyverse.org/reference/context.html">n()</a></code> to add the number of values used to calculate the statistic in a column named <code>n_values</code> - this is a useful sanity check whenever you make summary statistics.</p>
 <p>Note that the above code will not save the result of this operation, it will simply output the result in the console. If you wish to save it for future use, you can store it in an object by using the <code>&lt;-</code> notation and print it later by typing the object name.</p>
-<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">age_stats</span> <span class="op">&lt;-</span> <span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Age</span><span class="op">)</span>,
-            sd_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Age</span><span class="op">)</span>,
-            n_values <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">age_stats</span> <span class="op">&lt;-</span> <span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Age</span><span class="op">)</span>,</span>
+<span>            sd_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Age</span><span class="op">)</span>,</span>
+<span>            n_values <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Finally, the <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> function will work in the same way when calculating summary statistics -- the output of the function that is called after <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> will be produced for each level of the grouping variable.</p>
-<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Black</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Age</span><span class="op">)</span>,
-            sd_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Age</span><span class="op">)</span>,
-            n_values <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Black</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Age</span><span class="op">)</span>,</span>
+<span>            sd_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Age</span><span class="op">)</span>,</span>
+<span>            n_values <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
-<thead><tr>
-<th style="text-align:center;">
-Black
-</th>
-<th style="text-align:center;">
-mean_age
-</th>
-<th style="text-align:center;">
-sd_age
-</th>
-<th style="text-align:center;">
-n_values
-</th>
+<thead><tr class="header">
+<th align="center">Black</th>
+<th align="center">mean_age</th>
+<th align="center">sd_age</th>
+<th align="center">n_values</th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:center;">
-No
-</td>
-<td style="text-align:center;">
-26.11
-</td>
-<td style="text-align:center;">
-5.50
-</td>
-<td style="text-align:center;">
-451
-</td>
+<tr class="odd">
+<td align="center">No</td>
+<td align="center">26.11</td>
+<td align="center">5.50</td>
+<td align="center">451</td>
 </tr>
-<tr>
-<td style="text-align:center;">
-Yes
-</td>
-<td style="text-align:center;">
-25.82
-</td>
-<td style="text-align:center;">
-5.65
-</td>
-<td style="text-align:center;">
-372
-</td>
+<tr class="even">
+<td align="center">Yes</td>
+<td align="center">25.82</td>
+<td align="center">5.65</td>
+<td align="center">372</td>
 </tr>
 </tbody>
 </table></div>
@@ -300,17 +247,17 @@ Yes
 <h2>
 <span class="header-section-number">5.7</span> Pipes<a class="anchor" aria-label="anchor" href="#pipes-first"><i class="fas fa-link"></i></a>
 </h2>
-<p>Before we go further, let's take a quick detour to formally introduce the <a class="glossary" target="_blank" title="A way to order your code in a more readable format using the symbol %&gt;%" href="https://psyteachr.github.io/glossary/p#pipe">pipe</a>. Pipes allow you to send the output from one function straight into another function. Specifically, they send the result of the function before <code>%&gt;%</code> to be the first argument of the function after <code>%&gt;%</code>. It can be useful to translate the pipe as "<strong>and then</strong>". It's easier to show than tell, so let's look at an example.</p>
-<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># without pipe</span>
-<span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span><span class="va">opt</span>,
-          mean_bmi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">BMI</span><span class="op">)</span>, 
-          median_bmi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">BMI</span><span class="op">)</span><span class="op">)</span>
-
-<span class="co"># with pipe</span>
-<span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_bmi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">BMI</span><span class="op">)</span>, 
-          median_bmi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">BMI</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>Before we go further, let's take a quick detour to formally introduce the <a class="glossary">pipe<span class="def"></span></a>. Pipes allow you to send the output from one function straight into another function. Specifically, they send the result of the function before <code>%&gt;%</code> to be the first argument of the function after <code>%&gt;%</code>. It can be useful to translate the pipe as "<strong>and then</strong>". It's easier to show than tell, so let's look at an example.</p>
+<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># without pipe</span></span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span><span class="va">opt</span>,</span>
+<span>          mean_bmi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">BMI</span><span class="op">)</span>, </span>
+<span>          median_bmi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">BMI</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># with pipe</span></span>
+<span><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_bmi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">BMI</span><span class="op">)</span>, </span>
+<span>          median_bmi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">BMI</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Notice that <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> no longer needs the first argument to be the data table, it is pulled in from the pipe. The power of the pipe may not be obvious now, but it will soon prove its worth.</p>
 </div>
 <div id="alternatives" class="section level2" number="5.8">
@@ -323,14 +270,14 @@ Yes
 <span class="header-section-number">5.8.1</span> Base R<a class="anchor" aria-label="anchor" href="#base-r"><i class="fas fa-link"></i></a>
 </h3>
 <p>Rather than embedding the functions within <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> you can call the summary functions straight from Base R. Let's also clear up what that <code>$</code> notation is doing. The dollar sign allows you to select items from an object, such as columns from a table. The left-hand side is the object, and the right-hand side is the item. So in the below code, we're calculating the mean of the <code>Age</code> column that is present in the data set <code>opt</code>.</p>
-<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">opt</span><span class="op">$</span><span class="va">Age</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">opt</span><span class="op">$</span><span class="va">Age</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">opt</span><span class="op">$</span><span class="va">Age</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">opt</span><span class="op">$</span><span class="va">Age</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 25.97813
 ## [1] 25</code></pre>
 <p>Base R also contains the function <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> which will print a summary of all the variables in the dataset (actually there's so many variables in this dataset it will omit a few but we'll ignore that for now). <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> is very useful for getting a quick overview of the dataset and to check for any potential problems, e.g., do the minimum and maximum values look right? Does any variable have missing data (NAs)?</p>
-<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">opt</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">opt</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="psychdescribe" class="section level3" number="5.8.2">
 <h3>
@@ -338,11 +285,11 @@ Yes
 </h3>
 <p>The function <code><a href="https://rdrr.io/pkg/psych/man/describe.html">describe()</a></code> from the <code class="package">psych</code> is incredibly useful because it quickly produces a range of descriptive statistics, including standard error which is otherwise a faff to compute in R because there is no base function for standard error like there is for e.g., <code><a href="https://rdrr.io/r/stats/sd.html">sd()</a></code>.</p>
 <p>By default, <code><a href="https://rdrr.io/pkg/psych/man/describe.html">describe()</a></code> computes stats for all variables in the data set which probably isn't what you need and in the case of this dataset, would produce a monstrously long output. Instead, we can use <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> from the <code class="package">tidyverse</code> to select the columns we want to describe and then pass these to <code><a href="https://rdrr.io/pkg/psych/man/describe.html">describe()</a></code>. We may also want to drop some of the columns in the default <code><a href="https://rdrr.io/pkg/psych/man/describe.html">describe()</a></code> table which we can again do with <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> - hopefully the power of the <code>%&gt;%</code> begins to be obvious.</p>
-<div class="sourceCode" id="cb89"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">describe_table</span> <span class="op">&lt;-</span> <span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Age</span>, <span class="va">BMI</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://rdrr.io/pkg/psych/man/describe.html">describe</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">vars</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">describe_table</span> <span class="op">&lt;-</span> <span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Age</span>, <span class="va">BMI</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/psych/man/describe.html">describe</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">vars</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr>
 <th style="text-align:left;">
@@ -470,28 +417,28 @@ BMI
 </tbody>
 </table></div>
 <p>Finally, because <code><a href="https://rdrr.io/pkg/psych/man/describe.html">describe()</a></code> isn't tidyverse, we can't use <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> with it however, there is also a grouped version, <code><a href="https://rdrr.io/pkg/psych/man/describe.by.html">describeBy()</a></code>.</p>
-<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">describebytable</span> <span class="op">&lt;-</span> <span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Group</span>, <span class="va">Age</span>, <span class="va">BMI</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://rdrr.io/pkg/psych/man/describe.by.html">describeBy</a></span><span class="op">(</span>group <span class="op">=</span> <span class="st">"Group"</span><span class="op">)</span> 
-
-<span class="va">describebytable</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">describebytable</span> <span class="op">&lt;-</span> <span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Group</span>, <span class="va">Age</span>, <span class="va">BMI</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/psych/man/describe.by.html">describeBy</a></span><span class="op">(</span>group <span class="op">=</span> <span class="va">.</span><span class="op">$</span><span class="va">Group</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="va">describebytable</span></span></code></pre></div>
 <pre><code>## 
 ##  Descriptive statistics by group 
-## Group: C
+## group: C
 ##        vars   n  mean   sd median trimmed  mad min max range skew kurtosis   se
 ## Group*    1 410  1.00 0.00      1    1.00 0.00   1   1     0  NaN      NaN 0.00
 ## Age       2 410 25.86 5.51     25   25.48 5.93  16  44    28 0.61    -0.27 0.27
 ## BMI       3 375 27.45 6.88     26   26.78 5.93  16  62    46 1.16     2.16 0.36
 ## ------------------------------------------------------------ 
-## Group: T
+## group: T
 ##        vars   n  mean   sd median trimmed  mad min max range skew kurtosis   se
 ## Group*    1 413  2.00 0.00      2    2.00 0.00   2   2     0  NaN      NaN 0.00
 ## Age       2 413 26.09 5.62     25   25.73 5.93  16  44    28 0.58    -0.25 0.28
 ## BMI       3 375 27.89 7.37     26   26.94 5.93  15  68    53 1.72     4.67 0.38</code></pre>
-<p>The object this creates is different to what we've created so far. Rather than a single data frame or tibble, this creates a <a class="glossary" target="_blank" title="A container data type that allows items with different data types to be grouped together." href="https://psyteachr.github.io/glossary/l#list">list</a>. Lists can contain multiple objects, datasets, and data types but it does mean they're a little bit harder to work with and we need to use the <code>$</code> notation to pull out specific objects in the list before we can manipulate them. The tab autocomplete function can be very useful here to help you get the name of each object exactly right.</p>
-<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">describebytable</span><span class="op">$</span><span class="va">C</span></code></pre></div>
+<p>The object this creates is different to what we've created so far. Rather than a single data frame or tibble, this creates a <a class="glossary">list<span class="def"></span></a>. Lists can contain multiple objects, datasets, and data types but it does mean they're a little bit harder to work with and we need to use the <code>$</code> notation to pull out specific objects in the list before we can manipulate them. The tab autocomplete function can be very useful here to help you get the name of each object exactly right.</p>
+<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">describebytable</span><span class="op">$</span><span class="va">C</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr>
@@ -674,10 +621,10 @@ BMI
 </table></div>
 </div>
 <p>If you want to get rid of the row that contains <code>Group</code> (because the descriptives aren't informative) and the <code>vars</code> column (which again, isn't hugely helpful), then it requires a little bit of extra wrangling. Using the <code>%&gt;%</code> pipe, we pass the table to <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> and ask it to return all rows where <code>vars</code> does not (<code>!=</code>) equal 1 and then we use <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> to drop (<code>-</code>) the column <code>vars</code>.</p>
-<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">describebytable</span><span class="op">$</span><span class="va">`C`</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">vars</span> <span class="op">!=</span> <span class="fl">1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">vars</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">describebytable</span><span class="op">$</span><span class="va">`C`</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">vars</span> <span class="op">!=</span> <span class="fl">1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">vars</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr>
@@ -826,10 +773,10 @@ BMI
 <li>greater than or equal to 7: Normal</li>
 </ul>
 <p>So whilst this looks like a number, it's really not because you can't be sure that the difference between a score of 0 and 1 is the same as the difference between 1 and 2. But currently, R doesn't know this, as far as R is concerned, if it looks like a number and walks like a number and smells like a number, it's going to treat it as a number.</p>
-<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Apgar1</span>, <span class="va">Apgar5</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://rdrr.io/pkg/psych/man/describe.html">describe</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Apgar1</span>, <span class="va">Apgar5</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/psych/man/describe.html">describe</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr>
@@ -967,10 +914,10 @@ Apgar5
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Apgar1</span>, <span class="va">Apgar5</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Apgar1</span>, <span class="va">Apgar5</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##      Apgar1          Apgar5      
 ##  Min.   : 0.00   Min.   : 0.000  
 ##  1st Qu.: 8.00   1st Qu.: 9.000  
@@ -980,17 +927,17 @@ Apgar5
 ##  Max.   :10.00   Max.   :10.000  
 ##  NA's   :41      NA's   :41</code></pre>
 <p>If medical researchers are anything like psychologists, they will ignore the fact that the Apgar score is ordinal, treat it like a real number, calculate a full range of descriptive statistics and use it in parametric statistical tests. However, this isn't really right.</p>
-<p>Instead, you can convert the variable to a <a class="glossary" target="_blank" title="A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter" href="https://psyteachr.github.io/glossary/f#factor">factor</a>, or category using the function <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> from the <code class="package">tidyverse</code> package <code class="package">dplyr</code>.</p>
+<p>Instead, you can convert the variable to a <a class="glossary">factor<span class="def"></span></a>, or category using the function <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> from the <code class="package">tidyverse</code> package <code class="package">dplyr</code>.</p>
 <p>Note that because we save the result of the operation to a dataset of the same name, it will overwrite the original object. In this example, we've chosen to create new variables with the factored data but we could also have chosen to overwrite the original <code>Apgar1</code> and <code>Apgar5</code> variables by providing the existing names on the left-hand side. Think carefully about whether you want to overwrite existing variables or create new ones.</p>
-<div class="sourceCode" id="cb97"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">opt</span> <span class="op">&lt;-</span> <span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Apgar1_factor <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">Apgar1</span><span class="op">)</span>,
-         Apgar5_factor <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">Apgar5</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">opt</span> <span class="op">&lt;-</span> <span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Apgar1_factor <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">Apgar1</span><span class="op">)</span>,</span>
+<span>         Apgar5_factor <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">Apgar5</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Now that these variables are categories, <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> provides counts rather than means etc:</p>
-<div class="sourceCode" id="cb98"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Apgar1_factor</span>, <span class="va">Apgar5_factor</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Apgar1_factor</span>, <span class="va">Apgar5_factor</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##  Apgar1_factor Apgar5_factor
 ##  9      :440   9      :650  
 ##  8      :203   8      : 70  
@@ -1000,14 +947,14 @@ Apgar5
 ##  (Other): 31   (Other):  7  
 ##  NA's   : 41   NA's   : 41</code></pre>
 <p>You can also use <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> to plot the number of babies with each score:</p>
-<div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">opt</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Apgar1_factor</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">opt</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Apgar1_factor</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="05-data-summaries_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;"></div>
 <p>Or use the factor as a new grouping variable:</p>
-<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">opt</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Apgar5_factor</span>, fill <span class="op">=</span> <span class="va">Black</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">opt</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Apgar5_factor</span>, fill <span class="op">=</span> <span class="va">Black</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="05-data-summaries_files/figure-html/unnamed-chunk-15-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 <div id="missing-values" class="section level2" number="5.10">
@@ -1019,14 +966,14 @@ Apgar5
 <span class="header-section-number">5.10.0.1</span> Ignore missing values<a class="anchor" aria-label="anchor" href="#ignore-missing-values"><i class="fas fa-link"></i></a>
 </h4>
 <p>Some of the variables have missing data. If we try and compute mean BMI it returns <code>NA</code>. This is because <code>NA</code> basically means "I don't know", and the sum of 100 and "I don't know" is "I don't know", not 100. However, when you're calculating means, you often want to just ignore missing values. Set <code>na.rm = TRUE</code> in the summary function to remove missing values before calculating.</p>
-<div class="sourceCode" id="cb102"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># code that will return NA</span>
-<span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_bmi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">BMI</span><span class="op">)</span><span class="op">)</span>
-
-<span class="co"># ignore missing values to return mean</span>
-<span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_bmi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">BMI</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># code that will return NA</span></span>
+<span><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_bmi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">BMI</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># ignore missing values to return mean</span></span>
+<span><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_bmi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">BMI</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr>
@@ -1060,15 +1007,15 @@ mean_bmi
 <h4>
 <span class="header-section-number">5.10.0.2</span> Count missing values<a class="anchor" aria-label="anchor" href="#count-missing-values"><i class="fas fa-link"></i></a>
 </h4>
-<p>If you want to find out how many missing or non-missing values there are in a column, use the <code><a href="https://rdrr.io/r/base/NA.html">is.na()</a></code> function to get a <a class="glossary" target="_blank" title="A data type representing TRUE or FALSE values." href="https://psyteachr.github.io/glossary/l#logical">logical</a> vector of whether or not each value is missing, and use <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code> to count how many values are TRUE or <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> to calculate the proportion of TRUE values.</p>
-<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Black</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>
-    n_valid <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">Apgar5_factor</span><span class="op">)</span><span class="op">)</span>,
-    n_missing <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">Apgar5_factor</span><span class="op">)</span><span class="op">)</span>,
-    prop_missing <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">Apgar5_factor</span><span class="op">)</span><span class="op">)</span>
-  <span class="op">)</span></code></pre></div>
+<p>If you want to find out how many missing or non-missing values there are in a column, use the <code><a href="https://rdrr.io/r/base/NA.html">is.na()</a></code> function to get a <a class="glossary">logical<span class="def"></span></a> vector of whether or not each value is missing, and use <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code> to count how many values are TRUE or <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> to calculate the proportion of TRUE values.</p>
+<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Black</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span></span>
+<span>    n_valid <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">Apgar5_factor</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    n_missing <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">Apgar5_factor</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    prop_missing <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">Apgar5_factor</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr>
@@ -1123,14 +1070,14 @@ Yes
 <span class="header-section-number">5.10.0.3</span> Omit missing values<a class="anchor" aria-label="anchor" href="#omit-missing-values"><i class="fas fa-link"></i></a>
 </h4>
 <p>You may also want to remove rows that have missing values and only work from complete datasets. <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code> will remove any row that has a missing observation. You can use <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code> on the entire dataset which will remove any row that has <em>any</em> missing value, or you can specify to only remove rows that are missing a specific value.</p>
-<div class="sourceCode" id="cb104"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># remove any rows with any missing values</span>
-<span class="va">complete_data</span> <span class="op">&lt;-</span> <span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span>
-
-<span class="co"># remove any rows that are missing a value for sales</span>
-<span class="va">complete_bmi</span> <span class="op">&lt;-</span> <span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">BMI</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># remove any rows with any missing values</span></span>
+<span><span class="va">complete_data</span> <span class="op">&lt;-</span> <span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># remove any rows that are missing a value for sales</span></span>
+<span><span class="va">complete_bmi</span> <span class="op">&lt;-</span> <span class="va">opt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">BMI</span><span class="op">)</span></span></code></pre></div>
 <p>Missing data can be quite difficult to deal with depending on how it is represented. As always, no amount of coding expertise can make up for not understanding the structure and idiosyncrasies of your data.</p>
 </div>
 </div>
@@ -1150,34 +1097,30 @@ definition
 <tbody>
 <tr>
 <td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/f.html#factor" class="glossary" target="_blank">factor</a>
+factor
 </td>
 <td style="text-align:left;">
-A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/l.html#list" class="glossary" target="_blank">list</a>
-</td>
-<td style="text-align:left;">
-A container data type that allows items with different data types to be grouped together.
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/l.html#logical" class="glossary" target="_blank">logical</a>
+list
 </td>
 <td style="text-align:left;">
-A data type representing TRUE or FALSE values.
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/p.html#pipe" class="glossary" target="_blank">pipe</a>
+logical
 </td>
 <td style="text-align:left;">
-A way to order your code in a more readable format using the symbol %&gt;%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pipe
+</td>
+<td style="text-align:left;">
 </td>
 </tr>
 </tbody>
@@ -1438,7 +1381,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Intro to R and Data Visualization</strong>" was written by Emily Nordmann &amp; Javan Carter. It was last built on 2022-10-25.</p>
+    <p>"<strong>Intro to R and Data Visualization</strong>" was written by Emily Nordmann &amp; Javan Carter. It was last built on 2023-09-03.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -188,4 +188,8 @@ schedule-and-zoom-link-1
 content-1
 pre-requisites-1
 completion-quiz
-glossary
+ai-and-coding
+debugging
+r-tutor
+alternative-methods
+writing-code

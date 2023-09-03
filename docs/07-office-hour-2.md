@@ -3,8 +3,8 @@
 
 ## Schedule and Zoom link
 
-* The second live office hour session will take place on Wednesday 9th November 2pm EST via [Zoom](https://rtiorg.zoom.us/j/92322911830?pwd=cERXNHF1YkVUbDlIM1h0TmgxdWRQQT09). 
-* The password is 994922 and the waiting room will be enabled. Please ensure that your Zoom name is set to the name that you used to register with the *All of Us* Researcher Academy otherwise you may not be allowed entry to the session.
+* The second live office hour session will take place from 4-5pm ET on September 28 via [Zoom](https://rtiorg.zoom.us/j/8340850804?pwd=b3BZMi9oRzJ3MlB1aHlQaGNXYUwrdz09). 
+* The password is 3412 and the waiting room will be enabled. Please ensure that your Zoom name is set to the name that you used to register with the *All of Us* Researcher Academy otherwise you may not be allowed entry to the session.
 
 ## Content
 

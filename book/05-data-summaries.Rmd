@@ -190,7 +190,7 @@ Finally, because `describe()` isn't tidyverse, we can't use `group_by()` with it
 ```{r}
 describebytable <- opt %>%
   select(Group, Age, BMI) %>%
-  describeBy(group = "Group") 
+  describeBy(group = .$Group) 
 
 describebytable
 ```

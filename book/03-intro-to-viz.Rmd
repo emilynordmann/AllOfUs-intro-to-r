@@ -41,7 +41,7 @@ To create a new project for a local installation:
 RStudio will restart itself and open with this new project directory as the working directory.
 
 ```{r, echo = FALSE, fig.cap="Starting a new project.", fig.show="hold", out.width = "32%"}
-include_graphics(c("images/reports/new_proj_1.png",
+knitr::include_graphics(c("images/reports/new_proj_1.png",
                    "images/reports/new_proj_2.png",
                    "images/reports/new_proj_3.png"))
 ```
@@ -55,7 +55,7 @@ If you're working on the cloud:
 - Name the project `r path("intro-to-r")` by clicking on the name of the project (by default "Untitled project") at the top.
 
 ```{r, echo = FALSE, fig.cap="Starting a new project in the cloud.", fig.show="hold", out.width = "32%"}
-include_graphics(c("images/reports/new_project.png",
+knitr::include_graphics(c("images/reports/new_project.png",
                    "images/reports/name_project.png"))
 ```
 

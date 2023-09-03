@@ -7,7 +7,7 @@
 <title>Chapter 2 Intro to R and RStudio | Intro to R and Data Visualization</title>
 <meta name="author" content="Emily Nordmann &amp; Javan Carter">
 <meta name="description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Be able to install add-on packages Be able to get help for packages and functions Be able to create objects by...">
-<meta name="generator" content="bookdown 0.25 with bs4_book()">
+<meta name="generator" content="bookdown 0.34 with bs4_book()">
 <meta property="og:title" content="Chapter 2 Intro to R and RStudio | Intro to R and Data Visualization">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://emilynordmann.github.io/AllOfUs-intro-to-r/intro.html">
@@ -19,11 +19,11 @@
 <meta name="twitter:image" content="https://emilynordmann.github.io/AllOfUs-intro-to-r/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
-<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.2/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -83,9 +83,8 @@
 <li><a class="" href="live-office-hour-2.html"><span class="header-section-number">7</span> Live Office Hour 2</a></li>
 <li><a class="" href="completion-quiz.html"><span class="header-section-number">8</span> Completion Quiz</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="glossary.html"><span class="header-section-number">A</span> Glossary</a></li>
+<li><a class="" href="ai-and-coding.html"><span class="header-section-number">A</span> AI and coding</a></li>
 <li><a class="" href="license.html">License</a></li>
-<li><a class="" href="references.html">References</a></li>
 </ul>
 
         <div class="book-extra">
@@ -126,7 +125,7 @@
 <h3>
 <span class="header-section-number">2.3.1</span> RStudio<a class="anchor" aria-label="anchor" href="#rstudio_ide"><i class="fas fa-link"></i></a>
 </h3>
-<p>When you installed R, that gave your computer the ability to process the R programming language, and also installed an app called "R". We will never use that app. Instead, we will use <a href="http://www.rstudio.com" target="_blank">RStudio</a>. RStudio is arranged with up to four window <a class="glossary" target="_blank" title='RStudio is arranged with four window "panes".' href="https://psyteachr.github.io/glossary/p#panes">panes</a>.</p>
+<p>When you installed R, that gave your computer the ability to process the R programming language, and also installed an app called "R". We will never use that app. Instead, we will use <a href="http://www.rstudio.com" target="_blank">RStudio</a>. RStudio is arranged with up to four window <a class="glossary">panes<span class="def"></span></a>.</p>
 <p>By default, the upper left pane is the <strong>source pane</strong>, where you view, write, and edit code from files and view data tables in a spreadsheet format. When you first open RStudio, this pane won't display until we open a document or load in some data - don't worry, we'll get to that soon.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:img-rstudio"></span>
@@ -135,14 +134,14 @@ Figure 2.1: The RStudio IDE
 </p>
 </div>
 <p>The lower left pane is the <strong>console pane</strong>, where you can type in commands and view output messages. You can write code in the console to test it out. The code will run and can create objects in the environment, but the code itself won't be saved. You need to write your code into a script in the source pane to save it.</p>
-<p>The right panes have several different tabs that show you information about your code. The most used tabs in the upper right pane are the <strong>Environment</strong> tab and the <strong>Help</strong> tab. The environment tab lists some information about the <a class="glossary" target="_blank" title="A word that identifies and stores the value of some data for later use." href="https://psyteachr.github.io/glossary/o#object">objects</a> that you have defined in your code. We'll learn more about the Help tab in Section <a href="intro.html#function-help">2.5.4</a>.</p>
+<p>The right panes have several different tabs that show you information about your code. The most used tabs in the upper right pane are the <strong>Environment</strong> tab and the <strong>Help</strong> tab. The environment tab lists some information about the <a class="glossary">objects<span class="def"></span></a> that you have defined in your code. We'll learn more about the Help tab in Section <a href="intro.html#function-help">2.5.4</a>.</p>
 <p>In the lower right pane, the most used tabs are the <strong>Files</strong> tab for directory structure, the <strong>Plots</strong> tab for plots made in a script, the <strong>Packages</strong> tab for managing add-on packages (see Section <a href="intro.html#packages">2.5</a>), and the <strong>Viewer</strong> tab to display reports created by your scripts. You can change the location of panes and what tabs are shown under <strong><code>Preferences &gt; Pane Layout</code></strong> although if you're new to R, we'd suggest just keeping the defaults for now so that your screen looks like our screen.</p>
 </div>
 <div id="intro-reproducibility" class="section level3" number="2.3.2">
 <h3>
 <span class="header-section-number">2.3.2</span> Reproducibility<a class="anchor" aria-label="anchor" href="#intro-reproducibility"><i class="fas fa-link"></i></a>
 </h3>
-<p>One of the main reasons to learn R is that you can create <a class="glossary" target="_blank" title="The extent to which the findings of a study can be repeated in some other context" href="https://psyteachr.github.io/glossary/r#reproducibility">reproducible</a> reports. This involves writing scripts that transform data, create summaries and visualisations, and embed them in a report in a way that always gives you the same results.</p>
+<p>One of the main reasons to learn R is that you can create <a class="glossary">reproducible<span class="def"></span></a> reports. This involves writing scripts that transform data, create summaries and visualisations, and embed them in a report in a way that always gives you the same results.</p>
 <p>When you do things reproducibly, others (and future you) can understand and check your work. You can also reuse your work more easily. For example, if you need to run the same set of analyses each year on a new cohort of data, a reproducible report allows you to download the new data and create the report within seconds. It might take a little longer to set up the report in the first instance with reproducible methods, but the time it saves you in the long run is invaluable.</p>
 <div class="try">
 <p>Section <a href="installing-r.html#rstudio-settings">1.7</a> shows you how to change two important settings in the global Options to increase reproducibility. Your settings should have:</p>
@@ -184,14 +183,14 @@ Figure 2.1: The RStudio IDE
 <h2>
 <span class="header-section-number">2.5</span> Packages and functions<a class="anchor" aria-label="anchor" href="#packages"><i class="fas fa-link"></i></a>
 </h2>
-<p>When you install R you will have access to a range of <a class="glossary" target="_blank" title="A named section of code that can be reused." href="https://psyteachr.github.io/glossary/f#function">functions</a> including options for <a class="glossary" target="_blank" title="The process of preparing data for visualisation and statistical analysis." href="https://psyteachr.github.io/glossary/d#data-wrangling">data wrangling</a> and statistical analysis. The functions that are included in the default installation are typically referred to as <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages." href="https://psyteachr.github.io/glossary/b#base-r">base R</a> and you can think of them like the default apps that come pre-loaded on your phone.</p>
-<p>A <a class="glossary" target="_blank" title="A named section of code that can be reused." href="https://psyteachr.github.io/glossary/f#function">function</a> is a name that refers to some code you can reuse. We'll be using functions that are provided in packages, but you can also write your own functions.</p>
+<p>When you install R you will have access to a range of <a class="glossary">functions<span class="def"></span></a> including options for <a class="glossary">data wrangling<span class="def"></span></a> and statistical analysis. The functions that are included in the default installation are typically referred to as <a class="glossary">base R<span class="def"></span></a> and you can think of them like the default apps that come pre-loaded on your phone.</p>
+<p>A <a class="glossary">function<span class="def"></span></a> is a name that refers to some code you can reuse. We'll be using functions that are provided in packages, but you can also write your own functions.</p>
 <p>For example, the function <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code> is included in base R, and does what you would expect. In the console, run the below code:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 6</code></pre>
-<p>One of the great things about R, however, is that it is <strong>user extensible</strong>: anyone can create a new add-on that extends its functionality. There are currently thousands of <a class="glossary" target="_blank" title="A group of R functions." href="https://psyteachr.github.io/glossary/p#package">packages</a> that R users have created to solve many different kinds of problems, or just simply to have fun. For example, there are packages for data visualisation, machine learning, interactive dashboards, web scraping, and playing games such as Sudoku.</p>
-<p>Add-on packages are not distributed with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install PokemonGo on your smartphone. The main repository where packages reside is called <a class="glossary" target="_blank" title="The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R." href="https://psyteachr.github.io/glossary/c#cran">CRAN</a>, the Comprehensive R Archive Network.</p>
+<p>One of the great things about R, however, is that it is <strong>user extensible</strong>: anyone can create a new add-on that extends its functionality. There are currently thousands of <a class="glossary">packages<span class="def"></span></a> that R users have created to solve many different kinds of problems, or just simply to have fun. For example, there are packages for data visualisation, machine learning, interactive dashboards, web scraping, and playing games such as Sudoku.</p>
+<p>Add-on packages are not distributed with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install PokemonGo on your smartphone. The main repository where packages reside is called <a class="glossary">CRAN<span class="def"></span></a>, the Comprehensive R Archive Network.</p>
 <p>There is an important distinction between <strong>installing</strong> a package and <strong>loading</strong> a package.</p>
 <div id="install-package" class="section level3" number="2.5.1">
 <h3>
@@ -200,37 +199,37 @@ Figure 2.1: The RStudio IDE
 <!--
 <div class="small_right"><img src="images/memes/pokemon.gif" /></div>
 -->
-<p>This is done using <code><span class="fu"><a target="_blank" href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="op">)</span></code>. This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store; you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not <em>loaded</em>) every time you open up R.</p>
+<p>This is done using <code><span><span class="fu"><a target="_blank" href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="op">)</span></span></code>. This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store; you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not <em>loaded</em>) every time you open up R.</p>
 <p>Install the <code class="package">tidyverse</code> package on your system. This package is the main package we will use throughout this book for data wrangling, summaries, and visualisation.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># type this in the console pane</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># type this in the console pane</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span></code></pre></div>
 <p>If you get a message that says something like <code>package ‘tidyverse’ successfully unpacked and MD5 sums checked</code>, the installation was successful. If you get an error and the package wasn't installed, check the troubleshooting section of Section <a href="installing-r.html#package-install-troubleshooting">1.13</a>.</p>
 <div class="dangerous">
 <p>Never install a package from inside a script. Only do this from the console pane. This is because if you put the code to install a package in your script, you risk installing the package mulitple times. Not only will this waste time, but you may accidentally install a later version of the package you didn't want which breaks your code.</p>
 </div>
 <p>You can also install multiple packages at once. Here is the command to install all of the packages we'll be using in this course. Depending on your set-up and connection speed, this might take anywhere from a couple of minutes to 10+ minutes.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">packages</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>
-  <span class="st">"tidyverse"</span>,   <span class="co"># for everything</span>
-  <span class="st">"patchwork"</span>,   <span class="co"># for multi-part plots</span>
-  <span class="st">"ggthemes"</span>,    <span class="co"># for themed plots</span>
-  <span class="st">"devtools"</span>,    <span class="co"># for installing github packages</span>
-  <span class="st">"rmarkdown"</span>,   <span class="co"># for reproducible reports</span>
-  <span class="st">"medicaldata"</span>, <span class="co"># for medical datasets</span>
-  <span class="st">"gapminder"</span>,   <span class="co"># for gapminder dataset</span>
-  <span class="st">"psych"</span>,       <span class="co"># for descriptive stats (and other things)</span>
-  <span class="st">"plotly"</span>       <span class="co"># for interactive plots  </span>
-<span class="op">)</span>
-
-<span class="co"># determine which need to be installed</span>
-<span class="va">new_packages</span> <span class="op">&lt;-</span> <span class="va">packages</span><span class="op">[</span><span class="op">!</span><span class="va">packages</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">]</span>
-
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="va">new_packages</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">packages</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>  <span class="st">"tidyverse"</span>,   <span class="co"># for everything</span></span>
+<span>  <span class="st">"patchwork"</span>,   <span class="co"># for multi-part plots</span></span>
+<span>  <span class="st">"ggthemes"</span>,    <span class="co"># for themed plots</span></span>
+<span>  <span class="st">"devtools"</span>,    <span class="co"># for installing github packages</span></span>
+<span>  <span class="st">"rmarkdown"</span>,   <span class="co"># for reproducible reports</span></span>
+<span>  <span class="st">"medicaldata"</span>, <span class="co"># for medical datasets</span></span>
+<span>  <span class="st">"gapminder"</span>,   <span class="co"># for gapminder dataset</span></span>
+<span>  <span class="st">"psych"</span>,       <span class="co"># for descriptive stats (and other things)</span></span>
+<span>  <span class="st">"plotly"</span>       <span class="co"># for interactive plots  </span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># determine which need to be installed</span></span>
+<span><span class="va">new_packages</span> <span class="op">&lt;-</span> <span class="va">packages</span><span class="op">[</span><span class="op">!</span><span class="va">packages</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">]</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="va">new_packages</span><span class="op">)</span></span></code></pre></div>
 <p>Once you have the <code class="package">devtools</code> package, you can also install packages from repositories other than CRAN, such as github. The following code installs the package associated with a <a href="https://journals.sagepub.com/doi/full/10.1177/25152459221074654">paper Emily wrote on data visualization</a>.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install data viz package </span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"psyteachr/introdataviz"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install data viz package </span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"psyteachr/introdataviz"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="loading-a-package" class="section level3" number="2.5.2">
 <h3>
@@ -239,10 +238,10 @@ Figure 2.1: The RStudio IDE
 <p>This is done using the <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> function. This is like <strong>launching</strong> an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. For example, when you run <code><a href="https://patchwork.data-imaginist.com">library(patchwork)</a></code> within a session, the functions in the package referred to by <code>patchwork</code> will be made available for your R session. The next time you start R, you will need to run <code><a href="https://patchwork.data-imaginist.com">library(patchwork)</a></code> again if you want to access that package.</p>
 <p>After installing the<code class="package">tidyverse</code> package, you can load it for your current R session as follows:</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code></pre></div>
 <p>You might get some red text when you load a package, this is normal. It is usually warning you that this package has functions that have the same name as other packages you've already loaded.</p>
 <div class="info">
-<p>You can use the convention <code>package::function()</code> to indicate in which add-on package a function resides. For instance, if you see <code><span class="fu">readr</span><span class="fu">::</span><span class="fu"><a target="_blank" href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="op">)</span></code>, that refers to the function <code><span class="fu">read_csv</span><span class="op">(</span><span class="op">)</span></code> in the <code class="package">readr</code> add-on package. If the package is loaded using <code><a href="https://rdrr.io/r/base/library.html">library()</a></code>, you don't have to specify the package name before a function unless there is a <a class="glossary" target="_blank" title="Having two packages loaded that have a function with the same name." href="https://psyteachr.github.io/glossary/c#conflict">conflict</a> (e.g., you have two packages loaded that have a function with the same name).</p>
+<p>You can use the convention <code>package::function()</code> to indicate in which add-on package a function resides. For instance, if you see <code><span><span class="fu">readr</span><span class="fu">::</span><span class="fu"><a target="_blank" href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="op">)</span></span></code>, that refers to the function <code><span><span class="fu">read_csv</span><span class="op">(</span><span class="op">)</span></span></code> in the <code class="package">readr</code> add-on package. If the package is loaded using <code><a href="https://rdrr.io/r/base/library.html">library()</a></code>, you don't have to specify the package name before a function unless there is a <a class="glossary">conflict<span class="def"></span></a> (e.g., you have two packages loaded that have a function with the same name).</p>
 </div>
 </div>
 <div id="tidyverse" class="section level3" number="2.5.3">
@@ -260,10 +259,10 @@ Figure 2.1: The RStudio IDE
 <li>
 <code class="package">dplyr</code>, for data manipulation</li>
 <li>
-<code class="package">stringr</code>, for <a class="glossary" target="_blank" title="A piece of text inside of quotes." href="https://psyteachr.github.io/glossary/s#string">strings</a>
+<code class="package">stringr</code>, for <a class="glossary">strings<span class="def"></span></a>
 </li>
 <li>
-<code class="package">forcats</code>, for <a class="glossary" target="_blank" title="A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter" href="https://psyteachr.github.io/glossary/f#factor">factors</a>
+<code class="package">forcats</code>, for <a class="glossary">factors<span class="def"></span></a>
 </li>
 <li>
 <code class="package">purrr</code>, for repeating things</li>
@@ -273,23 +272,23 @@ Figure 2.1: The RStudio IDE
 <h3>
 <span class="header-section-number">2.5.4</span> Function Help<a class="anchor" aria-label="anchor" href="#function-help"><i class="fas fa-link"></i></a>
 </h3>
-<p>When you load the <code class="package">tidyverse</code> it automatically loads all of the above packages, however, it can be helpful to know which package a function comes from if you need to Google it. If a <a class="glossary" target="_blank" title="A named section of code that can be reused." href="https://psyteachr.github.io/glossary/f#function">function</a> is in <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages." href="https://psyteachr.github.io/glossary/b#base-r">base R</a> or a loaded package, you can type <code>?function_name</code> in the console to access the help file. At the top of the help it will give you the function and package name.</p>
-<p>If the package isn't loaded, use <code>?package_name::function_name</code> or specify the package in the <code>help()</code> function. When you aren't sure what package the function is in, use the shortcut <code>??function_name</code>.</p>
+<p>When you load the <code class="package">tidyverse</code> it automatically loads all of the above packages, however, it can be helpful to know which package a function comes from if you need to Google it. If a <a class="glossary">function<span class="def"></span></a> is in <a class="glossary">base R<span class="def"></span></a> or a loaded package, you can type <code>?function_name</code> in the console to access the help file. At the top of the help it will give you the function and package name.</p>
+<p>If the package isn't loaded, use <code>?package_name::function_name</code> or specify the package in the <code><a href="https://rdrr.io/r/utils/help.html">help()</a></code> function. When you aren't sure what package the function is in, use the shortcut <code>??function_name</code>.</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># if the package is loaded</span>
-<span class="op">?</span><span class="va">ggplot2</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="st">"ggplot2"</span><span class="op">)</span>
-
-<span class="co"># works whether or not the package is loaded</span>
-<span class="op">?</span><span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>
-<span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="st">"ggplot"</span>, package<span class="op">=</span><span class="st">"ggplot2"</span><span class="op">)</span> 
-
-<span class="co"># shows a list of potentially matching functions</span>
-<span class="op">?</span><span class="op">?</span><span class="va">ggplot</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># if the package is loaded</span></span>
+<span><span class="op">?</span><span class="va">ggplot2</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="st">"ggplot2"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># works whether or not the package is loaded</span></span>
+<span><span class="op">?</span><span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="st">"ggplot"</span>, package<span class="op">=</span><span class="st">"ggplot2"</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="co"># shows a list of potentially matching functions</span></span>
+<span><span class="op">?</span><span class="op">?</span><span class="va">ggplot</span></span></code></pre></div>
 <div class="small_right" style="width: 50%; max-width: 400px;">
 <img src="images/intro/function_help.png">
 </div>
-<p>Function help is always organised in the same way. For example, look at the help for <code><a href="https://rdrr.io/r/base/sample.html">?base::sample</a></code>. At the top, it tells you the name of the function and its package in curly brackets, then a short description of the function, followed by a longer description. The <strong>Usage</strong> section shows the function with all of its <a class="glossary" target="_blank" title="A variable that provides input to a function." href="https://psyteachr.github.io/glossary/a#argument">arguments</a>. If any of those arguments have default values, they will be shown like <code>function(arg = default)</code>. The <strong>Arguments</strong> section lists each argument with an explanation. There may be a <strong>Details</strong> section after this with even more detail about the functions. The <strong>Examples</strong> section is last, and shows examples that you can run in your console window to see how the function works.</p>
+<p>Function help is always organised in the same way. For example, look at the help for <code><a href="https://rdrr.io/r/base/sample.html">?base::sample</a></code>. At the top, it tells you the name of the function and its package in curly brackets, then a short description of the function, followed by a longer description. The <strong>Usage</strong> section shows the function with all of its <a class="glossary">arguments<span class="def"></span></a>. If any of those arguments have default values, they will be shown like <code>function(arg = default)</code>. The <strong>Arguments</strong> section lists each argument with an explanation. There may be a <strong>Details</strong> section after this with even more detail about the functions. The <strong>Examples</strong> section is last, and shows examples that you can run in your console window to see how the function works.</p>
 <div class="try">
 <ul>
 <li>What is the first argument to the <code>mean</code> function? <select class="webex-select"><option value="blank"></option>
@@ -311,17 +310,17 @@ Figure 2.1: The RStudio IDE
 <h3>
 <span class="header-section-number">2.5.5</span> Arguments<a class="anchor" aria-label="anchor" href="#arguments"><i class="fas fa-link"></i></a>
 </h3>
-<p>Most functions allow/require you to specify one or more <a class="glossary" target="_blank" title="A variable that provides input to a function." href="https://psyteachr.github.io/glossary/a#argument">arguments</a>. These are options that you can set. You can look up the arguments/options that a function has by using the help documentation. Some arguments are required, and some are optional. Optional arguments will often use a default (normally specified in the help documentation) if you do not enter any value.</p>
+<p>Most functions allow/require you to specify one or more <a class="glossary">arguments<span class="def"></span></a>. These are options that you can set. You can look up the arguments/options that a function has by using the help documentation. Some arguments are required, and some are optional. Optional arguments will often use a default (normally specified in the help documentation) if you do not enter any value.</p>
 <p>As an example, look at the help documentation for the function <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> which randomly samples items from a list.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="op">?</span><span class="va">sample</span></code></pre></div>
+<code class="sourceCode R"><span><span class="op">?</span><span class="va">sample</span></span></code></pre></div>
 <p>The help documentation for <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> should appear in the bottom right help panel. In the usage section, we see that <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> takes the following form:</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">size</span>, replace <span class="op">=</span> <span class="cn">FALSE</span>, prob <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">size</span>, replace <span class="op">=</span> <span class="cn">FALSE</span>, prob <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
 <p>In the arguments section, there are explanations for each of the arguments. <code>x</code> is the list of items we want to choose from, <code>size</code> is the number of items we want to choose, <code>replace</code> is whether or not each item may be selected more than once, and <code>prob</code> gives the probability that each item is chosen. In the details section it notes that if no values are entered for <code>replace</code> or <code>prob</code> it will use defaults of <code>FALSE</code> (each item can only be chosen once) and <code>NULL</code> (all items will have equal probability of being chosen). Because there is no default value for <code>x</code> or <code>size</code>, they must be specified otherwise the code won't run.</p>
-<p>Let's try an example and just change the required arguments to <code>x</code> and <code>size</code> to ask R to choose 5 random letters (<code>letters</code> is a built-in <a class="glossary" target="_blank" title="A type of data structure that collects values with the same data type, like T/F values, numbers, or strings." href="https://psyteachr.github.io/glossary/v#vector">vector</a> of the 26 lower-case Latin letters).</p>
+<p>Let's try an example and just change the required arguments to <code>x</code> and <code>size</code> to ask R to choose 5 random letters (<code>letters</code> is a built-in <a class="glossary">vector<span class="def"></span></a> of the 26 lower-case Latin letters).</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">letters</span>, size <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">letters</span>, size <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] "z" "v" "y" "w" "j"</code></pre>
 <div class="webex-solution">
 <button>
@@ -331,8 +330,8 @@ Why are my letters different to your letters?
 </div>
 <p>Now we can change the default value for the <code>replace</code> argument to produce a set of letters that is allowed to have duplicates.</p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">8675309</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">letters</span>, size <span class="op">=</span> <span class="fl">5</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">8675309</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">letters</span>, size <span class="op">=</span> <span class="fl">5</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] "t" "k" "j" "k" "m"</code></pre>
 <p>This time R has still produced 5 random letters, but now this set of letters has two instances of "k". Always remember to use the help documentation to help you understand what arguments a function requires.</p>
 </div>
@@ -342,12 +341,12 @@ Why are my letters different to your letters?
 </h3>
 <p>In the above examples, we have written out the argument names in our code (i.e., <code>x</code>, <code>size</code>, <code>replace</code>), however, this is not strictly necessary. The following two lines of code would both produce the same result (although each time you run <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> it will produce a slightly different result, because it's random, but they would still work the same):</p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">letters</span>, size <span class="op">=</span> <span class="fl">5</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">letters</span>, <span class="fl">5</span>, <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">letters</span>, size <span class="op">=</span> <span class="fl">5</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">letters</span>, <span class="fl">5</span>, <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p>Importantly, if you do not write out the argument names, R will use the default order of arguments. That is for <code>sample</code> it will assume that the first value you enter is <code>x</code>. the second value is <code>size</code> and the third value is <code>replace</code>.</p>
 <p>If you write out the argument names then you can write the arguments in whatever order you like:</p>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">5</span>, replace <span class="op">=</span> <span class="cn">TRUE</span>, x <span class="op">=</span> <span class="va">letters</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">5</span>, replace <span class="op">=</span> <span class="cn">TRUE</span>, x <span class="op">=</span> <span class="va">letters</span><span class="op">)</span></span></code></pre></div>
 <p>When you are first learning R, you may find it useful to write out the argument names as it can help you remember and understand what each part of the function is doing. However, as your skills progress you may find it quicker to omit the argument names and you will also see examples of code online that do not use argument names, so it is important to be able to understand which argument each bit of code is referring to (or look up the help documentation to check).</p>
 <p>In this course, we will always write out the argument names the first time we use each function. However, in subsequent uses they may be omitted.</p>
 </div>
@@ -371,16 +370,16 @@ Figure 2.2: Tab auto-complete
 <p>A large part of your coding will involve creating and manipulating objects. Objects contain stuff. That stuff can be numbers, words, or the result of operations and analyses. You assign content to an object using <code>&lt;-</code>.</p>
 <p>Run the following code in the console, but change the values of <code>name</code> and <code>age</code> to your own details and change <code>new_year</code> to a holiday or date you care about.</p>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">name</span> <span class="op">&lt;-</span> <span class="st">"Emily"</span>
-<span class="va">age</span> <span class="op">&lt;-</span> <span class="fl">37</span>
-<span class="va">today</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">new_year</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2022-12-31"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">name</span> <span class="op">&lt;-</span> <span class="st">"Emily"</span></span>
+<span><span class="va">age</span> <span class="op">&lt;-</span> <span class="fl">37</span></span>
+<span><span class="va">today</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">new_year</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2022-12-31"</span><span class="op">)</span></span></code></pre></div>
 <p>You'll see that four objects now appear in the environment pane:</p>
 <ul>
 <li>
-<code>name</code> is <a class="glossary" target="_blank" title="A data type representing strings of text." href="https://psyteachr.github.io/glossary/c#character">character</a> (text) data. In order for R to recognise it as character data, it <strong>must</strong> be enclosed in double quotation marks <code>" "</code>.</li>
+<code>name</code> is <a class="glossary">character<span class="def"></span></a> (text) data. In order for R to recognise it as character data, it <strong>must</strong> be enclosed in double quotation marks <code>" "</code>.</li>
 <li>
-<code>age</code> is <a class="glossary" target="_blank" title="A data type representing a real decimal number or integer." href="https://psyteachr.github.io/glossary/n#numeric">numeric</a> data. In order for R to recognise this as a number, it <strong>must not</strong> be enclosed in quotation marks.</li>
+<code>age</code> is <a class="glossary">numeric<span class="def"></span></a> data. In order for R to recognise this as a number, it <strong>must not</strong> be enclosed in quotation marks.</li>
 <li>
 <code>today</code> stores the result of the function <code><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date()</a></code>. This function returns your computer system's date. Unlike <code>name</code> and <code>age</code>, which are hard-coded (i.e., they will always return the values you enter), the contents of the object <code>today</code> will change dynamically with the date. That is, if you run that function tomorrow, it will update the date to tomorrow's date.</li>
 <li>
@@ -391,15 +390,15 @@ Figure 2.2: Tab auto-complete
 </div>
 <p>Finally, a key concept to understand is that objects can interact and you can save the results of those interactions in new object. Edit and run the following code to create these new objects, and then print the contents of each new object.</p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">decade</span> <span class="op">&lt;-</span> <span class="va">age</span> <span class="op">+</span> <span class="fl">10</span>
-<span class="va">full_name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">name</span>, <span class="st">"Nordmann"</span><span class="op">)</span>
-<span class="va">how_long</span> <span class="op">&lt;-</span> <span class="va">new_year</span> <span class="op">-</span> <span class="va">today</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">decade</span> <span class="op">&lt;-</span> <span class="va">age</span> <span class="op">+</span> <span class="fl">10</span></span>
+<span><span class="va">full_name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">name</span>, <span class="st">"Nordmann"</span><span class="op">)</span></span>
+<span><span class="va">how_long</span> <span class="op">&lt;-</span> <span class="va">new_year</span> <span class="op">-</span> <span class="va">today</span></span></code></pre></div>
 </div>
 <div id="help" class="section level2" number="2.7">
 <h2>
 <span class="header-section-number">2.7</span> Getting help<a class="anchor" aria-label="anchor" href="#help"><i class="fas fa-link"></i></a>
 </h2>
-<p>You will feel like you need a <em>lot</em> of help when you're starting to learn. This won't really go away; it's impossible to memorise everything. The goal is to learn enough about the structure of R that you can look things up quickly. This is why we'll introduce specialised jargon in the glossary; it's easier to google "convert <a class="glossary" target="_blank" title="A data type representing strings of text." href="https://psyteachr.github.io/glossary/c#character">character</a> to <a class="glossary" target="_blank" title="A data type representing a real decimal number or integer." href="https://psyteachr.github.io/glossary/n#numeric">numeric</a> in R" than "make numbers in quotes be actual numbers not words". In addition to the function help described above, here's some additional resources you should use often.</p>
+<p>You will feel like you need a <em>lot</em> of help when you're starting to learn. This won't really go away; it's impossible to memorise everything. The goal is to learn enough about the structure of R that you can look things up quickly. This is why we'll introduce specialised jargon in the glossary; it's easier to google "convert <a class="glossary">character<span class="def"></span></a> to <a class="glossary">numeric<span class="def"></span></a> in R" than "make numbers in quotes be actual numbers not words". In addition to the function help described above, here's some additional resources you should use often.</p>
 <div id="package-reference-manuals" class="section level3" number="2.7.1">
 <h3>
 <span class="header-section-number">2.7.1</span> Package reference manuals<a class="anchor" aria-label="anchor" href="#package-reference-manuals"><i class="fas fa-link"></i></a>
@@ -418,11 +417,11 @@ Figure 2.2: Tab auto-complete
 </h3>
 <p>Many packages, especially <a href="https://www.tidyverse.org/packages/" target="_blank">tidyverse</a> ones, have helpful websites with vignettes explaining how to use their functions. Some of the vignettes are also available inside R. You can access them from a package's help page or with the <code><a href="https://rdrr.io/r/utils/vignette.html">vignette()</a></code> function.</p>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># opens a list of available vignettes</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span>
-
-<span class="co"># opens a specific vignette in the Help pane</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span><span class="op">(</span><span class="st">"ggplot2-specs"</span>, package <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># opens a list of available vignettes</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># opens a specific vignette in the Help pane</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span><span class="op">(</span><span class="st">"ggplot2-specs"</span>, package <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div id="setup-check" class="section level2" number="2.8">
@@ -433,27 +432,27 @@ Figure 2.2: Tab auto-complete
 <p>If you get the error <code>there is no package called...</code>, install the package it says you don't have.</p>
 <p>If you are having technical issues working on your own machine and cannot get the below code to run, please consider using <a href="https://rstudio.cloud/">RStudio Cloud</a>.</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com">patchwork</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jrnold/ggthemes">ggthemes</a></span><span class="op">)</span>
-
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">starwars</span><span class="op">)</span>
-
-<span class="va">mass</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">starwars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">mass</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/ggthemes/man/theme_economist.html">theme_economist</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Mass of Star Wars characters"</span><span class="op">)</span>
-
-<span class="va">height</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">starwars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">height</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/ggthemes/man/theme_economist.html">theme_economist</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Height of Star Wars characters"</span><span class="op">)</span>
-
-<span class="va">mass</span> <span class="op">+</span> <span class="va">height</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com">patchwork</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jrnold/ggthemes">ggthemes</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">starwars</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mass</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">starwars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">mass</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/ggthemes/man/theme_economist.html">theme_economist</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Mass of Star Wars characters"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">height</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">starwars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">height</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/ggthemes/man/theme_economist.html">theme_economist</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Height of Star Wars characters"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mass</span> <span class="op">+</span> <span class="va">height</span></span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<pre><code>## Warning: Removed 28 rows containing non-finite values (stat_bin).</code></pre>
+<pre><code>## Warning: Removed 28 rows containing non-finite values (`stat_bin()`).</code></pre>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<pre><code>## Warning: Removed 6 rows containing non-finite values (stat_bin).</code></pre>
+<pre><code>## Warning: Removed 6 rows containing non-finite values (`stat_bin()`).</code></pre>
 <div class="inline-figure"><img src="02-intro-to-r_files/figure-html/unnamed-chunk-6-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 <div id="error-logs" class="section level2" number="2.9">
@@ -512,122 +511,107 @@ definition
 <tbody>
 <tr>
 <td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/a.html#argument" class="glossary" target="_blank">argument</a>
+argument
 </td>
 <td style="text-align:left;">
-A variable that provides input to a function.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/b.html#base-r" class="glossary" target="_blank">base r</a>
-</td>
-<td style="text-align:left;">
-The set of R functions that come with a basic installation of R, before you add external packages.
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/c.html#character" class="glossary" target="_blank">character</a>
+base R
 </td>
 <td style="text-align:left;">
-A data type representing strings of text.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/c.html#conflict" class="glossary" target="_blank">conflict</a>
-</td>
-<td style="text-align:left;">
-Having two packages loaded that have a function with the same name.
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/c.html#cran" class="glossary" target="_blank">cran</a>
+character
 </td>
 <td style="text-align:left;">
-The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/d.html#data-wrangling" class="glossary" target="_blank">data wrangling</a>
-</td>
-<td style="text-align:left;">
-The process of preparing data for visualisation and statistical analysis.
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/f.html#factor" class="glossary" target="_blank">factor</a>
+conflict
 </td>
 <td style="text-align:left;">
-A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/f.html#function" class="glossary" target="_blank">function</a>
-</td>
-<td style="text-align:left;">
-A named section of code that can be reused.
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/n.html#numeric" class="glossary" target="_blank">numeric</a>
+CRAN
 </td>
 <td style="text-align:left;">
-A data type representing a real decimal number or integer.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/o.html#object" class="glossary" target="_blank">object</a>
-</td>
-<td style="text-align:left;">
-A word that identifies and stores the value of some data for later use.
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/p.html#package" class="glossary" target="_blank">package</a>
+data wrangling
 </td>
 <td style="text-align:left;">
-A group of R functions.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/p.html#panes" class="glossary" target="_blank">panes</a>
-</td>
-<td style="text-align:left;">
-RStudio is arranged with four window "panes".
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/r.html#reproducibility" class="glossary" target="_blank">reproducibility</a>
+factor
 </td>
 <td style="text-align:left;">
-The extent to which the findings of a study can be repeated in some other context
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/s.html#string" class="glossary" target="_blank">string</a>
-</td>
-<td style="text-align:left;">
-A piece of text inside of quotes.
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="https://psyteachr.github.io/glossary/v.html#vector" class="glossary" target="_blank">vector</a>
+function
 </td>
 <td style="text-align:left;">
-A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+object
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+package
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+panes
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+reproducibility
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+string
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vector
+</td>
+<td style="text-align:left;">
 </td>
 </tr>
 </tbody>
@@ -902,7 +886,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Intro to R and Data Visualization</strong>" was written by Emily Nordmann &amp; Javan Carter. It was last built on 2022-10-25.</p>
+    <p>"<strong>Intro to R and Data Visualization</strong>" was written by Emily Nordmann &amp; Javan Carter. It was last built on 2023-09-03.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

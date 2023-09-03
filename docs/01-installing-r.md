@@ -19,7 +19,7 @@ Installing R and RStudio is usually straightforward. The sections below explain 
 
 ## R and RStudio {#intro-rstudio}
 
-R is a programming language that you will write code in and RStudio is an Integrated Development Environment (<a class='glossary' target='_blank' title='Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R.' href='https://psyteachr.github.io/glossary/i#ide'>IDE</a>) which makes working in  R easier. Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it would be much harder without things like spell-checking and formatting and you wouldn't be able to use some of the advanced features that Word has developed. In a similar way, you can use R without R Studio (sometimes referred to as "Base R") but we wouldn't recommend it. RStudio serves as a text editor, file manager, spreadsheet viewer, and more. The key thing to remember is that although you will do all of your work using RStudio for this course, you are actually using two pieces of software which means that from time-to-time, both of them may have separate updates.
+R is a programming language that you will write code in and RStudio is an Integrated Development Environment (<a class='glossary'>IDE<span class='def'></span></a>) which makes working in  R easier. Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it would be much harder without things like spell-checking and formatting and you wouldn't be able to use some of the advanced features that Word has developed. In a similar way, you can use R without R Studio (sometimes referred to as "Base R") but we wouldn't recommend it. RStudio serves as a text editor, file manager, spreadsheet viewer, and more. The key thing to remember is that although you will do all of your work using RStudio for this course, you are actually using two pieces of software which means that from time-to-time, both of them may have separate updates.
 
 ## Installing Base R
 
@@ -70,7 +70,7 @@ You may also want to change the appearance of your code. Different fonts and the
 <p class="caption">(\#fig:settings-general)RStudio General and Appearance settings</p>
 </div>
 
-You may also want to change the settings in the Code tab. For example, some people prefer two spaces instead of tabs for their code, or like to be able to see the <a class='glossary' target='_blank' title='Spaces, tabs and line breaks' href='https://psyteachr.github.io/glossary/w#whitespace'>whitespace</a> characters. But these are all a matter of personal preference.
+You may also want to change the settings in the Code tab. For example, some people prefer two spaces instead of tabs for their code, or like to be able to see the <a class='glossary'>whitespace<span class='def'></span></a> characters. But these are all a matter of personal preference.
 
 <div class="figure" style="text-align: center">
 <img src="images/appx/rstudio_settings_code.png" alt="RStudio Code settings" width="100%" />

@@ -56,24 +56,11 @@ opt %>%
   ungroup()
 ```
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Black </th>
-   <th style="text-align:center;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> No </td>
-   <td style="text-align:center;"> 451 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Yes </td>
-   <td style="text-align:center;"> 372 </td>
-  </tr>
-</tbody>
-</table>
+
+| Black |  n  |
+|:-----:|:---:|
+|  No   | 451 |
+|  Yes  | 372 |
 
 
 `group_by()` does not result in surface level changes to the dataset, rather, it changes the underlying structure so that if groups are specified, whatever functions called next are performed separately on each level of the grouping variable. This grouping remains in the object that is created so it is important to remove it with `ungroup()` to avoid future operations on the object unknowingly being performed by groups. 
@@ -86,18 +73,10 @@ opt %>%
   count()
 ```
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:center;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> 823 </td>
-  </tr>
-</tbody>
-</table>
+
+|  n  |
+|:---:|
+| 823 |
 
 ## Summarise
 
@@ -111,22 +90,10 @@ opt %>%
             n_values = n())
 ```
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:center;"> mean_age </th>
-   <th style="text-align:center;"> sd_age </th>
-   <th style="text-align:center;"> n_values </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> 25.98 </td>
-   <td style="text-align:center;"> 5.57 </td>
-   <td style="text-align:center;"> 823 </td>
-  </tr>
-</tbody>
-</table>
+
+| mean_age | sd_age | n_values |
+|:--------:|:------:|:--------:|
+|  25.98   |  5.57  |   823    |
 
 This code produces summary data in the form of a column named `mean_age` that contains the result of calculating the mean of the variable `age`. It then creates `sd_age` which does the same but for standard deviation. Finally, it uses the function `n()` to add the number of values used to calculate the statistic in a column named `n_values` - this is a useful sanity check whenever you make summary statistics.
 
@@ -152,34 +119,15 @@ opt %>%
   ungroup()
 ```
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Black </th>
-   <th style="text-align:center;"> mean_age </th>
-   <th style="text-align:center;"> sd_age </th>
-   <th style="text-align:center;"> n_values </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> No </td>
-   <td style="text-align:center;"> 26.11 </td>
-   <td style="text-align:center;"> 5.50 </td>
-   <td style="text-align:center;"> 451 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Yes </td>
-   <td style="text-align:center;"> 25.82 </td>
-   <td style="text-align:center;"> 5.65 </td>
-   <td style="text-align:center;"> 372 </td>
-  </tr>
-</tbody>
-</table>
+
+| Black | mean_age | sd_age | n_values |
+|:-----:|:--------:|:------:|:--------:|
+|  No   |  26.11   |  5.50  |   451    |
+|  Yes  |  25.82   |  5.65  |   372    |
 
 ## Pipes {#pipes-first}
 
-Before we go further, let's take a quick detour to formally introduce the <a class='glossary' target='_blank' title='A way to order your code in a more readable format using the symbol %>%' href='https://psyteachr.github.io/glossary/p#pipe'>pipe</a>. Pipes allow you to send the output from one function straight into another function. Specifically, they send the result of the function before `%>%` to be the first argument of the function after `%>%`. It can be useful to translate the pipe as "**and then**". It's easier to show than tell, so let's look at an example.
+Before we go further, let's take a quick detour to formally introduce the <a class='glossary'>pipe<span class='def'></span></a>. Pipes allow you to send the output from one function straight into another function. Specifically, they send the result of the function before `%>%` to be the first argument of the function after `%>%`. It can be useful to translate the pipe as "**and then**". It's easier to show than tell, so let's look at an example.
 
 
 ```r
@@ -295,7 +243,7 @@ Finally, because `describe()` isn't tidyverse, we can't use `group_by()` with it
 ```r
 describebytable <- opt %>%
   select(Group, Age, BMI) %>%
-  describeBy(group = "Group") 
+  describeBy(group = .$Group) 
 
 describebytable
 ```
@@ -303,20 +251,20 @@ describebytable
 ```
 ## 
 ##  Descriptive statistics by group 
-## Group: C
+## group: C
 ##        vars   n  mean   sd median trimmed  mad min max range skew kurtosis   se
 ## Group*    1 410  1.00 0.00      1    1.00 0.00   1   1     0  NaN      NaN 0.00
 ## Age       2 410 25.86 5.51     25   25.48 5.93  16  44    28 0.61    -0.27 0.27
 ## BMI       3 375 27.45 6.88     26   26.78 5.93  16  62    46 1.16     2.16 0.36
 ## ------------------------------------------------------------ 
-## Group: T
+## group: T
 ##        vars   n  mean   sd median trimmed  mad min max range skew kurtosis   se
 ## Group*    1 413  2.00 0.00      2    2.00 0.00   2   2     0  NaN      NaN 0.00
 ## Age       2 413 26.09 5.62     25   25.73 5.93  16  44    28 0.58    -0.25 0.28
 ## BMI       3 375 27.89 7.37     26   26.94 5.93  15  68    53 1.72     4.67 0.38
 ```
 
-The object this creates is different to what we've created so far. Rather than a single data frame or tibble, this creates a <a class='glossary' target='_blank' title='A container data type that allows items with different data types to be grouped together.' href='https://psyteachr.github.io/glossary/l#list'>list</a>. Lists can contain multiple objects, datasets, and data types but it does mean they're a little bit harder to work with and we need to use the `$` notation to pull out specific objects in the list before we can manipulate them. The tab autocomplete function can be very useful here to help you get the name of each object exactly right.
+The object this creates is different to what we've created so far. Rather than a single data frame or tibble, this creates a <a class='glossary'>list<span class='def'></span></a>. Lists can contain multiple objects, datasets, and data types but it does mean they're a little bit harder to work with and we need to use the `$` notation to pull out specific objects in the list before we can manipulate them. The tab autocomplete function can be very useful here to help you get the name of each object exactly right.
 
 
 ```r
@@ -568,7 +516,7 @@ opt %>%
 
 If medical researchers are anything like psychologists, they will ignore the fact that the Apgar score is ordinal, treat it like a real number, calculate a full range of descriptive statistics and use it in parametric statistical tests. However, this isn't really right. 
 
-Instead, you can convert the variable to a <a class='glossary' target='_blank' title='A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter' href='https://psyteachr.github.io/glossary/f#factor'>factor</a>, or category using the function `mutate()` from the <code class='package'>tidyverse</code> package <code class='package'>dplyr</code>.
+Instead, you can convert the variable to a <a class='glossary'>factor<span class='def'></span></a>, or category using the function `mutate()` from the <code class='package'>tidyverse</code> package <code class='package'>dplyr</code>.
 
 Note that because we save the result of the operation to a dataset of the same name, it will overwrite the original object. In this example, we've chosen to create new variables with the factored data but we could also have chosen to overwrite the original `Apgar1` and `Apgar5` variables by providing the existing names on the left-hand side. Think carefully about whether you want to overwrite existing variables or create new ones.
 
@@ -670,7 +618,7 @@ opt %>%
 
 #### Count missing values
 
-If you want to find out how many missing or non-missing values there are in a column, use the `is.na()` function to get a <a class='glossary' target='_blank' title='A data type representing TRUE or FALSE values.' href='https://psyteachr.github.io/glossary/l#logical'>logical</a> vector of whether or not each value is missing, and use `sum()` to count how many values are TRUE or `mean()` to calculate the proportion of TRUE values.
+If you want to find out how many missing or non-missing values there are in a column, use the `is.na()` function to get a <a class='glossary'>logical<span class='def'></span></a> vector of whether or not each value is missing, and use `sum()` to count how many values are TRUE or `mean()` to calculate the proportion of TRUE values.
 
 
 ```r
@@ -740,20 +688,20 @@ Missing data can be quite difficult to deal with depending on how it is represen
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> [factor](https://psyteachr.github.io/glossary/f.html#factor){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter </td>
+   <td style="text-align:left;"> factor </td>
+   <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [list](https://psyteachr.github.io/glossary/l.html#list){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> A container data type that allows items with different data types to be grouped together. </td>
+   <td style="text-align:left;"> list </td>
+   <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [logical](https://psyteachr.github.io/glossary/l.html#logical){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> A data type representing TRUE or FALSE values. </td>
+   <td style="text-align:left;"> logical </td>
+   <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> [pipe](https://psyteachr.github.io/glossary/p.html#pipe){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> A way to order your code in a more readable format using the symbol %&gt;% </td>
+   <td style="text-align:left;"> pipe </td>
+   <td style="text-align:left;">  </td>
   </tr>
 </tbody>
 </table>

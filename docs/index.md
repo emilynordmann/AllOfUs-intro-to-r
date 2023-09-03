@@ -2,7 +2,7 @@
 title: "Intro to R and Data Visualization" # edit
 #subtitle: "optional" 
 author: "Emily Nordmann & Javan Carter" # edit
-date: "2022-10-25"
+date: "2023-09-03"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
@@ -37,7 +37,7 @@ In addition to the asynchronous content, there will be two live office hour sess
 <div class="small_right"><img src="images/emily.jpeg" 
      alt="Dr. Emily Nordmann" /></div>
 
-**Dr. Emily Nordmann** is a teaching-focused Senior Lecturer in the [School of Psychology and Neuroscience](https://www.gla.ac.uk/schools/psychologyneuroscience/) at the University of Glasgow. She teaches research methods, individual differences and data skills in R as well as acting as Deputy Director of Education. She is a vocal advocate of open science and open educational resources. As a member of the [PsyTeachR](https://psyteachr.github.io/) team she has authored several open-access data skills books and tutorials, and is also the Communications Chair of [EdArXiv](https://edarxiv.org/), the preprint sever for the education research community. She lives in Glasgow, Scotland with her wife Kathleen and her cat Khaleesi, who she named before the final season of Game of Thrones aired. 
+**Dr. Emily Nordmann** is a teaching-focused Senior Lecturer in the [School of Psychology and Neuroscience](https://www.gla.ac.uk/schools/psychologyneuroscience/) at the University of Glasgow. She teaches research methods, individual differences and data skills in R as well as acting as Deputy Director of Education. She is a vocal advocate of open science and open educational resources. As a member of the [PsyTeachR](https://psyteachr.github.io/) team she has authored several open-access data skills books and tutorials. She lives in Glasgow, Scotland with her wife Kathleen and her cat Khaleesi, who she named before the final season of Game of Thrones aired. 
 
 <div class="small_right"><img src="images/javan.png" 
      alt="Dr. Javan K Carter" /></div>
