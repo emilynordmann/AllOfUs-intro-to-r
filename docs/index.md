@@ -2,7 +2,7 @@
 title: "Intro to R and Data Visualization" # edit
 #subtitle: "optional" 
 author: "Emily Nordmann & Javan Carter" # edit
-date: "2023-09-03"
+date: "2023-09-25"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
